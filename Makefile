@@ -3,17 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vfour <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/07/18 11:19:49 by vfour             #+#    #+#              #
-#    Updated: 2016/12/02 14:53:11 by vfour            ###   ########.fr        #
+#    Created: 2017/01/05 18:06:46 by hel-hadi          #+#    #+#              #
+#    Updated: 2017/01/05 18:07:16 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME    =   libft.a
 CC      =   gcc
 DIR_LIB =   ./
 LIB     =   $(DIR_LIB)ft_atoi.c             \
-            $(DIR_LIB)ft_atoi_base.c        \
             $(DIR_LIB)ft_bzero.c            \
             $(DIR_LIB)ft_isalnum.c          \
             $(DIR_LIB)ft_isalpha.c          \
@@ -22,7 +21,6 @@ LIB     =   $(DIR_LIB)ft_atoi.c             \
             $(DIR_LIB)ft_isprint.c          \
             $(DIR_LIB)ft_itoa.c             \
             $(DIR_LIB)ft_lstadd.c           \
-            $(DIR_LIB)ft_lstcreateelem.c    \
             $(DIR_LIB)ft_lstdel.c           \
             $(DIR_LIB)ft_lstdelone.c        \
             $(DIR_LIB)ft_lstiter.c          \

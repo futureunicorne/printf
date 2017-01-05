@@ -6,44 +6,44 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 09:17:24 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/05 10:59:17 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/05 18:08:51 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 PREF = ./srcs/
 HEADER = ./include/
-SRCS = 	ft_add_elem.c	\
-		ft_atoi.c		\
-		ft_bzero.c		\
-		ft_count_len.c	\
-		ft_count_num.c	\
+SRCS = 	ft_add_elem.c		\
+		ft_atoi.c			\
+		ft_bzero.c			\
+		ft_count_len.c		\
+		ft_count_num.c		\
 		ft_count_words.c	\
-		ft_del_elem.c	\
-		ft_free_lst.c	\
-		ft_get_elem.c	\
-		ft_init_lst.c	\
-		ft_isalnum.c	\
-		ft_isalpha.c	\
-		ft_isascii.c	\
-		ft_isdigit.c	\
-		ft_isprint.c	\
-		ft_itoa.c		\
+		ft_del_elem.c		\
+		ft_free_lst.c		\
+		ft_get_elem.c		\
+		ft_init_lst.c		\
+		ft_isalnum.c		\
+		ft_isalpha.c		\
+		ft_isascii.c		\
+		ft_isdigit.c		\
+		ft_isprint.c		\
+		ft_itoa.c			\
 		ft_len_space_out.c	\
-		ft_lstadd.c		\
-		ft_lstdel.c		\
-		ft_lstdelone.c	\
-		ft_lstiter.c	\
-		ft_lstmap.c		\
-		ft_lstnew.c		\
-		ft_memalloc.c	\
-		ft_memccpy.c	\
-		ft_memchr.c		\
-		ft_memcmp.c		\
-		ft_memcpy.c		\
-		ft_memdel.c		\
-		ft_memmove.c	\
-		ft_memset.c		\
+		ft_lstadd.c			\
+		ft_lstdel.c			\
+		ft_lstdelone.c		\
+		ft_lstiter.c		\
+		ft_lstmap.c			\
+		ft_lstnew.c			\
+		ft_memalloc.c		\
+		ft_memccpy.c		\
+		ft_memchr.c			\
+		ft_memcmp.c			\
+		ft_memcpy.c			\
+		ft_memdel.c			\
+		ft_memmove.c		\
+		ft_memset.c			\
 		ft_memset_base.c	\
 		ft_print_lst.c		\
 		ft_putchar.c		\
