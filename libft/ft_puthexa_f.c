@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/09 17:13:18 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/09 18:05:47 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,15 @@ void	ft_puthexa(long long n)
 	}
 }
 
-int	ft_puthexa_f(va_list *p)
+int	ft_putadd_f(va_list *p)
 {
 	ft_putstr("0x");
+	ft_puthexa(va_arg(*p, long long));
+	return (0);
+}
+
+int	ft_puthexa_f(va_list *p)
+{
 	ft_puthexa(va_arg(*p, long long));
 	return (0);
 }

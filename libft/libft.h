@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/09 15:25:37 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/09 17:45:40 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 int					ft_putnbr_f(va_list *p);
 int					ft_putstr_f(va_list *p);
 int					ft_putchar_f(va_list *p);
+int					ft_putadd_f(va_list *p);
 void				ft_puthexa(long long n);
 int					ft_puthexa_f(va_list *p);
 size_t				ft_strlen(const char *s);
