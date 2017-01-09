@@ -6,14 +6,18 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 09:17:24 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/05 10:59:17 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/09 15:07:53 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 PREF = ./srcs/
 HEADER = ./include/
-SRCS = 	ft_add_elem.c	\
+SRCS = 	ft_puthexa_f.c 	\
+		ft_putstr_f.c	\
+		ft_putchar_f.c	\
+		ft_putnbr_f.c	\
+		ft_add_elem.c	\
 		ft_atoi.c		\
 		ft_bzero.c		\
 		ft_count_len.c	\

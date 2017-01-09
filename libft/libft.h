@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/05 10:59:03 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/09 15:25:37 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
-
+# include <stdarg.h>
+//printf
+int					ft_putnbr_f(va_list *p);
+int					ft_putstr_f(va_list *p);
+int					ft_putchar_f(va_list *p);
+void				ft_puthexa(long long n);
+int					ft_puthexa_f(va_list *p);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 int					ft_strcmp(const char *s1, const char *s2);
@@ -76,6 +82,7 @@ char				*ft_strsub_b(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
+
 typedef struct		s_list
 {
 	char			*content;
