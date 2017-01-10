@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putoctal_f.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 17:07:25 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/10 17:23:52 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../libft.h"
 
-int	main()
+void	ft_putoctal(int long n)
 {
-	char *str;
- 	int i;
-	// %p %s %x %X %c %d %D
-	i = -28646447;
-	str = "et demi";
-	ft_printf("l adresse de str est %o", i);
-	ft_putchar('\n');
-	printf("l adresse de str est %O", i);
+	int long nb;
+
+	nb = n;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = nb * (-1);
+	}
+	if (nb >= 1)
+	{
+		ft_putoctal(nb / 8);
+		ft_putchar((nb % 8) + 48);
+	}
+}
+
+int	ft_putoctal_f(va_list *p)
+{
+	ft_putoctal(va_arg(*p, int long));
 	return (0);
 }

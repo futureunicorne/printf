@@ -1,20 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_f.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_f.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 13:13:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/09 14:50:48 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/10 17:28:49 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-
-int	ft_putstr_f(va_list *p)
+void	ft_putnbr_long(int long n)
 {
-	ft_putstr(va_arg(*p,char *));
+
+	long long nb;
+	nb = n;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = nb * (-1);
+	}
+	if (nb >= 0 && nb <= 9)
+		ft_putchar(nb + 48);
+	if (nb > 9)
+	{
+		ft_putnbr_long(nb / 10);
+		ft_putchar((nb % 10) + 48);
+	}
+}
+
+int	ft_putnbr_big_f(va_list *p)
+{
+	ft_putnbr_long(va_arg(*p, int long));
+	return (0);
+}
+
+int	ft_putnbr_f(va_list *p)
+{
+	ft_putnbr(va_arg(*p, int));
 	return (0);
 }
