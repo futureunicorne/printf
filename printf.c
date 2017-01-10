@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/09 17:54:06 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/10 08:59:44 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_flag(char c)
 		return (0);
 	else if (c == 's')
 		return (1);
-	else if (c == 'd' || c == 'D')
+	else if (c == 'd' || 'D')
 		return (2);
 	else if (c == 'p')
 		return (3);
@@ -36,11 +36,13 @@ int	ft_printf(char *str, ...)
 
 	int i;
 	int flag;
+	// ajuster pour nouvelle fonction
 	ptr_func[0] = &ft_putchar_f;
 	ptr_func[1] = &ft_putstr_f;
 	ptr_func[2] = &ft_putnbr_f;
 	ptr_func[3] = &ft_putadd_f;
 	ptr_func[4] = &ft_puthexa_f;
+
 	i = 0;
 	flag = 0;
 	va_start(ap,str);
