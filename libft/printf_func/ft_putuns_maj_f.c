@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_f.c                                      :+:      :+:    :+:   */
+/*   ft_putuns_big_f.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 17:28:49 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/10 13:21:49 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/10 20:45:40 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_putnbr_long(int long n)
+void	ft_putuns_maj(unsigned long long n)
 {
+	unsigned long long nb;
 
-	long long nb;
 	nb = n;
-	if (nb < 0)
+	if ((long int)nb < 0)
 	{
 		ft_putchar('-');
 		nb = nb * (-1);
 	}
-	if (nb >= 0 && nb <= 9)
+	if ((int)nb >= 0 && (int)nb <= 9)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{
-		ft_putnbr_long(nb / 10);
+		ft_putuns_maj(nb / 10);
 		ft_putchar((nb % 10) + 48);
 	}
 }
 
-int	ft_putnbr_big_f(va_list *p)
+int ft_putuns_maj_f(va_list *p)
 {
-	ft_putnbr_long(va_arg(*p, int long));
-	return (0);
-}
-
-int	ft_putnbr_f(va_list *p)
-{
-	ft_putnbr(va_arg(*p, int));
+	ft_putuns_maj(va_arg(*p, unsigned long long));
 	return (0);
 }

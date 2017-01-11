@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 17:10:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 17:23:22 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/10 20:43:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_putoctal_big(int long n)
+void	ft_putoctal_maj(long long n)
 {
 	int long nb;
 
@@ -24,13 +24,13 @@ void	ft_putoctal_big(int long n)
 	}
 	if (nb >= 1)
 	{
-		ft_putoctal_big(nb / 8);
+		ft_putoctal_maj(nb / 8);
 		ft_putchar((nb % 8) + 48);
 	}
 }
 
-int	ft_putoctal_big_f(va_list *p)
+int	ft_putoctal_maj_f(va_list *p)
 {
-	ft_putoctal_big(va_arg(*p, int long));
+	ft_putoctal_maj(va_arg(*p, long long));
 	return (0);
 }

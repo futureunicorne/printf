@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 17:07:25 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/11 09:36:14 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	main()
 	char *str;
  	int i;
 	// %p %s %x %X %c %d %D
-	i = -28646447;
+	i = 1564;
 	str = "et demi";
-	ft_printf("l adresse de str est %o", i);
+	ft_printf("l adresse de str est %x", i);
 	ft_putchar('\n');
-	printf("l adresse de str est %O", i);
+	printf("l adresse de str est %x", i);
 	return (0);
 }

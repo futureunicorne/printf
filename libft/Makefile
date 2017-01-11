@@ -6,21 +6,22 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 09:17:24 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/10 17:19:24 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/10 20:47:13 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 PREF = ./srcs/
 HEADER = ./include/
-SRCS = 	printf_func/ft_putoctal_big_f.c \
+SRCS = 	printf_func/ft_putuns_maj_f.c 	\
+		printf_func/ft_putoctal_maj_f.c \
 		printf_func/ft_putoctal_f.c 	\
 		printf_func/ft_putuns_f.c 		\
 		printf_func/ft_puthexa_f.c 		\
-		printf_func/ft_puthexa_big_f.c 	\
+		printf_func/ft_puthexa_maj_f.c 	\
 		printf_func/ft_putstr_f.c		\
 		printf_func/ft_putchar_f.c		\
-		printf_func/ft_putnbr_f.c		\
+		printf_func/ft_putnbr_maj_f.c	\
 		ft_add_elem.c					\
 		ft_atoi.c						\
 		ft_bzero.c						\

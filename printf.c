@@ -6,16 +6,18 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 17:22:28 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/11 09:41:08 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	check_flag(char c)
+int	check_flag(char c, char d, char e)
 {
 	if (c == 'c')
 		return (0);
+	else if (c == 'l')
+		return (check_flag(d, e, e));
 	else if (c == 's')
 		return (1);
 	else if (c == 'd' || c == 'i')
@@ -51,20 +53,20 @@ int	ft_printf(char *str, ...)
 	int i;
 	int flag;
 	// ajuster pour nouvelle fonction
-	ptr_func[0] = &ft_putchar_f;  //valide
-	ptr_func[1] = &ft_putstr_f;   // valide
-	ptr_func[2] = &ft_putnbr_f;   // valid
+	ptr_func[0] = &ft_putchar_f;  //valid
+	ptr_func[1] = &ft_putstr_f;   // valid
+	ptr_func[2] = &ft_putnbr_f;   // valid mais check ld pour tous
 	ptr_func[3] = &ft_putadd_f;   // valid
 	ptr_func[4] = &ft_puthexa_f;  //valid mais check le 0
 	ptr_func[5] = &ft_putuns_f;   //valid
 	ptr_func[6] = &ft_putoctal_f; //valid
-	ptr_func[7] = &ft_putnbr_big_f; //valid
-	ptr_func[8] = &ft_puthexa_big_f; //valid
-	ptr_func[9] = &ft_putoctal_big_f;
-	//ptr_func[9] = &ft_putuns_big_f;b
+	ptr_func[7] = &ft_putnbr_maj_f; //valid
+	ptr_func[8] = &ft_puthexa_maj_f; //valid
+	ptr_func[9] = &ft_putoctal_maj_f; //valid
+	ptr_func[10] = &ft_putuns_maj_f; // valid
 	//ptr_func[12] = &ft_putchar_big_f;
 	//ptr_func[10] = &ft_putstr_big_f;
-
+	//gestion des ld non terminer ... a revoi le char ne suffit pas
 	i = 0;
 	flag = 0;
 	va_start(ap,str);
@@ -72,14 +74,19 @@ int	ft_printf(char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			flag = check_flag(str[i + 1]);
+			flag = check_flag(str[i + 1], str[i + 2], str[i + 3]);
 			ptr_func[flag](&ap);
-			i++ ;
+			if (str[i + 1] == 'l')
+				i += 1;
+			if (str[i + 2] == 'l')
+				i += 3;
+			else
+				i++;
 		}
 		else
 			ft_putchar(str[i]);
 		i++;
 	}
-	va_end(ap);
+  	va_end(ap);
 	return (0);
 }
