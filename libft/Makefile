@@ -6,14 +6,17 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 09:17:24 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/10 20:47:13 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/11 17:45:39 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 PREF = ./srcs/
 HEADER = ./include/
-SRCS = 	printf_func/ft_putuns_maj_f.c 	\
+SRCS = 	printf_func/ft_putchar_maj_f.c	\
+		printf_func/ft_putstr_maj_f.c	\
+		printf_func/ft_putadd_f.c		\
+		printf_func/ft_putuns_maj_f.c 	\
 		printf_func/ft_putoctal_maj_f.c \
 		printf_func/ft_putoctal_f.c 	\
 		printf_func/ft_putuns_f.c 		\

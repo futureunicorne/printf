@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/11 09:09:13 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/11 17:45:41 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,26 @@
 # include <stdarg.h>
 # include <wchar.h>
 # include <stdio.h>
+# include <wctype.h>
+# include <locale.h>
+
 //printf
 int					ft_putnbr_f(va_list *p);
 void				ft_putnbr_maj(int long n);
 int					ft_putnbr_maj_f(va_list *p);
 int					ft_putstr_f(va_list *p);
 int					ft_putchar_f(va_list *p);
+void				ft_putchar_maj(wchar_t c);
+int					ft_putchar_maj_f(va_list *p);
+void				ft_putstr_maj(wchar_t *s);
+int					ft_putstr_maj_f(va_list *p);
 int					ft_putadd_f(va_list *p);
-void				ft_puthexa(int long n);
+void				ft_putadd(int long n);
+void				ft_puthexa(int n);
 int					ft_puthexa_f(va_list *p);
 int					ft_puthexa_maj_f(va_list *p);
 void				ft_puthexa_maj(int long n);
-void				ft_putuns(unsigned long n);
+void				ft_putuns(unsigned n);
 int					ft_putuns_f(va_list *p);
 void				ft_putuns_maj(unsigned long long n);
 int					ft_putuns_maj_f(va_list *p);

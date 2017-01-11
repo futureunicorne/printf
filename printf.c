@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/11 09:41:08 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/11 17:45:43 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,37 +38,35 @@ int	check_flag(char c, char d, char e)
 		return (9);
 	else if (c == 'U')
 		return (10);
-	else if (c == 'O')
-		return (11);
 	else if (c == 'C')
+		return (11);
+	else if (c == 'S')
 		return (12);
 	return (-1);
 }
 
 int	ft_printf(char *str, ...)
 {
+	int i;
+	int flag;
 	int (*ptr_func[13])(va_list *);
 	va_list ap;
 
-	int i;
-	int flag;
-	// ajuster pour nouvelle fonction
-	ptr_func[0] = &ft_putchar_f;  //valid
-	ptr_func[1] = &ft_putstr_f;   // valid
-	ptr_func[2] = &ft_putnbr_f;   // valid mais check ld pour tous
-	ptr_func[3] = &ft_putadd_f;   // valid
-	ptr_func[4] = &ft_puthexa_f;  //valid mais check le 0
-	ptr_func[5] = &ft_putuns_f;   //valid
-	ptr_func[6] = &ft_putoctal_f; //valid
-	ptr_func[7] = &ft_putnbr_maj_f; //valid
-	ptr_func[8] = &ft_puthexa_maj_f; //valid
-	ptr_func[9] = &ft_putoctal_maj_f; //valid
-	ptr_func[10] = &ft_putuns_maj_f; // valid
-	//ptr_func[12] = &ft_putchar_big_f;
-	//ptr_func[10] = &ft_putstr_big_f;
-	//gestion des ld non terminer ... a revoi le char ne suffit pas
 	i = 0;
 	flag = 0;
+	ptr_func[0]  = &ft_putchar_f;
+	ptr_func[1]  = &ft_putstr_f;
+	ptr_func[2]  = &ft_putnbr_f;
+	ptr_func[3]  = &ft_putadd_f;
+	ptr_func[4]  = &ft_puthexa_f;
+	ptr_func[5]  = &ft_putuns_f;
+	ptr_func[6]  = &ft_putoctal_f;
+	ptr_func[7]  = &ft_putnbr_maj_f;
+	ptr_func[8]  = &ft_puthexa_maj_f;
+	ptr_func[9]  = &ft_putoctal_maj_f;
+	ptr_func[10] = &ft_putuns_maj_f;
+	ptr_func[11] = &ft_putchar_maj_f;
+	ptr_func[12] = &ft_putstr_maj_f;
 	va_start(ap,str);
 	while (str[i] != '\0')
 	{
@@ -76,10 +74,10 @@ int	ft_printf(char *str, ...)
 		{
 			flag = check_flag(str[i + 1], str[i + 2], str[i + 3]);
 			ptr_func[flag](&ap);
-			if (str[i + 1] == 'l')
-				i += 1;
 			if (str[i + 2] == 'l')
-				i += 3;
+				i += 2;
+			if (str[i + 1] == 'l')
+				i += 2;
 			else
 				i++;
 		}

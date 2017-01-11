@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putuns_big_f.c                                  :+:      :+:    :+:   */
+/*   ft_putuns_maj_f.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:21:49 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 20:45:40 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/11 10:50:04 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_putuns_maj(unsigned long long n)
 	unsigned long long nb;
 
 	nb = n;
-	if ((long int)nb < 0)
+	if (!(unsigned long long)nb)
 	{
 		ft_putchar('-');
 		nb = nb * (-1);
 	}
-	if ((int)nb >= 0 && (int)nb <= 9)
+	if ((unsigned long long)nb && nb <= 9)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{

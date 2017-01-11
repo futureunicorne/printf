@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 20:35:30 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/11 11:41:24 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_puthexa_maj(int long n)
 		ft_putchar('-');
 		nb = nb * (-1);
 	}
-	if (nb > 1)
+	if (nb >= 1)
 	{
 		ft_puthexa_maj(nb / 16);
 		na = nb % 16;
@@ -34,13 +34,6 @@ void	ft_puthexa_maj(int long n)
 			ft_putchar(na + 55);
 		na = 0;
 	}
-}
-
-int	ft_putadd_f(va_list *p)
-{
-	ft_putstr("0x");
-	ft_puthexa(va_arg(*p, int long));
-	return (0);
 }
 
 int	ft_puthexa_maj_f(va_list *p)

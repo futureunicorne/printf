@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putoctal_f.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_maj_f.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/11 13:49:38 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/11 15:53:17 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_putoctal(int long n)
+void	ft_putstr_maj(wchar_t *s)
 {
-	int long nb;
-
-	nb = n;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * (-1);
-	}
-	if (nb > 0)
-	{
-		ft_putoctal(nb / 8);
-		ft_putchar((nb % 8) + 48);
-	}
+	if (s)
+		write(1, s, ft_strlen((const char *)s));
 }
 
-int	ft_putoctal_f(va_list *p)
+int	ft_putstr_maj_f(va_list *p)
 {
-	ft_putoctal(va_arg(*p, int long));
+	ft_putstr_maj(va_arg(*p, wchar_t*));
 	return (0);
 }
