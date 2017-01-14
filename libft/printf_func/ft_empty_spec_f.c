@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_empty_spec_f.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/14 17:26:46 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/14 15:58:18 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/14 17:26:53 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../libft.h"
 
-int	main()
+void ft_empty_spec(char *str)
 {
-	wchar_t *str = {L"Вы говорите по-русски? je sais pas"};
+	ft_putstr("");
+}
 
-	int i;
-	i = -20000000;
-	setlocale(LC_ALL, "");
-	//ft_printf("%%%%%%%%%%%%", 10);
-	//ft_putchar('\n');
-	setlocale(LC_ALL, "");
-	printf("% % % %", 10);
+int	ft_empty_spec_f(va_list *p)
+{
+	ft_empty_spec(va_arg(*p, char*));
 	return (0);
 }

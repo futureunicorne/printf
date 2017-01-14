@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/14 17:26:46 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/14 13:37:05 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/14 17:26:43 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../libft.h"
 
-int	main()
+int	ft_check_percent(char *str, int pos)
 {
-	wchar_t *str = {L"Вы говорите по-русски? je sais pas"};
-
 	int i;
-	i = -20000000;
-	setlocale(LC_ALL, "");
-	//ft_printf("%%%%%%%%%%%%", 10);
-	//ft_putchar('\n');
-	setlocale(LC_ALL, "");
-	printf("% % % %", 10);
-	return (0);
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == hg)
+	}
 }
+
+/*
+int i;
+int flag;
+int auth;
+
+i = 0;
+auth = 0;
+flag = 0;
+while (str[i] && i <=  pos)
+{
+	if (str[i] == '%' && auth == 0)
+		auth++;
+	if (str[i] == '%' && auth == 1)
+		auth--;
+	i++;
+}
+return (auth);
+*/

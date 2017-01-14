@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/13 11:19:04 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/14 17:26:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ void				ft_putoctal(int long n);
 int					ft_putoctal_f(va_list *p);
 int					ft_putoctal_maj_f(va_list *p);
 void				ft_putoctal_maj(long long n);
+int					ft_empty_spec_f(va_list *p);
+int					ft_check_percent(char *str, int pos);
+
+
 //printf
 
 size_t				ft_strlen(const char *s);
