@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/13 17:41:51 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/14 01:36:59 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,24 @@ void	ft_putchar_maj(wchar_t c)
 
 	d = c;
 	e = c;
+	ft_putnbr(c);
 	if (c <= 127)
 		d = 1;
-	if (c <= 2047)
+	else if (c <= 2047)
 	{
 		d =  (d >> 6 | 0xC0);
 		c = ((c & 0x3F) | 0x80);
 		c = (c << 8 | d);
 		d = 2;
 	}
-	if (c <= 65535)
+	else if (c <= 65535)
 	{
-		ft_putchar((c >> 12) | 0xE0); //224
-		ft_putchar(((c >> 6) & 0x3F) | 0x80); // 63 et 128
-		ft_putchar((c & 0x3F) | 0x80); // 63 et 1280
+		c = (c >> 12 | 0xE0);
+		d = ((((d >> 6) & 0x3F) | 0x80));
+		c = (((e & 0x3F) | 0x80));
 		d = 3;
 	}
-//	ft_putnbr(c)
-		write(1, &c, d);
+	write(1, &c, d);
 }
 
 int	ft_putchar_maj_f(va_list *p)
