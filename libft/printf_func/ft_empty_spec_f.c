@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 15:58:18 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/14 17:26:53 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/15 14:13:47 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_empty_spec(char *str)
 {
-	ft_putstr("");
+	ft_putchar('%');
 }
 
 int	ft_empty_spec_f(va_list *p)

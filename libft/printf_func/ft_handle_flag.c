@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_percent.c                                 :+:      :+:    :+:   */
+/*   ft_handle_flag.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/14 13:37:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/14 17:26:43 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/15 13:46:37 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/15 14:13:44 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_check_percent(char *str, int pos)
+// mettrelachaine de caractere dans une liste chaines
+/* les espaces */
+
+int	ft_putspace(char *s)
 {
 	int i;
+	int flag;
 
 	i = 0;
-	while (str[i])
+	flag = 0;
+	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
 	{
-		if (str[i] == hg)
+		if (s[i] == ' ' && flag == 0)
+		{
+			ft_putchar(' ');
+			flag = 1;
+		}
+		i++;
 	}
+	return (i);
 }
 
-/*
-int i;
-int flag;
-int auth;
+/* le plus et le moins */
 
-i = 0;
-auth = 0;
-flag = 0;
-while (str[i] && i <=  pos)
-{
-	if (str[i] == '%' && auth == 0)
-		auth++;
-	if (str[i] == '%' && auth == 1)
-		auth--;
-	i++;
-}
-return (auth);
-*/
+/* le dieses */
