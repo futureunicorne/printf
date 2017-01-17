@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/10 20:38:16 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/17 16:22:22 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,22 @@ void	ft_putnbr_maj(int long n)
 	}
 }
 
-int	ft_putnbr_maj_f(va_list *p)
+int	ft_putnbr_maj_f(char *s, va_list *p)
 {
-	ft_putnbr_maj(va_arg(*p, int long));
+	int long arg;
+
+	arg = va_arg(*p, int long);
+	ft_handle_flag(s, (void*)arg);
+	ft_putnbr_maj(arg);
 	return (0);
 }
 
-int	ft_putnbr_f(va_list *p)
+int	ft_putnbr_f(char *s, va_list *p)
 {
-	ft_putnbr(va_arg(*p, int));
+	int arg;
+
+	arg = va_arg(*p, int);
+	ft_handle_flag(s, (void*)arg);
+	ft_putnbr(arg);
 	return (0);
 }

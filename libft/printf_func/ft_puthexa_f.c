@@ -6,16 +6,16 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/11 11:40:17 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/17 18:15:08 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_puthexa(int  n)
+void	ft_puthexa(int long n)
 {
-	int  nb;
-	int  na;
+	int long nb;
+	int long na;
 
 	nb = n;
 	na = 0;
@@ -36,8 +36,12 @@ void	ft_puthexa(int  n)
 	}
 }
 
-int	ft_puthexa_f(va_list *p)
+int	ft_puthexa_f(char *s, va_list *p)
 {
-	ft_puthexa(va_arg(*p, int long));
+	int long arg;
+
+	arg = va_arg(*p, int long);
+	ft_handle_flag(s, (void*)arg);
+	ft_puthexa(arg);
 	return (0);
 }

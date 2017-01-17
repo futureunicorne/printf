@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 10:35:48 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/17 18:15:18 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_attribute_ptr(int (*ptr_func[])(va_list*))
+void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*))
 {
 	ptr_func[1]  = &ft_putchar_f;
 	ptr_func[2]  = &ft_putstr_f;
@@ -30,15 +30,14 @@ void	ft_attribute_ptr(int (*ptr_func[])(va_list*))
 	ptr_func[14] = &ft_empty_spec_f;
 }
 
-void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(va_list*))
+void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(char *s, va_list*))
 {
 	if (s[pos->i] == '%')
 	{
-		ft_handle_flag(s + pos->i + 1, ap);
 		//ft_handle_prec(s + pos->i + 1, ap);
 		if (ft_check_spec(s + pos->i + 1))
 		{
-			ptr_func[ft_check_spec(s + pos->i + 1)](ap);
+			ptr_func[ft_check_spec(s + pos->i + 1)](s + pos->i + 1, ap);
 			if (ft_check_ecart(s + pos->i + 1) > 0)
 				pos->i = pos->i + ft_check_ecart(s + pos->i + 1);
 			if (s[pos->i + 2] == 'l')
@@ -56,7 +55,7 @@ void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(va_list*))
 int	ft_printf(char *str, ...)
 {
 	t_pos pos;
-	int (*ptr_func[15])(va_list *);
+	int (*ptr_func[15])(char*, va_list*);
 	va_list ap;
 
 	ft_memset(&pos, 0, sizeof(t_pos));

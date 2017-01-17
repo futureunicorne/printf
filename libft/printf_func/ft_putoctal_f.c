@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/11 13:49:38 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/17 16:30:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ void	ft_putoctal(int long n)
 	}
 }
 
-int	ft_putoctal_f(va_list *p)
+int	ft_putoctal_f(char *s, va_list *p)
 {
-	ft_putoctal(va_arg(*p, int long));
+	int long arg;
+
+	arg = va_arg(*p, int long);
+	ft_handle_flag(s, (void*)arg);
+	ft_putoctal(arg);
 	return (0);
 }

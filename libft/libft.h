@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 10:35:44 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/17 18:15:11 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,38 +23,38 @@
 # include <locale.h>
 
 //printf
-int					ft_putnbr_f(va_list *p);
+int					ft_putnbr_f(char *s, va_list *p);
 void				ft_putnbr_maj(int long n);
-int					ft_putnbr_maj_f(va_list *p);
-int					ft_putstr_f(va_list *p);
-int					ft_putchar_f(va_list *p);
+int					ft_putnbr_maj_f(char *s, va_list *p);
+int					ft_putstr_f(char *s, va_list *p);
+int					ft_putchar_f(char *s, va_list *p);
 void				ft_putchar_maj(wchar_t c);
-int					ft_putchar_maj_f(va_list *p);
+int					ft_putchar_maj_f(char *s, va_list *p);
 void				ft_putstr_maj(wchar_t *s);
-int					ft_putstr_maj_f(va_list *p);
-int					ft_putadd_f(va_list *p);
+int					ft_putstr_maj_f(char *s, va_list *p);
+int					ft_putadd_f(char *s, va_list *p);
 void				ft_putadd(int long n);
-void				ft_puthexa(int n);
-int					ft_puthexa_f(va_list *p);
-int					ft_puthexa_maj_f(va_list *p);
+void				ft_puthexa(int long n);
+int					ft_puthexa_f(char *s, va_list *p);
+int					ft_puthexa_maj_f(char *s, va_list *p);
 void				ft_puthexa_maj(int long n);
 void				ft_putuns(unsigned n);
-int					ft_putuns_f(va_list *p);
+int					ft_putuns_f(char *s, va_list *p);
 void				ft_putuns_maj(unsigned long long n);
-int					ft_putuns_maj_f(va_list *p);
+int					ft_putuns_maj_f(char *s, va_list *p);
 void				ft_putoctal(int long n);
-int					ft_putoctal_f(va_list *p);
-int					ft_putoctal_maj_f(va_list *p);
+int					ft_putoctal_f(char *s, va_list *p);
+int					ft_putoctal_maj_f(char *s, va_list *p);
 void				ft_putoctal_maj(long long n);
-int					ft_empty_spec_f(va_list *p);
+int					ft_empty_spec_f(char *s, va_list *p);
 int					ft_check_spec(char *s);
-void				ft_attribute_ptr(int (*ptr_func[])(va_list*));
+void				ft_attribute_ptr(int (*ptr_func[])(char *s, va_list*));
 int					check_ptr(char c, char d, char e);
 int					check_ptr_bis(char c, char d, char e);
 int 				ft_check_ecart(char *s);
 int					ft_putspace(char *s);
-int					ft_handle_flag(char *s, va_list *	ap);
-int 				ft_putless(char *s);
+int					ft_handle_flag(char *s, void *arg);
+int 				ft_putless(char *s, va_list *ap);
 
 
 
