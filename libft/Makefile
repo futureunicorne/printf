@@ -6,14 +6,15 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 09:17:24 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/15 09:12:53 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/17 10:35:46 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 PREF = ./srcs/
 HEADER = ./include/
-SRCS = 	printf_func/ft_check_spec.c  \
+SRCS = 	printf_func/ft_handle_flag.c	\
+		printf_func/ft_check_spec.c  	\
 		printf_func/ft_empty_spec_f.c 	\
 		printf_func/ft_putchar_maj_f.c	\
 		printf_func/ft_putstr_maj_f.c	\
