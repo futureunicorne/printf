@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 16:19:39 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/18 14:58:17 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,18 @@ void	ft_putchar_maj(wchar_t c)
 int	ft_putchar_maj_f(char *s, va_list *p)
 {
 	wchar_t arg;
+	int		nb;
+	int		diff;
 
 	arg = va_arg(*p, wchar_t);
+	if (arg <= 127)
+		nb = 1;
+	else if (arg <= 2047)
+		nb = 2;
+	else if (arg <= 65535)
+		nb = 3;
+	diff = ft_flag_size(s, (void*)arg);
+	ft_size_chain(s, nb, diff);
 	ft_handle_flag(s, (void*)arg);
 	ft_putchar_maj(arg);
 	return (0);

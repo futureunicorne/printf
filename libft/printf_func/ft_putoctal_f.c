@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 16:30:38 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/18 15:00:53 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ void	ft_putoctal(int long n)
 
 int	ft_putoctal_f(char *s, va_list *p)
 {
-	int long arg;
+	int long	arg;
+	int			nb;
+	int			diff;
 
 	arg = va_arg(*p, int long);
+	nb = ft_count_num((int long)arg);
+	diff = ft_flag_size(s, (void*)arg);
+	ft_size_chain(s, nb, diff);
 	ft_handle_flag(s, (void*)arg);
 	ft_putoctal(arg);
 	return (0);

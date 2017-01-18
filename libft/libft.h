@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 18:15:11 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/18 14:33:49 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,19 @@ void				ft_attribute_ptr(int (*ptr_func[])(char *s, va_list*));
 int					check_ptr(char c, char d, char e);
 int					check_ptr_bis(char c, char d, char e);
 int 				ft_check_ecart(char *s);
-int					ft_putspace(char *s);
 int					ft_handle_flag(char *s, void *arg);
-int 				ft_putless(char *s, va_list *ap);
+char*				ft_record_chain(char *s);
+int					ft_size_chain(char *s, int t_arg, int diff);
+int					ft_putplus_bis(char *s, void *arg);
+int					ft_putdieses_bis(char *s);
+int					ft_putspace_bis(int auth, int flag);
+int					ft_flag_size(char *s, void *arg);
+
+
+
+
+
+
 
 
 

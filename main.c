@@ -6,23 +6,20 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 18:15:13 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/18 15:47:45 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include <wchar.h>
+#include <stdio.h>
+#include <wctype.h>
+#include <locale.h>
 
 int	main()
 {
-	wchar_t *str = {L"Вы говорите по-русски? je sais pas"};
+	wchar_t *str = {L"C Pождеством Xристовом"};
 
-	int i;
-	i = -575645;
 	setlocale(LC_ALL, "");
-	ft_printf("%10d\n", i);
-	printf("%10d\n", i);
-	setlocale(LC_ALL, "");
-	//ft_printf("a%-dhamza\n", i);
-	//printf("a%-dhamza\n", i);
+	printf("%S", str);
 	return (0);
 }

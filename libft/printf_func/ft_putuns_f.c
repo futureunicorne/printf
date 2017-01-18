@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 11:02:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 16:32:50 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/18 15:13:08 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,16 @@ void	ft_putuns(unsigned n)
 
 int		ft_putuns_f(char *s, va_list *p)
 {
-	unsigned arg;
+	unsigned	arg;
+	int			nb;
+	int			diff;
 
+	nb = 0;
+	diff = 0;
 	arg = va_arg(*p, unsigned);
+	nb = ft_count_num((int long)arg);
+	diff = ft_flag_size(s, (void*)arg);
+	ft_size_chain(s, nb, diff);
 	ft_handle_flag(s, (void*)arg);
 	ft_putuns(arg);
 	return (0);

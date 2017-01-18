@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/17 16:29:52 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/18 14:52:53 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,14 @@ void	ft_putadd(int long n)
 
 int	ft_putadd_f(char *s, va_list *p)
 {
-	int long arg;
+	int long	arg;
+	int			nb;
+	int			diff;
 
 	arg = va_arg(*p, int long);
+	nb = ft_count_num((int long)arg);
+	diff = ft_flag_size(s, (void*)arg);
+	ft_size_chain(s, nb, diff);
 	ft_handle_flag(s, (void*)arg);
 	ft_putstr("0x");
 	ft_putadd(arg);
