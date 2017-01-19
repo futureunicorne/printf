@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/18 14:58:17 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/19 08:50:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_putchar_maj_f(char *s, va_list *p)
 	wchar_t arg;
 	int		nb;
 	int		diff;
+	int		check_type;
+
 
 	arg = va_arg(*p, wchar_t);
 	if (arg <= 127)
@@ -52,9 +54,10 @@ int	ft_putchar_maj_f(char *s, va_list *p)
 		nb = 2;
 	else if (arg <= 65535)
 		nb = 3;
+	check_type = 1;
 	diff = ft_flag_size(s, (void*)arg);
 	ft_size_chain(s, nb, diff);
-	ft_handle_flag(s, (void*)arg);
+	ft_handle_flag(s, (void*)arg, check_type);
 	ft_putchar_maj(arg);
 	return (0);
 }

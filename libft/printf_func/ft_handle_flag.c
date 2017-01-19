@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/15 13:46:37 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/18 11:23:26 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/19 08:49:07 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int	ft_putplus(char *s, void *arg)
 	if (((long)arg > 2147483647 || (long)arg < 0) && flag == 3)
 		return (0);
 	if (arg >= 0 && (flag == 3 || flag == 8))
+	{
 		ft_putchar('+');
+		return (1);
+	}
 	return (0);
 }
 
@@ -51,13 +54,13 @@ int	ft_putdieses(char *s)
 	return (0);
 }
 
-int	ft_putspace(int auth, int flag)
+int	ft_putspace(int auth, int flag, int check_type)
 {
-	if (auth == 1 && flag == 0)
+	if (auth == 1 && flag == 0 && check_type == 0)
 		ft_putchar(' ');
 	return (0);
 }
-int ft_handle_flag(char *s, void *arg)
+int ft_handle_flag(char *s, void *arg, int check_type)
 {
 	int i;
 	t_pos pos;
@@ -87,6 +90,6 @@ int ft_handle_flag(char *s, void *arg)
 		}
 		i++;
 	}
-	ft_putspace(pos.auth, pos.flag);
+	ft_putspace(pos.auth, pos.flag, check_type);
 	return (0);
 }
