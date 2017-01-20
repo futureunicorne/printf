@@ -6,11 +6,25 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 08:50:50 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/19 18:48:19 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+
+int		ft_strwclen(wchar_t arg)
+{
+	int nb;
+
+	nb = 0;
+	if (arg <= 127)
+		nb = 1;
+	else if (arg <= 2047)
+		nb = 2;
+	else if (arg <= 65535)
+		nb = 3;
+	return (nb);
+}
 
 void	ft_putchar_maj(wchar_t c)
 {
@@ -48,16 +62,12 @@ int	ft_putchar_maj_f(char *s, va_list *p)
 
 
 	arg = va_arg(*p, wchar_t);
-	if (arg <= 127)
-		nb = 1;
-	else if (arg <= 2047)
-		nb = 2;
-	else if (arg <= 65535)
-		nb = 3;
-	check_type = 1;
+	nb = ft_strwclen(arg);
+	check_type = 0;
 	diff = ft_flag_size(s, (void*)arg);
-	ft_size_chain(s, nb, diff);
 	ft_handle_flag(s, (void*)arg, check_type);
+	ft_size_chain(s, nb, diff);
 	ft_putchar_maj(arg);
+	ft_size_chain_plus(s, nb, diff);
 	return (0);
 }

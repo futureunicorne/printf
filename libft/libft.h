@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 08:49:14 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/19 16:20:42 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int					ft_putdieses_bis(char *s);
 int					ft_putspace_bis(int auth, int flag);
 int					ft_flag_size(char *s, void *arg);
 int					ft_strwlen(wchar_t *s);
+int					ft_size_chain_plus(char *s, int t_arg, int diff);
+
 
 
 

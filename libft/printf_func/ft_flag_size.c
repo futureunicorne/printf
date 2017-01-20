@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 14:12:34 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 08:17:55 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/19 18:18:44 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int ft_flag_size(char *s, void *arg)
 		}
 		else if (s[i] == ' ')
 			pos.auth = 1;
+
 		else if (s[i] == '#' && pos.flag3 == 0)
 		{
 			if (ft_putdieses_bis(s) > 0)

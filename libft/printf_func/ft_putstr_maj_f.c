@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 08:51:00 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/19 18:49:06 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,9 @@ int	ft_putstr_maj_f(char *s, va_list *p)
 	arg = va_arg(*p, wchar_t*);
 	nb = ft_strwlen(arg);
 	diff = ft_flag_size(s, (void*)arg);
-	ft_size_chain(s, nb, diff);
 	ft_handle_flag(s, (void*)arg, check_type);
+	ft_size_chain(s, nb, diff);
 	ft_putstr_maj(arg);
+	ft_size_chain_plus(s, nb, diff);
 	return (0);
 }
