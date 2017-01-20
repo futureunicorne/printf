@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/18 15:31:51 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 10:49:02 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef	struct		s_pos
 	int				flag2;
 	int				flag3;
 	int				flag_size;
+	int				flag_zero;
 }					t_pos;
 
 

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/15 13:46:37 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 18:30:23 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 17:31:41 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ int	ft_putplus(char *s, void *arg)
 	if (((long)arg > 2147483647 || (long)arg < 0) && flag == 3)
 		return (0);
 	if (arg >= 0 && (flag == 3 || flag == 8))
-	{
-		ft_putchar('+');
 		return (1);
-	}
 	return (0);
 }
 
@@ -44,7 +41,7 @@ int	ft_putdieses(char *s)
 		i++;
 	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
 	if (flag == 5) //x
-		ft_putstr("0x");
+		ft_putstr("");
 	else if (flag == 7) // o
 		ft_putchar('0');
 	else if (flag == 9) // X
@@ -54,9 +51,11 @@ int	ft_putdieses(char *s)
 	return (0);
 }
 
-int	ft_putspace(int auth, int flag, int check_type)
+int	ft_putspace(int auth, int flag, int flag_z, int check_type)
 {
-	if (auth == 1 && flag == 0 && check_type == 0)
+	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 0)
+		ft_putchar(' ');
+	else if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 1)
 		ft_putchar(' ');
 	return (0);
 }
@@ -83,7 +82,7 @@ int ft_handle_flag(char *s, void *arg, int check_type)
 		else if (s[i] == ' ')
 			pos.auth = 1;
 		else if (s[i] == '0')
-			pos.auth = 0;
+			pos.flag_zero = 1;
 		else if (s[i] == '#' && pos.flag3 == 0)
 		{
 			ft_putdieses(s);
@@ -92,6 +91,6 @@ int ft_handle_flag(char *s, void *arg, int check_type)
 		}
 		i++;
 	}
-	ft_putspace(pos.auth, pos.flag, check_type);
+	ft_putspace(pos.auth, pos.flag, pos.flag_zero ,check_type);
 	return (0);
 }

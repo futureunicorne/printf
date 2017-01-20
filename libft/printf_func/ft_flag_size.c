@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 14:12:34 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 18:18:44 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 14:46:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,16 @@ int	ft_putdieses_bis(char *s)
 	return (0);
 }
 
-int	ft_putspace_bis(int auth, int flag)
+int	ft_putspace_bis(int auth, int flag, int flag_z, int check_type)
 {
-	if (auth == 1 && flag == 0)
+	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 0)
+		return (1);
+	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 1)
 		return (1);
 	return (0);
 }
-int ft_flag_size(char *s, void *arg)
+
+int ft_flag_size(char *s, void *arg, int check_type)
 {
 	int i;
 	t_pos pos;
@@ -80,17 +83,18 @@ int ft_flag_size(char *s, void *arg)
 		}
 		else if (s[i] == ' ')
 			pos.auth = 1;
-
+		else if (s[i] == '0')
+			pos.flag_zero = 1;
 		else if (s[i] == '#' && pos.flag3 == 0)
 		{
 			if (ft_putdieses_bis(s) > 0)
 				pos.flag_size = ft_putdieses_bis(s);
 			pos.flag3 = 1;
-			pos.flag = 1;
+			//pos.flag = 1;
 		}
 		i++;
 	}
-	if (ft_putspace_bis(pos.auth, pos.flag) == 1)
+	if (ft_putspace_bis(pos.auth, pos.flag, pos.flag_zero, check_type) == 1)
 		pos.flag_size++;
 	return (pos.flag_size);
 }

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 18:49:06 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 10:58:48 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_putstr_maj_f(char *s, va_list *p)
 	check_type = 1;
 	arg = va_arg(*p, wchar_t*);
 	nb = ft_strwlen(arg);
-	diff = ft_flag_size(s, (void*)arg);
+	diff = ft_flag_size(s, (void*)arg, check_type);
 	ft_handle_flag(s, (void*)arg, check_type);
 	ft_size_chain(s, nb, diff);
 	ft_putstr_maj(arg);

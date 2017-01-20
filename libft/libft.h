@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 16:20:42 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 17:41:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void				ft_putstr_maj(wchar_t *s);
 int					ft_putstr_maj_f(char *s, va_list *p);
 int					ft_putadd_f(char *s, va_list *p);
 void				ft_putadd(int long n);
-void				ft_puthexa(int long n);
+void				ft_puthexa(int n);
 int					ft_puthexa_f(char *s, va_list *p);
 int					ft_puthexa_maj_f(char *s, va_list *p);
 void				ft_puthexa_maj(int long n);
@@ -57,10 +57,23 @@ int					ft_record_chain(char *s);
 int					ft_size_chain(char *s, int t_arg, int diff);
 int					ft_putplus_bis(char *s, void *arg);
 int					ft_putdieses_bis(char *s);
-int					ft_putspace_bis(int auth, int flag);
-int					ft_flag_size(char *s, void *arg);
+int					ft_putspace_bis(int auth, int flag, int flag_z, int check_type);
+int					ft_flag_size(char *s, void *arg, int check_type);
 int					ft_strwlen(wchar_t *s);
+int					ft_strhlen(int  nb);
 int					ft_size_chain_plus(char *s, int t_arg, int diff);
+int					ft_nbr_octal_len(int long nb);
+int					ft_size_chain_add(char *s, int t_arg, int diff);
+int					ft_size_chain_base(char *s, int t_arg, int diff, char c);
+int					ft_size_chain_hexa(char *s, int t_arg, int diff);
+int					ft_size_chain_hexa_maj(char *s, int t_arg, int diff);
+int					ft_size_chain_plus_base(char *s, int t_arg, int diff);
+
+
+
+
+
+
 
 
 

@@ -6,13 +6,26 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 18:47:11 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 16:31:59 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_puthexa(int long nb)
+int		ft_strhlen(int nb)
+{
+	int i;
+
+	i = 0;
+	while (nb > 0)
+	{
+		nb = nb / 16;
+		i++;
+	}
+	return (i);
+}
+
+void	ft_puthexa(int nb)
 {
 	char *tab = "0123456789abcdef";
 	if (nb >= 0 && nb <= 15)
@@ -27,17 +40,17 @@ void	ft_puthexa(int long nb)
 
 int	ft_puthexa_f(char *s, va_list *p)
 {
-	int long	arg;
+	int			arg;
 	int			nb;
 	int			diff;
 	int			check_type;
 
-	check_type = 0;
-	arg = va_arg(*p, int long);
-	nb = ft_count_num((int long)arg) - 1;
-	diff = ft_flag_size(s, (void*)arg);
+	check_type = 1;
+	arg = va_arg(*p, int);
+	nb = ft_strhlen((int)arg);
+	diff = ft_flag_size(s, (void*)arg, check_type);
 	ft_handle_flag(s, (void*)arg, check_type);
-	ft_size_chain(s, nb, diff);
+	ft_size_chain_hexa(s, nb, diff);
 	ft_puthexa(arg);
 	ft_size_chain_plus(s, nb, diff);
 	return (0);
