@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/15 13:46:37 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 17:31:41 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 18:29:45 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,6 @@ int	ft_putplus(char *s, void *arg)
 	return (0);
 }
 
-int	ft_putdieses(char *s)
-{
-	int i;
-	int flag;
-
-	i = 0;
-	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
-		i++;
-	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
-	if (flag == 5) //x
-		ft_putstr("");
-	else if (flag == 7) // o
-		ft_putchar('0');
-	else if (flag == 9) // X
-		ft_putstr("0X");
-	else if (flag == 10) // O
-		ft_putchar('0');
-	return (0);
-}
 
 int	ft_putspace(int auth, int flag, int flag_z, int check_type)
 {
@@ -85,7 +66,6 @@ int ft_handle_flag(char *s, void *arg, int check_type)
 			pos.flag_zero = 1;
 		else if (s[i] == '#' && pos.flag3 == 0)
 		{
-			ft_putdieses(s);
 			pos.flag3 = 1;
 			pos.flag = 1;
 		}

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 17:41:38 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 18:07:31 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int					ft_size_chain_base(char *s, int t_arg, int diff, char c);
 int					ft_size_chain_hexa(char *s, int t_arg, int diff);
 int					ft_size_chain_hexa_maj(char *s, int t_arg, int diff);
 int					ft_size_chain_plus_base(char *s, int t_arg, int diff);
+int					ft_size_chain_oct(char *s, int t_arg, int diff);
 
 
 

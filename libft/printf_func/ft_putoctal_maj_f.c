@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 17:10:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 10:58:27 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/20 18:32:20 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ int	ft_putoctal_maj_f(char *s ,va_list *p)
 	int			diff;
 	int			check_type;
 
-	check_type = 0;
+	check_type = 1;
 	arg = va_arg(*p, long long);
 	nb = ft_count_num((int long)arg);
 	diff = ft_flag_size(s, (void*)arg, check_type);
 	ft_handle_flag(s, (void*)arg, check_type);
-	ft_size_chain(s, nb, diff);
+	ft_size_chain_oct(s, nb, diff);
 	ft_putoctal_maj(arg);
 	ft_size_chain_plus(s, nb, diff);
 	return (0);
