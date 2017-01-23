@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 10:58:48 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/23 11:50:04 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int		ft_strwlen(wchar_t *s)
 			cpt += 2;
 		else if (s[i] <= 65535)
 			cpt += 3;
+		else if (s[i] <= 1114111)
+			cpt += 4;
 		i++;
 	}
 	return (cpt);

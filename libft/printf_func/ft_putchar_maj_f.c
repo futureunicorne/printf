@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 18:57:12 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/23 11:46:26 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_strwclen(wchar_t arg)
 		nb = 2;
 	else if (arg <= 65535)
 		nb = 3;
+	else if (arg <= 1114111)
+		nb = 4;
 	return (nb);
 }
 
@@ -49,6 +51,14 @@ void	ft_putchar_maj(wchar_t c)
 		e = ((e >> 12) | 0xE0);
 		c = ((e | d) | c);
 		d = 3;
+	}
+	else if (c <= 1114111)
+	{
+		c = (((c & 0x3F) | 0x80) << 24);
+		d = ((((d & 0xFC0) >> 6) | 0x80) << 16);
+		e = (((e >> 12) | 0x80) << 8);
+		c = (((c | d) | e) | 0xF0);
+		d = 4;
 	}
 	write(1, &c, d);
 }

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 19:17:21 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/23 14:45:57 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main()
 {
 	wchar_t *str = {L"C Pождеством Xристовом"};
-	wchar_t cs = {L'🧀'};
+	wchar_t cs = {L'🕦'};
 	char *s;
 	char c;
 	int	nb;
@@ -24,11 +24,23 @@ int	main()
 	s = "le gloububouka";
 	nb = 1564435;
 	setlocale(LC_ALL, "");
-	ft_printf("%C", cs);
+	ft_printf("%.12d", nb);
 	printf("\n");
 	setlocale(LC_ALL, "");
-	printf("%C", cs);
+	printf("%018.15d", nb);
+	printf("\n");
 	return (0);
 }
 //d ok
 //x nok
+
+/*
+
+pour chaine de caracatere cela ninflue que sur la taille de la chaine,
+le reste des des flag  reste inchanges
+
+pour le numeriques, rajoute 0 pour completer la precision demandes, si la largeur de champs
+est preciser et que l
+
+
+*/

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 17:16:35 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 18:11:13 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/23 15:08:41 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int ft_record_chain(char *s)
 	i = 0;
 	res = 0;
 	s1 = ft_strnew(ft_strlen(s));
-	while (s[i] != '\0')
+	while (s[i] != '\0' && s[i] != '.')
 	{
 		if (s[i] >= 48 && s[i] <= 57)
 		{
