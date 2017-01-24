@@ -6,32 +6,14 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 09:17:24 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/23 17:18:59 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/24 07:31:38 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 PREF = ./srcs/
 HEADER = ./include/
-SRCS = 	printf_func/ft_flag_size.c		\
-		printf_func/ft_size_chain.c		\
-		printf_func/ft_handle_flag.c	\
-		printf_func/ft_check_spec.c  	\
-		printf_func/ft_empty_spec_f.c 	\
-		printf_func/ft_putchar_maj_f.c	\
-		printf_func/ft_putstr_maj_f.c	\
-		printf_func/ft_putadd_f.c		\
-		printf_func/ft_putuns_maj_f.c 	\
-		printf_func/ft_putoctal_maj_f.c \
-		printf_func/ft_putoctal_f.c 	\
-		printf_func/ft_putuns_f.c 		\
-		printf_func/ft_puthexa_f.c 		\
-		printf_func/ft_puthexa_maj_f.c 	\
-		printf_func/ft_putstr_f.c		\
-		printf_func/ft_putchar_f.c		\
-		printf_func/ft_putnbr_maj_f.c	\
-		ft_add_elem.c					\
-		ft_atoi.c						\
+SRCS = 	ft_atoi.c						\
 		ft_bzero.c						\
 		ft_count_len.c					\
 		ft_count_num.c					\

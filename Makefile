@@ -6,13 +6,14 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 18:14:05 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/10 20:51:28 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/24 07:35:35 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = test_printf
 PREF = ./srcs/
 HEADER = ./include/
+SRCS = 	ft	\
 
 OBJ = $(SRC:.c=.o)
 OBJ1 = objets/*.o

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/23 16:41:55 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 07:02:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 	check_type = 0;
 	arg = va_arg(*p, int long);
 	nb = ft_count_num((int long)arg);
-	diff = ft_flag_size(s, (void*)arg, check_type);
-	ft_handle_flag(s, (void*)arg, check_type);
+	diff = ft_nbr_size(s, (void*)arg, check_type);
+	ft_handle_nbr(s, (void*)arg, check_type);
 	ft_size_chain_base(s, nb, diff, '+');
 	ft_putnbr_maj(arg);
 	ft_size_chain_plus_base(s, nb, diff);
@@ -62,8 +62,8 @@ int	ft_putnbr_f(char *s, va_list *p)
 	check_type = 0;
 	arg = va_arg(*p, int);
 	nb = ft_count_num((int long)arg);
-	diff = ft_flag_size(s, (void*)arg, check_type);
-	ft_handle_flag(s, (void*)arg, check_type);
+	diff = ft_nbr_size(s, (void*)arg, check_type);
+	ft_handle_nbr(s, (void*)arg, check_type);
 	ft_size_chain_base(s, nb, diff, '+');
 	ft_putnbr(arg);
 	ft_size_chain_plus_base(s, nb, diff);

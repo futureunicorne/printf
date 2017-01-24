@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putadd_f.c                                      :+:      :+:    :+:   */
+/*   ft_puthexa_f.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 16:02:26 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/24 07:01:35 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		ft_nbr_add_len(int long nb)
+int		ft_strhlen(int nb)
 {
 	int i;
 
@@ -25,32 +25,33 @@ int		ft_nbr_add_len(int long nb)
 	return (i);
 }
 
-void	ft_putadd(int long nb)
+void	ft_puthexa(int nb)
 {
 	char *tab = "0123456789abcdef";
 	if (nb >= 0 && nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{
-		ft_putadd(nb / 16);
+		ft_puthexa(nb / 16);
 		ft_putchar(tab[nb % 16]);
 	}
 }
 
-int	ft_putadd_f(char *s, va_list *p)
+
+int	ft_puthexa_f(char *s, va_list *p)
 {
-	int long	arg;
+	int			arg;
 	int			nb;
 	int			diff;
 	int			check_type;
 
 	check_type = 1;
-	arg = va_arg(*p, int long);
-	nb = ft_nbr_add_len(&arg) + 2;
-	diff = ft_flag_size(s, (void*)arg, check_type);
-	ft_handle_flag(s, (void*)arg, check_type);
-	ft_size_chain_add(s, nb, diff);
-	ft_putadd(arg);
+	arg = va_arg(*p, int);
+	nb = ft_strhlen((int)arg);
+	diff = ft_hexa_size(s, (void*)arg, check_type);
+	ft_handle_hexa(s, (void*)arg, check_type);
+	ft_size_chain_hexa(s, nb, diff);
+	ft_puthexa(arg);
 	ft_size_chain_plus(s, nb, diff);
 	return (0);
 }

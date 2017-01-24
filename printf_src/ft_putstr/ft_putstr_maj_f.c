@@ -1,20 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_f.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_maj_f.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 13:13:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/20 19:37:28 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/24 07:06:30 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_putstr_f(char *s, va_list *p)
+int		ft_strwlen(wchar_t *s)
 {
-	char	*arg;
+	int i;
+	int cpt;
+
+	i = 0;
+	cpt = 0;
+	while (s[i])
+	{
+		if (s[i] <= 127)
+			cpt++;
+		else if (s[i] <= 2047)
+			cpt += 2;
+		else if (s[i] <= 65535)
+			cpt += 3;
+		else if (s[i] <= 1114111)
+			cpt += 4;
+		i++;
+	}
+	return (cpt);
+}
+
+void	ft_putstr_maj(wchar_t *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_maj(s[i]);
+		i++;
+	}
+}
+
+int	ft_putstr_maj_f(char *s, va_list *p)
+{
+	wchar_t *arg;
 	int		nb;
 	int		diff;
 	int		check_type;
@@ -22,12 +56,12 @@ int	ft_putstr_f(char *s, va_list *p)
 	nb = 0;
 	diff = 0;
 	check_type = 1;
-	arg = va_arg(*p, char*);
-	nb = ft_strlen(arg);
-	diff = ft_flag_size(s,(void*)arg, check_type);
-	ft_handle_flag(s, arg, check_type);
+	arg = va_arg(*p, wchar_t*);
+	nb = ft_strwlen(arg);
+	diff = ft_str_size(s, (void*)arg, check_type);
+	ft_handle_str(s, (void*)arg, check_type);
 	ft_size_chain(s, nb, diff);
-	ft_putstr(arg);
+	ft_putstr_maj(arg);
 	ft_size_chain_plus(s, nb, diff);
 	return (0);
 }

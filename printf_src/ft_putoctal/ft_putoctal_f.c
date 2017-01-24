@@ -1,57 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexa_f.c                                     :+:      :+:    :+:   */
+/*   ft_putoctal_f.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/23 13:59:08 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/24 07:04:54 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		ft_strhlen(int nb)
+int		ft_nbr_octal_len(int long nb)
 {
 	int i;
 
 	i = 0;
 	while (nb > 0)
 	{
-		nb = nb / 16;
+		nb = nb / 8;
 		i++;
 	}
 	return (i);
 }
-
-void	ft_puthexa(int nb)
+void	ft_putoctal(int long n)
 {
-	char *tab = "0123456789abcdef";
-	if (nb >= 0 && nb <= 15)
-		ft_putchar(tab[nb]);
-	if (nb >= 16)
+	int long nb;
+
+	nb = n;
+	if (nb < 0)
 	{
-		ft_puthexa(nb / 16);
-		ft_putchar(tab[nb % 16]);
+		ft_putchar('-');
+		nb = nb * (-1);
+	}
+	if (nb >= 0 && nb <= 7)
+		ft_putchar(nb + 48);
+	if (nb > 7)
+	{
+		ft_putoctal(nb / 8);
+		ft_putchar((nb % 8) + 48);
 	}
 }
 
-
-int	ft_puthexa_f(char *s, va_list *p)
+int	ft_putoctal_f(char *s, va_list *p)
 {
-	int			arg;
+	int long	arg;
 	int			nb;
 	int			diff;
 	int			check_type;
 
 	check_type = 1;
-	arg = va_arg(*p, int);
-	nb = ft_strhlen((int)arg);
-	diff = ft_flag_size(s, (void*)arg, check_type);
-	ft_handle_flag(s, (void*)arg, check_type);
-	ft_size_chain_hexa(s, nb, diff);
-	ft_puthexa(arg);
+	arg = va_arg(*p, int long);
+	nb = ft_nbr_octal_len((int long)arg);
+	diff = ft_oct_size(s, (void*)arg, check_type);
+	ft_handle_oct(s, (void*)arg, check_type);
+	ft_size_chain_oct(s, nb, diff);
+	ft_putoctal(arg);
 	ft_size_chain_plus(s, nb, diff);
 	return (0);
 }
