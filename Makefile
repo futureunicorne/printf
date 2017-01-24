@@ -6,15 +6,13 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 18:14:05 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/24 07:35:35 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/24 15:35:22 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = test_printf
 PREF = ./srcs/
 HEADER = ./include/
-SRCS = 	ft	\
-
 OBJ = $(SRC:.c=.o)
 OBJ1 = objets/*.o
 CC = gcc
@@ -24,11 +22,12 @@ OPT2 = -o
 all: $(NAME)
 
 $(NAME):
-		make -C libft/ fclean && make -C libft/
-		gcc  -I libft/includes -o printf.o -c printf.c
-		gcc  -I libft/includes -o main.o -c main.c
-		gcc -o test_printf main.o printf.o -I/includes -L libft/ -lft
+		make -C printf_src/ fclean && make -C printf_src/
+		gcc  -I printf_src/includes -o printf.o -c printf_src/ft_printf.c
+		gcc  -I printf_src/includes -o main.o -c main.c
+		gcc -o test_printf main.o printf.o -I/includes -L printf_src/ -lftprintf
 		@echo "\033[34m === Creation de l executable ===\033[0m"
+
 
 
 clean	:

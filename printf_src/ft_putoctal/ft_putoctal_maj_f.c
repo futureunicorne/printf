@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 17:10:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:05:23 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:48:39 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 void	ft_putoctal_maj(long long n)
 {
@@ -43,6 +43,6 @@ int	ft_putoctal_maj_f(char *s ,va_list *p)
 	ft_handle_oct(s, (void*)arg, check_type);
 	ft_size_chain_oct(s, nb, diff);
 	ft_putoctal_maj(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_oct_plus(s, nb, diff);
 	return (0);
 }

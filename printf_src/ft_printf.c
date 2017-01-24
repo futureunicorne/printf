@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/19 10:39:54 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:51:54 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*))
 	ptr_func[11] = &ft_putuns_maj_f;
 	ptr_func[12] = &ft_putchar_maj_f;
 	ptr_func[13] = &ft_putstr_maj_f;
-	ptr_func[14] = &ft_empty_spec_f;
+	ptr_func[14] = &ft_putpercent_f;
 }
 
 void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(char *s, va_list*))

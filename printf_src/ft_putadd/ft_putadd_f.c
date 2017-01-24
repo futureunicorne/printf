@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:00:17 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:47:13 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 int		ft_nbr_add_len(int long nb)
 {
@@ -51,6 +51,6 @@ int	ft_putadd_f(char *s, va_list *p)
 	ft_handle_add(s, (void*)arg, check_type);
 	ft_size_chain_add(s, nb, diff);
 	ft_putadd(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_add_plus(s, nb, diff);
 	return (0);
 }

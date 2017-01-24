@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:06:30 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:48:59 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 int		ft_strwlen(wchar_t *s)
 {
@@ -60,8 +60,8 @@ int	ft_putstr_maj_f(char *s, va_list *p)
 	nb = ft_strwlen(arg);
 	diff = ft_str_size(s, (void*)arg, check_type);
 	ft_handle_str(s, (void*)arg, check_type);
-	ft_size_chain(s, nb, diff);
+	ft_size_chain_str(s, nb, diff);
 	ft_putstr_maj(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_str_plus(s, nb, diff);
 	return (0);
 }

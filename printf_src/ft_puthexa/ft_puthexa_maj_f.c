@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:02:14 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:47:53 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 void	ft_puthexa_maj(int long n)
 {
@@ -53,6 +53,6 @@ int	ft_puthexa_maj_f(char *s, va_list *p)
 	ft_handle_hexa(s, (void*)arg, check_type);
 	ft_size_chain_hexa_maj(s, nb, diff);
 	ft_puthexa_maj(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_hexa_plus(s, nb, diff);
 	return (0);
 }

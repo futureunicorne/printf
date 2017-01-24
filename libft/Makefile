@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 09:17:24 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/24 07:31:38 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/24 11:52:21 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,7 @@ $(NAME):
 		ar rc $(NAME) $(OBJ1)
 		ranlib $(NAME)
 		@rm -rf objets
-		@echo "\033[34m === Creation de votre librairie ===\033[0m"
+		@echo "\033[34m === Creation de la libft.a ===\033[0m"
 
 
 clean	:

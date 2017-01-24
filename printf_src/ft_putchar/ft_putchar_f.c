@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:44 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:00:36 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:47:28 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 int	ft_putchar_f(char *s, va_list *p)
 {
@@ -24,8 +24,8 @@ int	ft_putchar_f(char *s, va_list *p)
 	nb = 1;
 	diff = ft_char_size(s, (void*)arg, check_type);
 	ft_handle_char(s, (void*)arg, check_type);
-	ft_size_chain(s, nb, diff);
+	ft_size_chain_char(s, nb, diff);
 	ft_putchar(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_char_plus(s, nb, diff);
 	return (0);
 }

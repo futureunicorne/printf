@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:04:54 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:48:33 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 int		ft_nbr_octal_len(int long nb)
 {
@@ -57,6 +57,6 @@ int	ft_putoctal_f(char *s, va_list *p)
 	ft_handle_oct(s, (void*)arg, check_type);
 	ft_size_chain_oct(s, nb, diff);
 	ft_putoctal(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_oct_plus(s, nb, diff);
 	return (0);
 }

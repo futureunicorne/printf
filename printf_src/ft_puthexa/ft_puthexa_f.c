@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:01:35 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:47:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 int		ft_strhlen(int nb)
 {
@@ -37,7 +37,6 @@ void	ft_puthexa(int nb)
 	}
 }
 
-
 int	ft_puthexa_f(char *s, va_list *p)
 {
 	int			arg;
@@ -52,6 +51,6 @@ int	ft_puthexa_f(char *s, va_list *p)
 	ft_handle_hexa(s, (void*)arg, check_type);
 	ft_size_chain_hexa(s, nb, diff);
 	ft_puthexa(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_hexa_plus(s, nb, diff);
 	return (0);
 }

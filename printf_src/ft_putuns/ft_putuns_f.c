@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 11:02:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 07:06:45 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:49:18 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../printf.h"
 
 void	ft_putuns(unsigned n)
 {
@@ -46,8 +46,8 @@ int		ft_putuns_f(char *s, va_list *p)
 	nb = ft_count_num((int long)arg);
 	diff = ft_uns_size(s, (void*)arg, check_type);
 	ft_handle_uns(s, (void*)arg, check_type);
-	ft_size_chain(s, nb, diff);
+	ft_size_chain_uns(s, nb, diff);
 	ft_putuns(arg);
-	ft_size_chain_plus(s, nb, diff);
+	ft_size_chain_uns_plus(s, nb, diff);
 	return (0);
 }

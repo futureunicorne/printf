@@ -6,14 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:16:51 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/23 17:28:14 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:48:11 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include "../../printf.h"
+#include "../printf.h"
 
-int	ft_putplus(char *s, void *arg)
+int	ft_putplus_nbr(char *s, void *arg)
 {
 	int i;
 	int flag;
@@ -32,7 +31,7 @@ int	ft_putplus(char *s, void *arg)
 }
 
 
-int	ft_putspace(int auth, int flag, int flag_z, int check_type)
+int	ft_putspace_nbr(int auth, int flag, int flag_z, int check_type)
 {
 	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 0)
 		ft_putchar(' ');
@@ -56,7 +55,7 @@ int ft_handle_nbr(char *s, void *arg, int check_type)
 		}
 		else if (s[i] == '+' && pos.flag1 == 0)
 		{
-			ft_putplus(s, arg);
+			ft_putplus_nbr(s, arg);
 			pos.flag1 = 1;
 			pos.flag = 1;
 		}
@@ -73,6 +72,6 @@ int ft_handle_nbr(char *s, void *arg, int check_type)
 	}
 	if (ft_check_point(s) == 1)
 		check_type = 1;
-	ft_putspace(pos.auth, pos.flag, pos.flag_zero ,check_type);
+	ft_putspace_nbr(pos.auth, pos.flag, pos.flag_zero ,check_type);
 	return (0);
 }

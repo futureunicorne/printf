@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:21:04 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/23 17:27:05 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 13:49:42 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "printf.h"
 
 int	ft_check_less(char *s)
 {
@@ -54,7 +54,6 @@ int	ft_check_space(char *s)
 	return (0);
 }
 
-
 int	ft_check_dieses(char *s)
 {
 	int i;
@@ -69,21 +68,6 @@ int	ft_check_dieses(char *s)
 	}
 	return (0);
 }
-
-int	ft_check_point(char *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == '.')
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 
 int	ft_check_zero(char *s, int nb)
 {
