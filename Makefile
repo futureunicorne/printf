@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 18:14:05 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/24 17:01:40 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/24 17:59:32 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,10 @@ OPT2 = -o
 all: $(NAME)
 
 $(NAME):
-		make -C printf_src/ fclean && make -C printf_src/
-		gcc  -I printf_src/includes -o printf.o -c printf_src/ft_printf.c
-		gcc  -I printf_src/includes -o main.o -c main.c
-		gcc -o test_printf main.o printf.o -I/includes -L printf_src/ -lftprintf
+		make -C src/ fclean && make -C src/
+		gcc  -I src/includes -o printf.o -c src/ft_printf.c
+		gcc  -I src/includes -o main.o -c main.c
+		gcc -o test_printf main.o printf.o -I/includes -L libft/ -lft -L src/ -lftprintf
 		@echo "\033[34m === Creation de l executable ===\033[0m"
 
 

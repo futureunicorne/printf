@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_size.c                                      :+:      :+:    :+:   */
+/*   ft_handle_hexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/24 09:45:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:39:42 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/23 17:16:05 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/24 18:30:05 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putspace_add(int auth, int flag, int flag_z, int check_type)
+int	ft_putspace_hexa(int auth, int flag, int flag_z, int check_type)
 {
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 0)
-		return (1);
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 1)
-		return (1);
+	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 0)
+		ft_putchar(' ');
+	else if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 1)
+		ft_putchar(' ');
 	return (0);
 }
-
-int ft_add_size(char *s, void *arg, int check_type)
+int ft_handle_hexa(char *s, int arg, int check_type)
 {
 	int i;
 	t_pos pos;
@@ -39,11 +38,15 @@ int ft_add_size(char *s, void *arg, int check_type)
 			pos.auth = 1;
 		else if (s[i] == '0')
 			pos.flag_zero = 1;
+		else if (s[i] == '#' && pos.flag3 == 0)
+		{
+			pos.flag3 = 1;
+			pos.flag = 1;
+		}
 		i++;
 	}
 	if (ft_check_point(s) == 1)
 		check_type = 1;
-	if (ft_putspace_add(pos.auth, pos.flag, pos.flag_zero, check_type) == 1)
-		pos.flag_size++;
-	return (pos.flag_size);
+	ft_putspace_hexa(pos.auth, pos.flag, pos.flag_zero ,check_type);
+	return (0);
 }

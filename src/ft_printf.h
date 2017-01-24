@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:11:03 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 18:24:14 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		ft_putplus_nbr(char *s, void *arg);
 int		ft_putspace_nbr(int auth, int flag, int flag_z, int check_type);
 int		ft_putplus_nbr_bis(char *s, void *arg);
 int		ft_putdieses_nbr_bis(char *s);
-int		ft_putspace_nbr_bis(int auth, int flag, int flag_z, int check_type);
+int		ft_putspace_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_nbr_size(char *s, void *arg, int check_type);
 void	ft_putnbr_maj(int long n);
 int		ft_putnbr_maj_f(char *s, va_list *p);
@@ -83,10 +83,10 @@ int		ft_putnbr_f(char *s, va_list *p);
 int		ft_size_chain_nbr(char *s, int t_arg, int diff);
 int		ft_size_chain_nbr_plus(char *s, int t_arg, int diff);
 int		ft_putspace_hexa(int auth, int flag, int flag_z, int check_type);
-int 	ft_handle_hexa(char *s, void *arg, int check_type);
+int 	ft_handle_hexa(char *s, int arg, int check_type);
 int		ft_putdieses_hexa(char *s);
 int		ft_putspace_hexa_bis(int auth, int flag, int flag_z, int check_type);
-int 	ft_hexa_size(char *s, void *arg, int check_type);
+int 	ft_hexa_size(char *s, int arg, int check_type);
 int		ft_strhlen(int nb);
 void	ft_puthexa(int nb);
 int		ft_puthexa_f(char *s, va_list *p);
@@ -96,9 +96,9 @@ int		ft_size_chain_hexa(char *s, int t_arg, int diff);
 int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff);
 int		ft_size_chain_hexa_plus(char *s, int t_arg, int diff);
 int		ft_putspace_char(int auth, int flag, int flag_z, int check_type);
-int 	ft_char_size(char *s, void *arg, int check_type);
+int 	ft_char_size(char *s, int check_type);
 int		ft_putspace_char_bis(int auth, int flag, int flag_z, int check_type);
-int		ft_handle_char(char *s, void *arg, int check_type);
+int		ft_handle_char(char *s, int check_type);
 int		ft_putchar_f(char *s, va_list *p);
 int		ft_strwclen(wchar_t arg);
 void	ft_putchar_maj(wchar_t c);

@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/24 18:30:01 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/24 15:35:12 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRCS = 	ft_putadd/ft_add_size.c				\
 		ft_check_tools.c					\
 		ft_check_tools2.c					\
 		ft_printf.c							\
+
 OBJ = $(SRC:.c=.o)
 OBJ1 = objets/*.o
 CC = gcc
@@ -64,10 +65,8 @@ $(NAME):
 		@mkdir objets
 		@mv *.o objets
 		ar rc $(NAME) $(OBJ1)
-		@libtool -static -o $(NAME) $(NAME) ../libft/libft.a
 		ranlib $(NAME)
 		@rm -rf objets
-		@libtool -static -o $(NAME) $(NAME) ../libft/libft.a
 		@echo "\033[34m === Creation de la libft.a ===\033[0m"
 
 

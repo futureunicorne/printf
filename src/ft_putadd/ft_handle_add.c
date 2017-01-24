@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:49:39 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:39:38 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 18:30:03 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_putspace_add_bis(int auth, int flag, int flag_z, int check_type)
 	return (0);
 }
 
-int ft_handle_nbr(char *s, void *arg, int check_type)
+int ft_handle_add(char *s, int long arg, int check_type)
 {
 	int i;
 	t_pos pos;

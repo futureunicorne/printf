@@ -1,56 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putadd_f.c                                      :+:      :+:    :+:   */
+/*   ft_puthexa_maj_f.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:39:35 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/24 18:22:06 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_nbr_add_len(int long nb)
+void	ft_puthexa_maj(int long n)
 {
-	int i;
+	int long nb;
+	int long na;
 
-	i = 0;
-	while (nb > 0)
+	nb = n;
+	na = 0;
+	if (nb < 0)
 	{
-		nb = nb / 16;
-		i++;
+		ft_putchar('-');
+		nb = nb * (-1);
 	}
-	return (i);
-}
-
-void	ft_putadd(int long nb)
-{
-	char *tab = "0123456789abcdef";
+	char *tab = "0123456789ABCDEF";
 	if (nb >= 0 && nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{
-		ft_putadd(nb / 16);
-		ft_putchar(tab[nb % 16]);
+		ft_puthexa_maj(nb / 16);
+		na = nb % 16;
+		if (na + 48 >= '0' && na + 48 <= '9')
+			ft_putchar(na + 48);
+		else
+			ft_putchar(na + 55);
+		na = 0;
 	}
 }
 
-int	ft_putadd_f(char *s, va_list *p)
+int	ft_puthexa_maj_f(char *s, va_list *p)
 {
-	int long	arg;
+	int 		arg;
 	int			nb;
 	int			diff;
 	int			check_type;
 
 	check_type = 1;
 	arg = va_arg(*p, int long);
-	nb = ft_nbr_add_len(&arg) + 2;
-	diff = ft_add_size(s, (void*)arg, check_type);
-	ft_handle_add(s, (void*)arg, check_type);
-	ft_size_chain_add(s, nb, diff);
-	ft_putadd(arg);
-	ft_size_chain_add_plus(s, nb, diff);
+	nb = ft_strhlen((int long)arg);
+	diff = ft_hexa_size(s, arg, check_type);
+	ft_handle_hexa(s, arg, check_type);
+	ft_size_chain_hexa_maj(s, nb, diff);
+	ft_puthexa_maj(arg);
+	ft_size_chain_hexa_plus(s, nb, diff);
 	return (0);
 }
