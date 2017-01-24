@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:33:54 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:48:05 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include <stdio.h>
 # include <wctype.h>
 # include <locale.h>
+# include "../libft/libft.h"
 
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*));
-void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(char *s, va_list*));
 int		ft_printf(char *str, ...);
 int		ft_record_prec(char *s);
 int		ft_record_chain(char *s);
@@ -115,7 +115,7 @@ int		ft_putadd_f(char *s, va_list *p);
 int		ft_size_chain_add_plus(char *s, int t_arg, int diff);
 int		ft_size_chain_add(char *s, int t_arg, int diff);
 
-typedef	struct	s_pos
+typedef struct	s_pos
 {
 	int			i;
 	int			flag;

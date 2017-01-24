@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:16:51 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 13:48:11 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:38:48 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_putplus_nbr(char *s, void *arg)
 {

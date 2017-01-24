@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:33:46 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 13:47:16 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:39:32 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_size_chain_add_plus(char *s, int t_arg, int diff)
 {

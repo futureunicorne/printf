@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:02:24 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 13:48:42 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:38:44 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_size_chain_oct(char *s, int t_arg, int diff)
 {

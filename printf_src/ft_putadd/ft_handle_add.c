@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:49:39 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:01:46 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:39:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_putspace_add_bis(int auth, int flag, int flag_z, int check_type)
 {

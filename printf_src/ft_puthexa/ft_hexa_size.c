@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:54:39 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 13:47:47 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:39:01 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_putdieses_hexa(char *s)
 {

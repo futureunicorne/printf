@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:37:16 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 13:49:46 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:41:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_record_prec(char *s)
 {

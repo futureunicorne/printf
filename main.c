@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:01:42 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:50:04 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_src/printf.h"
+#include "srcs/ft_printf.h"
 
 int	main()
 {

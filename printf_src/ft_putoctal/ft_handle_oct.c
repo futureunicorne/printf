@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:17:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 13:48:26 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:38:32 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_putspace_oct(int auth, int flag, int flag_z, int check_type)
 {
