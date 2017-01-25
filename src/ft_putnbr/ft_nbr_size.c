@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:57:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 09:34:24 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 11:42:11 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,6 @@ int	ft_putplus_nbr_bis(char *s, int arg)
 	if (((long)arg > 2147483647 || (long)arg < 0) && flag == 3)
 		return (0);
 	if (arg >= 0 && (flag == 3 || flag == 8))
-		return (1);
-	return (0);
-}
-
-int	ft_putdieses_nbr_bis(char *s)
-{
-	int i;
-	int flag;
-
-	i = 0;
-	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
-		i++;
-	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
-	if (flag == 5) //x
-		return (2);
-	else if (flag == 7) // o
-		return (1);
-	else if (flag == 9) // X
-		return (2);
-	else if (flag == 10) // O
 		return (1);
 	return (0);
 }
@@ -84,13 +64,6 @@ int ft_nbr_size(char *s, int arg, int check_type)
 			pos.auth = 1;
 		else if (s[i] == '0')
 			pos.flag_zero = 1;
-		else if (s[i] == '#' && pos.flag3 == 0)
-		{
-			if (ft_putdieses_nbr_bis(s) > 0)
-				pos.flag_size = ft_putdieses_nbr_bis(s);
-			pos.flag3 = 1;
-			//pos.flag = 1;
-		}
 		i++;
 	}
 	if (ft_check_point(s) == 1)

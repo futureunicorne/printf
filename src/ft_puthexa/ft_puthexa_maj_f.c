@@ -6,26 +6,21 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:22:06 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 11:24:27 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_puthexa_maj(int long n)
+void	ft_puthexa_maj(unsigned int n)
 {
-	int long nb;
-	int long na;
+	unsigned int nb;
+	unsigned int na;
 
 	nb = n;
 	na = 0;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * (-1);
-	}
 	char *tab = "0123456789ABCDEF";
-	if (nb >= 0 && nb <= 15)
+	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{

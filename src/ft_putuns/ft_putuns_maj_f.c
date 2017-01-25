@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:21:49 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 08:57:14 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 10:27:55 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,7 @@ void	ft_putuns_maj(unsigned long long n)
 	unsigned long long nb;
 
 	nb = n;
-	if ((unsigned long long)nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * (-1);
-	}
-	if ((unsigned long long)nb >= 0 && nb <= 9)
+	if (nb <= 9)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{

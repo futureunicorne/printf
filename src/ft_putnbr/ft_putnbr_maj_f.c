@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 09:37:56 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 18:35:41 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 	nb = ft_count_num((int long)arg);
 	diff = ft_nbr_size_maj(s, arg, check_type);
 	ft_handle_nbr_maj(s, arg, check_type);
-	ft_size_chain_nbr(s, nb, diff);
+	ft_size_chain_nbr(s, nb, diff, arg);
 	ft_putnbr_maj(arg);
 	ft_size_chain_nbr_plus(s, nb, diff);
 	return (0);
@@ -60,11 +60,11 @@ int	ft_putnbr_f(char *s, va_list *p)
 
 	diff = 0;
 	check_type = 0;
+	printf("s =  %s\n", s);
 	arg = va_arg(*p, int);
 	nb = ft_count_num((int long)arg);
 	diff = ft_nbr_size(s, arg, check_type);
-	ft_handle_nbr(s, arg, check_type);
-	ft_size_chain_nbr(s, nb, diff);
+	ft_size_chain_nbr(s, nb, diff, (size_t)arg);
 	ft_putnbr(arg);
 	ft_size_chain_nbr_plus(s, nb, diff);
 	return (0);

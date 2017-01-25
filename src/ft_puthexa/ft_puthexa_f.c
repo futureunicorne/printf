@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:21:19 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 11:21:24 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int		ft_strhlen(int nb)
 	return (i);
 }
 
-void	ft_puthexa(int nb)
+void	ft_puthexa(unsigned nb)
 {
 	char *tab = "0123456789abcdef";
-	if (nb >= 0 && nb <= 15)
+	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{
@@ -45,7 +45,7 @@ int	ft_puthexa_f(char *s, va_list *p)
 	int			check_type;
 
 	check_type = 1;
-	arg = va_arg(*p, int);
+	arg = va_arg(*p, unsigned);
 	nb = ft_strhlen((int)arg);
 	diff = ft_hexa_size(s, arg, check_type);
 	ft_handle_hexa(s, arg, check_type);

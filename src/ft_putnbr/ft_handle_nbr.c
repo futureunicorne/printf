@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:16:51 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 09:32:43 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 11:41:18 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,6 @@ int ft_handle_nbr(char *s, int arg, int check_type)
 			pos.auth = 1;
 		else if (s[i] == '0')
 			pos.flag_zero = 1;
-		else if (s[i] == '#' && pos.flag3 == 0)
-		{
-			pos.flag3 = 1;
-			pos.flag = 1;
-		}
 		i++;
 	}
 	if (ft_check_point(s) == 1)

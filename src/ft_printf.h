@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 09:35:37 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 18:03:00 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ int 	ft_str_size(char *s, void *arg, int check_type);
 void 	ft_putpercent(char *str);
 int		ft_putpercent_f(char *s, va_list *p);
 int		ft_putspace_oct(int auth, int flag, int flag_z, int check_type);
-int 	ft_handle_oct(char *s, void *arg, int check_type);
+int 	ft_handle_oct(char *s, int check_type);
 int		ft_putdieses_oct(char *s);
 int		ft_putspace_oct_bis(int auth, int flag, int flag_z, int check_type);
-int 	ft_oct_size(char *s, void *arg, int check_type);
+int 	ft_oct_size(char *s, int check_type);
 int		ft_nbr_octal_len(int long nb);
-void	ft_putoctal(int long n);
+void	ft_putoctal(unsigned n);
 int		ft_putoctal_f(char *s, va_list *p);
-void	ft_putoctal_maj(long long n);
+void	ft_putoctal_maj(unsigned long long n);
 int		ft_putoctal_maj_f(char *s ,va_list *p);
 int		ft_size_chain_oct(char *s, int t_arg, int diff);
 int		ft_size_chain_oct_plus(char *s, int t_arg, int diff);
@@ -80,7 +80,7 @@ int 	ft_nbr_size(char *s, int arg, int check_type);
 void	ft_putnbr_maj(int long n);
 int		ft_putnbr_maj_f(char *s, va_list *p);
 int		ft_putnbr_f(char *s, va_list *p);
-int		ft_size_chain_nbr(char *s, int t_arg, int diff);
+int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg);
 int		ft_size_chain_nbr_plus(char *s, int t_arg, int diff);
 int 	ft_handle_nbr(char *s, int arg, int check_type);
 int		ft_handle_nbr_maj(char *s, int long arg, int check_type);
@@ -96,9 +96,9 @@ int		ft_putdieses_hexa(char *s);
 int		ft_putspace_hexa_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_hexa_size(char *s, int arg, int check_type);
 int		ft_strhlen(int nb);
-void	ft_puthexa(int nb);
+void	ft_puthexa(unsigned nb);
 int		ft_puthexa_f(char *s, va_list *p);
-void	ft_puthexa_maj(int long n);
+void	ft_puthexa_maj(unsigned n);
 int		ft_puthexa_maj_f(char *s, va_list *p);
 int		ft_size_chain_hexa(char *s, int t_arg, int diff);
 int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff);
@@ -134,5 +134,18 @@ typedef struct	s_pos
 	int			flag_size;
 	int			flag_zero;
 }				t_pos;
+
+typedef struct	s_siz
+{
+	int 		i;
+	int			flag;
+	int			flag_plus;
+	int			nbr;
+	int			nbr_prec;
+	int			len;
+	int			ecart;
+	char		d;
+}				t_siz;
+
 
 #endif

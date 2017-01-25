@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 09:46:53 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 18:32:35 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ int	main()
 	wchar_t cs = {L'🕦'};
 	char *s;
 	char c;
-	unsigned int nb;
+	unsigned nb;
 
 	c = 'c';
 	s = "le gloububouka";
-	nb = 15644975;
+	nb = -130;
 	setlocale(LC_ALL, "");
-	ft_printf("%x", nb);
+	ft_printf("%d is one");
 	printf("\n");
 	setlocale(LC_ALL, "");
-	printf("%x", nb);
+	printf("%d is one");
 	printf("\n");
 	return (0);
 }
@@ -39,6 +39,7 @@ int	main()
 // type x est un unsigned
 pour chaine de caracatere cela ninflue que sur la taille de la chaine,
 le reste des des flag  reste inchanges
+gerer % + d +%
 
 pour le numeriques, rajoute 0 pour completer la precision demandes, si la largeur de champs
 est preciser et que l

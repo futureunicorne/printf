@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:01:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:38:35 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 10:35:22 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_putspace_oct_bis(int auth, int flag, int flag_z, int check_type)
 	return (0);
 }
 
-int ft_oct_size(char *s, void *arg, int check_type)
+int ft_oct_size(char *s, int check_type)
 {
 	int i;
 	t_pos pos;

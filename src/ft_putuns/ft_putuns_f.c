@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 11:02:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 08:58:21 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 10:28:12 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,7 @@ void	ft_putuns(unsigned n)
 	unsigned nb;
 
 	nb = n;
-	if ((unsigned)nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * (-1);
-	}
-	if ((unsigned)nb >= 0 && nb <= 9)
+	if (nb <= 9)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{

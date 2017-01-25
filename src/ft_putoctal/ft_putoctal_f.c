@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:38:37 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 10:50:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,12 @@ int		ft_nbr_octal_len(int long nb)
 	}
 	return (i);
 }
-void	ft_putoctal(int long n)
+void	ft_putoctal(unsigned n)
 {
-	int long nb;
+	unsigned nb;
 
 	nb = n;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * (-1);
-	}
-	if (nb >= 0 && nb <= 7)
+	if (nb <= 7)
 		ft_putchar(nb + 48);
 	if (nb > 7)
 	{
@@ -45,7 +40,7 @@ void	ft_putoctal(int long n)
 
 int	ft_putoctal_f(char *s, va_list *p)
 {
-	int long	arg;
+	unsigned 	arg;
 	int			nb;
 	int			diff;
 	int			check_type;
@@ -53,8 +48,8 @@ int	ft_putoctal_f(char *s, va_list *p)
 	check_type = 1;
 	arg = va_arg(*p, int long);
 	nb = ft_nbr_octal_len((int long)arg);
-	diff = ft_oct_size(s, (void*)arg, check_type);
-	ft_handle_oct(s, (void*)arg, check_type);
+	diff = ft_oct_size(s, check_type);
+	ft_handle_oct(s, check_type);
 	ft_size_chain_oct(s, nb, diff);
 	ft_putoctal(arg);
 	ft_size_chain_oct_plus(s, nb, diff);

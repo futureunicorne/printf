@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/25 09:29:09 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/25 18:34:04 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,16 +67,20 @@ $(NAME):
 		@mkdir objets
 		@mv *.o objets
 		ar rc $(NAME) $(OBJ1)
+		@libtool -static -o $(NAME) $(NAME) ../libft/libft.a
 		ranlib $(NAME)
 		@rm -rf objets
-		@echo "\033[34m === Creation de la libft.a ===\033[0m"
+		@echo "\033[36m === Creation de la libftprintf.a ===\033[0m"
 
 
 clean	:
+	@make clean -C ../libft/
+	@rm -rf objets
 	rm -rf *.o
 	@echo "\033[31m === Suppression des fichiers objets===\033[0m"
 
 fclean: clean
+	@make fclean -C ../libft/
 	rm -f $(NAME)
 	@echo "\033[31m === Suppression du fichier executable===\033[0m"
 
