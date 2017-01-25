@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handle_nbr.c                                    :+:      :+:    :+:   */
+/*   ft_nbr_size_maj.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 17:16:51 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 09:32:43 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/25 09:22:03 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/25 09:37:13 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putplus_nbr(char *s, int arg)
+int	ft_putplus_nbr_bis_maj(char *s, int long arg)
 {
 	int i;
 	int flag;
@@ -30,16 +30,36 @@ int	ft_putplus_nbr(char *s, int arg)
 	return (0);
 }
 
-
-int	ft_putspace_nbr(int auth, int flag, int flag_z, int check_type)
+int	ft_putdieses_nbr_bis_maj(char *s)
 {
-	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 0)
-		ft_putchar(' ');
-	else if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 1)
-		ft_putchar(' ');
+	int i;
+	int flag;
+
+	i = 0;
+	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
+		i++;
+	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
+	if (flag == 5) //x
+		return (2);
+	else if (flag == 7) // o
+		return (1);
+	else if (flag == 9) // X
+		return (2);
+	else if (flag == 10) // O
+		return (1);
 	return (0);
 }
-int ft_handle_nbr(char *s, int arg, int check_type)
+
+int	ft_putspace_nbr_bis_maj(int auth, int flag, int flag_z, int check_type)
+{
+	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 0)
+		return (1);
+	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 1)
+		return (1);
+	return (0);
+}
+
+int ft_nbr_size_maj(char *s, int long arg, int check_type)
 {
 	int i;
 	t_pos pos;
@@ -55,7 +75,8 @@ int ft_handle_nbr(char *s, int arg, int check_type)
 		}
 		else if (s[i] == '+' && pos.flag1 == 0)
 		{
-			ft_putplus_nbr(s, arg);
+			if (ft_putplus_nbr_bis_maj(s, arg) == 1)
+				pos.flag_size++;
 			pos.flag1 = 1;
 			pos.flag = 1;
 		}
@@ -65,13 +86,16 @@ int ft_handle_nbr(char *s, int arg, int check_type)
 			pos.flag_zero = 1;
 		else if (s[i] == '#' && pos.flag3 == 0)
 		{
+			if (ft_putdieses_nbr_bis_maj(s) > 0)
+				pos.flag_size = ft_putdieses_nbr_bis_maj(s);
 			pos.flag3 = 1;
-			pos.flag = 1;
+			//pos.flag = 1;
 		}
 		i++;
 	}
 	if (ft_check_point(s) == 1)
 		check_type = 1;
-	ft_putspace_nbr(pos.auth, pos.flag, pos.flag_zero ,check_type);
-	return (0);
+	if (ft_putspace_nbr_bis_maj(pos.auth, pos.flag, pos.flag_zero, check_type) == 1)
+		pos.flag_size++;
+	return (pos.flag_size);
 }

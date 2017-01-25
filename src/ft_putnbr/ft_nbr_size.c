@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:57:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:01:46 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 09:34:24 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putplus_nbr_bis(char *s, void *arg)
+int	ft_putplus_nbr_bis(char *s, int arg)
 {
 	int i;
 	int flag;
@@ -59,7 +59,7 @@ int	ft_putspace_nbr_bis(int auth, int flag, int flag_z, int check_type)
 	return (0);
 }
 
-int ft_nbr_size(char *s, void *arg, int check_type)
+int ft_nbr_size(char *s, int arg, int check_type)
 {
 	int i;
 	t_pos pos;

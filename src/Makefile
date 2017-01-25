@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/24 15:35:12 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/25 09:29:09 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ SRCS = 	ft_putadd/ft_add_size.c				\
 		ft_puthexa/ft_puthexa_maj_f.c		\
 		ft_puthexa/ft_size_chain_hexa.c		\
 		ft_putnbr/ft_handle_nbr.c			\
+		ft_putnbr/ft_handle_nbr_maj.c		\
 		ft_putnbr/ft_nbr_size.c				\
+		ft_putnbr/ft_nbr_size_maj.c			\
 		ft_putnbr/ft_putnbr_maj_f.c			\
 		ft_putnbr/ft_size_chain_nbr.c		\
 		ft_putoctal/ft_handle_oct.c			\

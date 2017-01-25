@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:30:03 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/25 09:46:53 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ int	main()
 	wchar_t cs = {L'🕦'};
 	char *s;
 	char c;
-	int	nb;
+	unsigned int nb;
 
 	c = 'c';
 	s = "le gloububouka";
-	nb = 1564435;
+	nb = 15644975;
 	setlocale(LC_ALL, "");
-	ft_printf("% +   -#15ld", nb);
+	ft_printf("%x", nb);
 	printf("\n");
 	setlocale(LC_ALL, "");
-	printf("% +   -#15ld", nb);
+	printf("%x", nb);
 	printf("\n");
 	return (0);
 }
@@ -36,7 +36,7 @@ int	main()
 //x nok
 
 /*
-
+// type x est un unsigned
 pour chaine de caracatere cela ninflue que sur la taille de la chaine,
 le reste des des flag  reste inchanges
 
