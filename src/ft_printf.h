@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/26 16:40:32 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 10:27:31 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int 	ft_nbr_size_maj(char *s, int long arg, int check_type);
 int		ft_putspace_nbr_bis_maj(int auth, int flag, int flag_z, int check_type);
 int		ft_putdieses_nbr_bis_maj(char *s);
 int		ft_putplus_nbr_bis_maj(char *s, int long arg);
+int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg);
 int		ft_putspace_hexa(int auth, int flag, int flag_z, int check_type);
 int 	ft_handle_hexa(char *s, int arg, int check_type);
 int		ft_putdieses_hexa(char *s);
@@ -134,6 +135,7 @@ typedef struct	s_pos
 	int			flag3;
 	int			flag_size;
 	int			flag_zero;
+	int			val;
 }				t_pos;
 
 typedef struct	s_siz

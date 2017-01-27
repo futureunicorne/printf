@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_size_chain_nbr.c                                :+:      :+:    :+:   */
+/*   ft_size_chain_less.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 10:22:16 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/01/27 09:36:05 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/01/27 10:26:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-
-int	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, int diff)
+static int	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, int diff)
 {
 	if (ft_check_zero(s, siz->nbr) == 1)
 		siz->d = '0';
@@ -23,7 +22,7 @@ int	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, int diff)
 		siz->len = siz->nbr - t_arg - diff;
 	else if (!siz->nbr)
 	{
-		siz->len = siz->nbr_prec - t_arg;
+		siz->len = siz->nbr_prec - t_arg + 1;
 		siz->d = '0';
 	}
 	else if (siz->nbr && siz->nbr_prec)
@@ -42,28 +41,27 @@ int	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, int diff)
 	}
 }
 
-int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg)
+int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 {
 	t_siz siz;
 
 	ft_memset(&siz, 0, sizeof(t_siz));
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
-	if (ft_check_more(s) && (!ft_check_point(s)) && ft_putplus_nbr(s, arg)
+	if ((!ft_check_point(s)) && !ft_putplus_nbr(s, arg)
 	&& (t_arg > siz.nbr || ft_check_zero(s, siz.nbr)))
 	{
-		ft_putchar('+');
+		ft_putchar('-');
 		siz.val++;
 		siz.flag = 1;
 	}
-	if (ft_check_more(s) && siz.nbr && siz.nbr_prec
-	&& (siz.nbr_prec > siz.nbr || siz.nbr_prec == siz.nbr))
+	if (siz.nbr_prec && (siz.nbr_prec > siz.nbr || siz.nbr_prec == siz.nbr))
 	{
-		ft_putchar('+');
+		ft_putchar('-');
 		siz.val++;
 		siz.flag = 1;
 	}
-	if (ft_check_space(s) && (!ft_check_more(s)) && ft_putplus_nbr(s, arg))
+	if (ft_check_space(s) && (!ft_check_more(s)) && (!ft_putplus_nbr(s, arg)))
 	{
 		ft_putchar(' ');
 		siz.val++;
@@ -80,10 +78,10 @@ int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg)
 		}
 		else if (siz.i >= siz.ecart)
 		{
-			if (!siz.flag && ft_check_more(s) && ft_putplus_nbr(s, arg)
+			if (!siz.flag  && (!ft_putplus_nbr(s, arg))
 			 && siz.nbr_prec < siz.nbr && siz.nbr_prec)
 			{
-				ft_putchar('+');
+				ft_putchar('-');
 				siz.val++;
 				siz.flag = 1;
 			}
@@ -92,34 +90,11 @@ int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg)
 		}
 		siz.i++;
 	}
-	if (!siz.flag && ft_check_more(s) && ft_putplus_nbr(s, arg))
+	if (!siz.flag && (!ft_putplus_nbr(s, arg)))
 	{
-		ft_putchar('+');
+		ft_putchar('-');
 		siz.val++;
 		siz.flag = 1;
-	}
-	return (siz.val);
-}
-
-int	ft_size_chain_nbr_plus(char *s, int t_arg, int diff)
-{
-	t_siz siz;
-
-	ft_memset(&siz, 0, sizeof(t_siz));
-	if (ft_check_less(s) == 0 || ft_check_point(s) == 1)
-		return (0);
-	siz.nbr = ft_record_chain(s);
-	siz.i = 0;
-	if (t_arg > siz.nbr)
-		return (0);
-	siz.len = siz.nbr - t_arg - diff;
-	if (ft_check_space(s) == 1 && siz.nbr && ft_check_more(s) == 0)
-		siz.len -= 1;
-	while (siz.i < siz.len)
-	{
-		ft_putchar(' ');
-		siz.val++;
-		siz.i++;
 	}
 	return (siz.val);
 }
