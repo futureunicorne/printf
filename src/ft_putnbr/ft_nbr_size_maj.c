@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 09:22:03 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 11:41:34 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 18:18:14 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putplus_nbr_bis_maj(char *s, int long arg)
+int	ft_putplus_nbr_bis_maj(char *s, long long arg)
 {
 	int i;
 	int flag;
@@ -23,7 +23,7 @@ int	ft_putplus_nbr_bis_maj(char *s, int long arg)
 	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
 		i++;
 	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
-	if (((long)arg > 2147483647 || (long)arg < 0) && flag == 3)
+	if (arg < 9223372036854775807)
 		return (0);
 	if (arg >= 0 && (flag == 3 || flag == 8))
 		return (1);
