@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/25 18:34:04 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/25 19:16:38 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,6 @@ $(NAME):
 		@mkdir objets
 		@mv *.o objets
 		ar rc $(NAME) $(OBJ1)
-		@libtool -static -o $(NAME) $(NAME) ../libft/libft.a
 		ranlib $(NAME)
 		@rm -rf objets
 		@echo "\033[36m === Creation de la libftprintf.a ===\033[0m"

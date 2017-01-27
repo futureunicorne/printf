@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 18:35:41 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/26 18:36:48 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 {
 	int long 	arg;
 	int 		nb;
+	int			val;
 	int			diff;
 	int			len;
 	int			check_type;
@@ -44,9 +45,9 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 	nb = ft_count_num((int long)arg);
 	diff = ft_nbr_size_maj(s, arg, check_type);
 	ft_handle_nbr_maj(s, arg, check_type);
-	ft_size_chain_nbr(s, nb, diff, arg);
+	val = ft_size_chain_nbr(s, nb, diff, arg);
 	ft_putnbr_maj(arg);
-	ft_size_chain_nbr_plus(s, nb, diff);
+	val += ft_size_chain_nbr_plus(s, nb, diff);
 	return (0);
 }
 
@@ -54,18 +55,16 @@ int	ft_putnbr_f(char *s, va_list *p)
 {
 	int arg;
 	int nb;
+	int val;
 	int diff;
-	int	check_type;
-
 
 	diff = 0;
-	check_type = 0;
-	printf("s =  %s\n", s);
 	arg = va_arg(*p, int);
 	nb = ft_count_num((int long)arg);
-	diff = ft_nbr_size(s, arg, check_type);
-	ft_size_chain_nbr(s, nb, diff, (size_t)arg);
+	diff = ft_nbr_size(s, arg);
+	val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
 	ft_putnbr(arg);
-	ft_size_chain_nbr_plus(s, nb, diff);
-	return (0);
+	val += ft_size_chain_nbr_plus(s, nb, diff);
+	val += nb;
+	return (val);
 }

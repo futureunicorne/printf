@@ -6,11 +6,12 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:41:02 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/26 08:35:20 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*))
 {
@@ -32,12 +33,15 @@ void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*))
 
 void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(char *s, va_list*))
 {
+	char *spec;
+
 	if (s[pos->i] == '%')
 	{
 		//ft_handle_prec(s + pos->i + 1, ap);
 		if (ft_check_spec(s + pos->i + 1))
 		{
-			ptr_func[ft_check_spec(s + pos->i + 1)](s + pos->i + 1, ap);
+			spec = ft_return_chain(s + pos->i);
+			ptr_func[ft_check_spec(spec)](spec, ap);
 			if (ft_check_ecart(s + pos->i + 1) > 0)
 				pos->i = pos->i + ft_check_ecart(s + pos->i + 1);
 			if (s[pos->i + 2] == 'l')

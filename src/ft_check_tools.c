@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:21:04 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 14:26:07 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/26 10:54:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,24 +69,19 @@ int	ft_check_dieses(char *s)
 	return (0);
 }
 
-int	ft_check_zero(char *s, int nb)
+int	ft_check_zero(char *s, int arg)
 {
-	char	*str;
-	int		i;
-	int		j;
+	int	i;
 
-	str = ft_itoa(nb);
 	i = 0;
-	while (s && (s[i] != '0'))
-		i++;
-	while (s[i])
+	while (s[i] && s[i] != '.')
 	{
-		j = 0;
-		while (s[i + j] == str[j])
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			if (str[j  + 1] == '\0')
+			if (s[i] == '0')
 				return (1);
-			j++;
+			else
+				return (0);
 		}
 		i++;
 	}

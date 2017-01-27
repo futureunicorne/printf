@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 13:37:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:41:24 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/26 08:35:56 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,22 @@ int	check_ptr(char c, char d, char e)
 	if (check_ptr_bis(c, d ,e))
 		return (check_ptr_bis(c, d ,e));
 	return (0);
+}
+
+char	*ft_return_chain(char *s)
+{
+	int i;
+	char *s1;
+
+	i = 1;
+	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
+		i++;
+	if (check_ptr(s[i], s[i + 1],s[i + 2]))
+	{
+		s1 = ft_strsub(s, 1, i);
+		return (s1);
+	}
+	return (NULL);
 }
 
 int	ft_check_spec(char *s)

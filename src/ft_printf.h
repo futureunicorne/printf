@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 18:03:00 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/26 16:40:32 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*));
 int		ft_printf(char *str, ...);
+char	*ft_return_chain(char *s);
 int		ft_record_prec(char *s);
 int		ft_record_chain(char *s);
 int		ft_check_point(char *s);
@@ -76,7 +77,7 @@ int		ft_putspace_nbr(int auth, int flag, int flag_z, int check_type);
 int		ft_putplus_nbr_bis(char *s, int arg);
 int		ft_putdieses_nbr_bis(char *s);
 int		ft_putspace_bis(int auth, int flag, int flag_z, int check_type);
-int 	ft_nbr_size(char *s, int arg, int check_type);
+int 	ft_nbr_size(char *s, int arg);
 void	ft_putnbr_maj(int long n);
 int		ft_putnbr_maj_f(char *s, va_list *p);
 int		ft_putnbr_f(char *s, va_list *p);
@@ -139,13 +140,15 @@ typedef struct	s_siz
 {
 	int 		i;
 	int			flag;
+	int			val;
+	int			cpt;
 	int			flag_plus;
 	int			nbr;
 	int			nbr_prec;
 	int			len;
 	int			ecart;
 	char		d;
+	char		e;
 }				t_siz;
-
 
 #endif
