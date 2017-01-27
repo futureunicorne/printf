@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 10:23:28 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 16:23:40 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main()
 	s = "le gloububouka";
 	nb = 1;
 	setlocale(LC_ALL, "");
-	ft_printf("%.5d", -42);
+	ft_printf("%30lld", -9223372036854775808);
 	printf("\n");
 	setlocale(LC_ALL, "");
-	printf("%.5d", -42);
+	printf("%30lld", -9223372036854775808);
 	printf("\n");
 	return (0);
 }
@@ -46,4 +46,3 @@ est preciser et que l
 
 printf("oui\n");
 */
-

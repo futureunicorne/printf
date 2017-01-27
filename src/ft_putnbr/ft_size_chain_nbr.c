@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 10:22:16 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 11:36:54 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, int diff)
 		siz->d = '0';
 		siz->e = ' ';
 	}
+	return (0);
 }
 
 int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg)

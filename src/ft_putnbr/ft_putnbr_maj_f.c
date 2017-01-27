@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 09:56:02 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 16:34:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,43 +28,79 @@ void	ft_putnbr_less(int n)
 	}
 }
 
-void	ft_putnbr_maj(int long n)
+void	ft_putnbr_maj_less(long long n)
 {
 
 	long long nb;
 	nb = n;
-	if (nb < 0)
+	if ((size_t)nb == -9223372036854775808)
+		ft_putstr("9223372036854775808");
+	else
 	{
-		ft_putchar('-');
-		nb = nb * (-1);
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			nb = nb * (-1);
+		}
+		if (nb >= 0 && nb <= 9)
+			ft_putchar(nb + 48);
+		if (nb > 9)
+		{
+			ft_putnbr_maj_less(nb / 10);
+			ft_putchar((nb % 10) + 48);
+		}
 	}
-	if (nb >= 0 && nb <= 9)
-		ft_putchar(nb + 48);
-	if (nb > 9)
+}
+
+void	ft_putnbr_maj(long long n)
+{
+
+	long long nb;
+	nb = n;
+	if ((size_t)nb == -9223372036854775808)
+		ft_putstr("-9223372036854775808");
+	else
 	{
-		ft_putnbr_maj(nb / 10);
-		ft_putchar((nb % 10) + 48);
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			nb = nb * (-1);
+		}
+		if (nb >= 0 && nb <= 9)
+			ft_putchar(nb + 48);
+		if (nb > 9)
+		{
+			ft_putnbr_maj(nb / 10);
+			ft_putchar((nb % 10) + 48);
+		}
 	}
 }
 
 int	ft_putnbr_maj_f(char *s, va_list *p)
 {
-	int long 	arg;
-	int 		nb;
-	int			val;
-	int			diff;
-	int			len;
-	int			check_type;
+	long long arg;
+	int nb;
+	int val;
+	int diff;
 
-	check_type = 0;
-	arg = va_arg(*p, int long);
-	nb = ft_count_num((int long)arg);
-	diff = ft_nbr_size_maj(s, arg, check_type);
-	ft_handle_nbr_maj(s, arg, check_type);
-	val = ft_size_chain_nbr(s, nb, diff, arg);
-	ft_putnbr_maj(arg);
+	diff = 0;
+	arg = va_arg(*p, long long);
+	nb = ft_count_nb_long((ssize_t)arg);
+	diff = ft_nbr_size(s, arg);
+	if (!ft_putplus_nbr_bis(s, arg))
+	{
+		nb = nb;
+		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
+		ft_putnbr_maj_less(arg);
+	}
+	else
+	{
+		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
+		ft_putnbr_maj(arg);
+	}
 	val += ft_size_chain_nbr_plus(s, nb, diff);
-	return (0);
+	val += nb;
+	return (val);
 }
 
 int	ft_putnbr_f(char *s, va_list *p)
@@ -76,7 +112,7 @@ int	ft_putnbr_f(char *s, va_list *p)
 
 	diff = 0;
 	arg = va_arg(*p, int);
-	nb = ft_count_num((int long)arg);
+	nb = ft_count_num((ssize_t)arg);
 	diff = ft_nbr_size(s, arg);
 	if (!ft_putplus_nbr_bis(s, arg))
 	{

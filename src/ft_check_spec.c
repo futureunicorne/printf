@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 13:37:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/26 08:35:56 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 15:59:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_return_chain(char *s)
 		i++;
 	if (check_ptr(s[i], s[i + 1],s[i + 2]))
 	{
-		s1 = ft_strsub(s, 1, i);
+		s1 = ft_strsub(s, 1, i + 1);
 		return (s1);
 	}
 	return (NULL);

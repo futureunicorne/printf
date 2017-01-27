@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:24:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 11:01:47 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 16:27:26 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_len_space_out(char const *s);
 int					ft_count_words(char const *s, char c);
-int					ft_count_num(int long n);
+int					ft_count_num(ssize_t n);
+int					ft_count_nb_long(long long n);
 int					ft_count_len(char const *s, char c);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);

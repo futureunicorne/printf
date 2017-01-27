@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:37:16 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 17:41:25 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 13:51:00 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,22 @@ int	ft_check_point(char *s)
 	{
 		if (s[i] == '.')
 			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_check_long(char *s, char c)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == 'l' && s[i + 1] == c)
+			return (1);
+		if (s[i] == 'l' && s[i + 1] == 'l' && s[i + 2] == c)
+			return (2);
 		i++;
 	}
 	return (0);

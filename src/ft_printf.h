@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 10:27:31 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 14:43:21 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		ft_putplus_nbr_bis(char *s, int arg);
 int		ft_putdieses_nbr_bis(char *s);
 int		ft_putspace_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_nbr_size(char *s, int arg);
-void	ft_putnbr_maj(int long n);
+void	ft_putnbr_maj(long long n);
 int		ft_putnbr_maj_f(char *s, va_list *p);
 int		ft_putnbr_f(char *s, va_list *p);
 int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg);
@@ -124,6 +124,10 @@ void	ft_putadd(int long nb);
 int		ft_putadd_f(char *s, va_list *p);
 int		ft_size_chain_add_plus(char *s, int t_arg, int diff);
 int		ft_size_chain_add(char *s, int t_arg, int diff);
+int 	ft_putnbr_long_f(char *s, va_list *p);
+int		ft_check_long(char *s, char c);
+
+
 
 typedef struct	s_pos
 {
