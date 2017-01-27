@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 13:37:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 15:59:38 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 16:52:10 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@ int	check_ptr_bis(char c, char d, char e)
 
 int	check_ptr(char c, char d, char e)
 {
-	if (c == 'l' && d =='l')
-		e = e - 32;
-	else if (c == 'l' && d != 'l')
-		d = d - 32;
 	if (c == 'c')
 		return (1);
 	else if (c == 'l')
