@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 18:22:31 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/27 20:28:46 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putnbr_maj_less(long long n)
 
 	long long nb;
 	nb = n;
-	if ((size_t)nb == -9223372036854775808)
+	if ((long long)nb < -9223372036854775807)
 		ft_putstr("9223372036854775808");
 	else
 	{
@@ -57,7 +57,7 @@ void	ft_putnbr_maj(long long n)
 
 	long long nb;
 	nb = n;
-	if ((size_t)nb == -9223372036854775808)
+	if ((long long)nb < -9223372036854775807)
 		ft_putstr("-9223372036854775808");
 	else
 	{

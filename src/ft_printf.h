@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 18:00:30 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 11:26:56 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "../libft/libft.h"
 
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*));
+int		ft_puthexa_long_f(char *s, va_list *p);
 int		ft_printf(char *str, ...);
 char	*ft_return_chain(char *s);
 int		ft_record_prec(char *s);
