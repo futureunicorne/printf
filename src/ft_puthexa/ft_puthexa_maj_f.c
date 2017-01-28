@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 11:14:11 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 19:24:04 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ int	ft_puthexa_maj_long_f(char *s, va_list *p)
 	arg = va_arg(*p, unsigned long long);
 	nb = ft_strhlen((int)arg);
 	diff = ft_hexa_size(s, arg, check_type);
-	ft_handle_hexa(s, arg, check_type);
-	ft_size_chain_hexa(s, nb, diff);
+	ft_size_chain_hexa(s, nb, diff, "0X");
 	ft_puthexa_maj_long(arg);
 	ft_size_chain_hexa_plus(s, nb, diff);
 	return (0);
@@ -84,7 +83,7 @@ int	ft_puthexa_maj_f(char *s, va_list *p)
 	int			check_type;
 
 	check_type = 1;
-	if (ft_check_long(s, 'X'))
+	if (ft_check_long(s))
 	{
 		ft_puthexa_maj_long_f(s, p);
 		return (0);
@@ -92,8 +91,7 @@ int	ft_puthexa_maj_f(char *s, va_list *p)
 	arg = va_arg(*p, int long);
 	nb = ft_strhlen((int long)arg);
 	diff = ft_hexa_size(s, arg, check_type);
-	ft_handle_hexa(s, arg, check_type);
-	ft_size_chain_hexa_maj(s, nb, diff);
+	ft_size_chain_hexa(s, nb, diff, "0X");
 	ft_puthexa_maj(arg);
 	ft_size_chain_hexa_plus(s, nb, diff);
 	return (0);

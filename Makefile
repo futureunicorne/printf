@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 18:14:05 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/01/25 10:38:31 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/01/28 15:08:13 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,12 @@ $(NAME):
 
 
 clean	:
+	@make clean -C src/
 	rm -rf *.o
 	@echo "\033[31m === Suppression des fichiers objets===\033[0m"
 
 fclean: clean
+	make fclean -C src/
 	rm -f $(NAME)
 	@echo "\033[31m === Suppression du fichier executable===\033[0m"
 

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:21:04 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/26 10:54:58 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 19:07:46 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	ft_check_dieses(char *s)
 	return (0);
 }
 
-int	ft_check_zero(char *s, int arg)
+int	ft_check_zero(char *s)
 {
 	int	i;
 

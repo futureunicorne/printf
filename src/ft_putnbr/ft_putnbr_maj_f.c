@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 20:28:46 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 14:46:53 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	ft_putnbr_f(char *s, va_list *p)
 	int diff;
 
 	diff = 0;
-	if (ft_check_long(s, 'd'))
+	if (ft_check_long(s))
 	{
 		val = ft_putnbr_maj_f(s, p);
 		return (val);

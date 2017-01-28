@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 11:26:56 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 19:23:51 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include "../libft/libft.h"
 
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*));
-int		ft_puthexa_long_f(char *s, va_list *p);
+int		ft_puthexa_l(char *s, va_list *p);
 int		ft_printf(char *str, ...);
 char	*ft_return_chain(char *s);
 int		ft_record_prec(char *s);
@@ -34,7 +34,7 @@ int		ft_check_less(char *s);
 int		ft_check_more(char *s);
 int		ft_check_space(char *s);
 int		ft_check_dieses(char *s);
-int		ft_check_zero(char *s, int nb);
+int		ft_check_zero(char *s);
 int		check_ptr_bis(char c, char d, char e);
 int		check_ptr(char c, char d, char e);
 int		ft_check_spec(char *s);
@@ -103,8 +103,7 @@ void	ft_puthexa(unsigned nb);
 int		ft_puthexa_f(char *s, va_list *p);
 void	ft_puthexa_maj(unsigned n);
 int		ft_puthexa_maj_f(char *s, va_list *p);
-int		ft_size_chain_hexa(char *s, int t_arg, int diff);
-int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff);
+int		ft_size_chain_hexa(char *s, int t_arg, int diff, char *base);
 int		ft_size_chain_hexa_plus(char *s, int t_arg, int diff);
 int		ft_putspace_char(int auth, int flag, int flag_z, int check_type);
 int 	ft_char_size(char *s, int check_type);
@@ -126,9 +125,9 @@ int		ft_putadd_f(char *s, va_list *p);
 int		ft_size_chain_add_plus(char *s, int t_arg, int diff);
 int		ft_size_chain_add(char *s, int t_arg, int diff);
 int 	ft_putnbr_long_f(char *s, va_list *p);
-int		ft_check_long(char *s, char c);
-
-
+int		ft_check_long(char *s);
+int 	check_ptr2(char c);
+int		check_ptr_bis2(char c);
 
 typedef struct	s_pos
 {

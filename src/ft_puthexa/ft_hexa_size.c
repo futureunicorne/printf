@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:54:39 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:24:37 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 18:05:22 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,7 @@ int	ft_putdieses_hexa(char *s)
 	return (0);
 }
 
-int	ft_putspace_hexa_bis(int auth, int flag, int flag_z, int check_type)
-{
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 0)
-		return (1);
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 1)
-		return (1);
-	return (0);
-}
+
 
 int ft_hexa_size(char *s, int arg, int check_type)
 {
@@ -67,9 +60,5 @@ int ft_hexa_size(char *s, int arg, int check_type)
 		}
 		i++;
 	}
-	if (ft_check_point(s) == 1)
-		check_type = 1;
-	if (ft_putspace_hexa(pos.auth, pos.flag, pos.flag_zero, check_type) == 1)
-		pos.flag_size++;
 	return (pos.flag_size);
 }

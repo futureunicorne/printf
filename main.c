@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 12:11:10 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 19:28:55 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ int	main()
 	wchar_t cs = {L'🕦'};
 	char *s;
 	char c;
-	unsigned long nb;
+	int nb;
 
 	c = 'c';
 	s = "le gloububouka";
-	nb = 6854709008;
+	nb = 327611;
 	setlocale(LC_ALL, "");
-	ft_printf("%llu", nb);
+	ft_printf("%-#18.18x", nb);
 	printf("\n");
 	setlocale(LC_ALL, "");
-	printf("%llu", nb);
+	printf("%-#18.18x", nb);
 	printf("\n");
 	return (0);
 }

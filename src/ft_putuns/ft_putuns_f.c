@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 11:02:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 12:11:13 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/28 14:46:29 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_putuns_f(char *s, va_list *p)
 	nb = 0;
 	diff = 0;
 	check_type = 1;
-	if (ft_check_long(s, 'u'))
+	if (ft_check_long(s))
 	{
 		ft_putuns_maj_f(s, p);
 		return (0);
