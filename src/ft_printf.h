@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 19:23:51 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 15:53:36 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,12 @@ int		ft_strwlen(wchar_t *s);
 void	ft_putstr_maj(wchar_t *s);
 int		ft_putstr_maj_f(char *s, va_list *p);
 int		ft_size_chain_str_plus(char *s, int t_arg, int diff);
-int		ft_size_chain_str(char *s, int t_arg, int diff);
+int		ft_size_chain_str(char *s, int t_arg, int diff, char *arg);
+int		ft_size_chain_str_maj(char *s, int t_arg, int diff, wchar_t *arg);
 int		ft_putspace_str_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_str_size(char *s, void *arg, int check_type);
+int 	ft_putnstr(char const *s, int n);
+void	ft_putnstr_maj(wchar_t *s, int n);
 void 	ft_putpercent(char *str);
 int		ft_putpercent_f(char *s, va_list *p);
 int		ft_putspace_oct(int auth, int flag, int flag_z, int check_type);
@@ -66,7 +69,7 @@ int 	ft_handle_oct(char *s, int check_type);
 int		ft_putdieses_oct(char *s);
 int		ft_putspace_oct_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_oct_size(char *s, int check_type);
-int		ft_nbr_octal_len(int long nb);
+int		ft_nbr_octal_len(size_t nb);
 void	ft_putoctal(unsigned n);
 int		ft_putoctal_f(char *s, va_list *p);
 void	ft_putoctal_maj(unsigned long long n);
@@ -98,7 +101,7 @@ int 	ft_handle_hexa(char *s, int arg, int check_type);
 int		ft_putdieses_hexa(char *s);
 int		ft_putspace_hexa_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_hexa_size(char *s, int arg, int check_type);
-int		ft_strhlen(int nb);
+int		ft_strhlen(size_t nb);
 void	ft_puthexa(unsigned nb);
 int		ft_puthexa_f(char *s, va_list *p);
 void	ft_puthexa_maj(unsigned n);
@@ -119,7 +122,7 @@ int		ft_putspace_add(int auth, int flag, int flag_z, int check_type);
 int 	ft_add_size(char *s, int long arg, int check_type);
 int		ft_putspace_add_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_handle_add(char *s, int long arg, int check_type);
-int		ft_nbr_add_len(int long nb);
+int		ft_nbr_add_len(size_t nb);
 void	ft_putadd(int long nb);
 int		ft_putadd_f(char *s, va_list *p);
 int		ft_size_chain_add_plus(char *s, int t_arg, int diff);

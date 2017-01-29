@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 14:47:23 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 14:11:03 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_nbr_octal_len(int long nb)
+int		ft_nbr_octal_len(size_t nb)
 {
 	int i;
 
@@ -24,6 +24,7 @@ int		ft_nbr_octal_len(int long nb)
 	}
 	return (i);
 }
+
 void	ft_putoctal(unsigned n)
 {
 	unsigned nb;
@@ -36,6 +37,99 @@ void	ft_putoctal(unsigned n)
 		ft_putoctal(nb / 8);
 		ft_putchar((nb % 8) + 48);
 	}
+}
+
+void	ft_putoctal_max(intmax_t n)
+{
+	intmax_t nb;
+
+	nb = n;
+	if (nb <= 7)
+		ft_putchar(nb + 48);
+	if (nb > 7)
+	{
+		ft_putoctal(nb / 8);
+		ft_putchar((nb % 8) + 48);
+	}
+}
+
+void	ft_putoctal_size(size_t n)
+{
+	size_t nb;
+
+	nb = n;
+	if (nb <= 7)
+		ft_putchar(nb + 48);
+	if (nb > 7)
+	{
+		ft_putoctal(nb / 8);
+		ft_putchar((nb % 8) + 48);
+	}
+}
+
+void	ft_putoctal_short(short int n)
+{
+	short int nb;
+
+	nb = n;
+	if (nb <= 7)
+		ft_putchar(nb + 48);
+	if (nb > 7)
+	{
+		ft_putoctal(nb / 8);
+		ft_putchar((nb % 8) + 48);
+	}
+}
+
+int	ft_putoctal_j(char *s, va_list *p)
+{
+	intmax_t 	arg;
+	int			nb;
+	int			diff;
+	int			check_type;
+
+	check_type = 1;
+	arg = va_arg(*p, intmax_t);
+	nb = ft_nbr_octal_len(arg);
+	diff = ft_oct_size(s, check_type);
+	ft_size_chain_oct(s, nb, diff);
+	ft_putoctal_max(arg);
+	ft_size_chain_oct_plus(s, nb, diff);
+	return (0);
+}
+
+int	ft_putoctal_z(char *s, va_list *p)
+{
+	size_t 	arg;
+	int			nb;
+	int			diff;
+	int			check_type;
+
+	check_type = 1;
+	arg = va_arg(*p, size_t);
+	nb = ft_nbr_octal_len(arg);
+	diff = ft_oct_size(s, check_type);
+	ft_size_chain_oct(s, nb, diff);
+	ft_putoctal_size(arg);
+	ft_size_chain_oct_plus(s, nb, diff);
+	return (0);
+}
+
+int	ft_putoctal_h(char *s, va_list *p)
+{
+	short int 	arg;
+	int			nb;
+	int			diff;
+	int			check_type;
+
+	check_type = 1;
+	arg = va_arg(*p, int);
+	nb = ft_nbr_octal_len(arg);
+	diff = ft_oct_size(s, check_type);
+	ft_size_chain_oct(s, nb, diff);
+	ft_putoctal_short(arg);
+	ft_size_chain_oct_plus(s, nb, diff);
+	return (0);
 }
 
 int	ft_putoctal_f(char *s, va_list *p)
@@ -51,11 +145,15 @@ int	ft_putoctal_f(char *s, va_list *p)
 		if (ft_check_long(s) == 'l')
 			ft_putoctal_maj_f(s, p);
 		else if (ft_check_long(s) == 'h')
-			//ft_putoctal_h(s, p);
+			ft_putoctal_h(s, p);
+		else if (ft_check_long(s) == 'j')
+			ft_putoctal_j(s, p);
+		else if (ft_check_long(s) == 'z')
+			ft_putoctal_z(s, p);
 		return (0);
 	}
 	arg = va_arg(*p, int long);
-	nb = ft_nbr_octal_len((int long)arg);
+	nb = ft_nbr_octal_len(arg);
 	diff = ft_oct_size(s, check_type);
 	ft_handle_oct(s, check_type);
 	ft_size_chain_oct(s, nb, diff);

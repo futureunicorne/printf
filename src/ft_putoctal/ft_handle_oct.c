@@ -6,20 +6,12 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:17:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 10:34:55 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 09:23:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putspace_oct(int auth, int flag, int flag_z, int check_type)
-{
-	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 0)
-		ft_putchar(' ');
-	else if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 1)
-		ft_putchar(' ');
-	return (0);
-}
 int ft_handle_oct(char *s, int check_type)
 {
 	int i;
@@ -45,8 +37,5 @@ int ft_handle_oct(char *s, int check_type)
 		}
 		i++;
 	}
-	if (ft_check_point(s) == 1)
-		check_type = 1;
-	ft_putspace_oct(pos.auth, pos.flag, pos.flag_zero ,check_type);
 	return (0);
 }

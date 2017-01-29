@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:54:39 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 18:05:22 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 07:31:36 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,10 @@ int	ft_putdieses_hexa(char *s)
 	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
 	if (flag == 5)
 		return (2);
-	else if (flag == 7)
-		return (1);
 	else if (flag == 9)
 		return (2);
-	else if (flag == 10)
-		return (1);
 	return (0);
 }
-
-
 
 int ft_hexa_size(char *s, int arg, int check_type)
 {
@@ -43,16 +37,7 @@ int ft_hexa_size(char *s, int arg, int check_type)
 	ft_memset(&pos, 0, sizeof(t_pos));
 	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
 	{
-		if (s[i] == '-' && pos.flag2 == 0)
-		{
-			pos.flag2 = 1;
-			pos.flag = 1;
-		}
-		else if (s[i] == ' ')
-			pos.auth = 1;
-		else if (s[i] == '0')
-			pos.flag_zero = 1;
-		else if (s[i] == '#' && pos.flag3 == 0)
+		if (s[i] == '#' && pos.flag3 == 0)
 		{
 			if (ft_putdieses_hexa(s) > 0)
 				pos.flag_size = ft_putdieses_hexa(s);

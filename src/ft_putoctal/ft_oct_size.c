@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:01:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 10:35:22 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 09:24:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,10 @@ int	ft_putdieses_oct(char *s)
 	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
 		i++;
 	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
-	if (flag == 5) //x
-		return (2);
-	else if (flag == 7) // o
-		return (1);
-	else if (flag == 9) // X
-		return (2);
-	else if (flag == 10) // O
-		return (1);
-	return (0);
-}
 
-int	ft_putspace_oct_bis(int auth, int flag, int flag_z, int check_type)
-{
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 0)
+	if (flag == 7)
 		return (1);
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 1)
+	else if (flag == 10)
 		return (1);
 	return (0);
 }
@@ -55,8 +43,6 @@ int ft_oct_size(char *s, int check_type)
 			pos.flag2 = 1;
 			pos.flag = 1;
 		}
-		else if (s[i] == ' ')
-			pos.auth = 1;
 		else if (s[i] == '0')
 			pos.flag_zero = 1;
 		else if (s[i] == '#' && pos.flag3 == 0)
@@ -68,9 +54,6 @@ int ft_oct_size(char *s, int check_type)
 		}
 		i++;
 	}
-	if (ft_check_point(s) == 1)
-		check_type = 1;
-	if (ft_putspace_oct_bis(pos.auth, pos.flag, pos.flag_zero, check_type) == 1)
-		pos.flag_size++;
+
 	return (pos.flag_size);
 }

@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 14:42:24 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/27 16:41:05 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 11:48:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_num(ssize_t n)
+int	ft_count_num_2(ssize_t n)
 {
 	int count;
 
@@ -24,6 +24,21 @@ int	ft_count_num(ssize_t n)
 		n = n * (-1);
 		count++;
 	}
+	while (n > 0)
+	{
+		n = n / 10;
+		count++;
+	}
+	return (count);
+}
+
+int	ft_count_num(size_t n)
+{
+	int count;
+
+	count = 0;
+	if (n <= 9)
+		return (1);
 	while (n > 0)
 	{
 		n = n / 10;

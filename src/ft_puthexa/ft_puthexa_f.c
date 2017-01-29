@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 19:30:11 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 14:17:12 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_strhlen(int nb)
+int		ft_strhlen(size_t nb)
 {
 	int i;
 
@@ -24,20 +24,7 @@ int		ft_strhlen(int nb)
 	}
 	return (i);
 }
-/*
-int		ft_strhlen_long(unsigned long long nb)
-{
-	int i;
 
-	i = 0;
-	while (nb > 0)
-	{
-		nb = nb / 16;
-		i++;
-	}
-	return (i);
-}
-*/
 void	ft_puthexa_long(unsigned long long nb)
 {
 	char *tab = "0123456789abcdef";

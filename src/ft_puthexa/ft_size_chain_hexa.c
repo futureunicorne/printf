@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:56:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 19:26:06 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 10:30:02 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	ft_size_chain_hexa_bis(t_siz *siz, char *s, int t_arg, int diff)
 	if (ft_check_zero(s) == 0)
 		siz->d = ' ';
 	if (!siz->nbr_prec && siz->nbr)
+	{
 		siz->len = siz->nbr - t_arg - diff;
+	}
 	else if (!siz->nbr && siz->nbr_prec)
 		siz->len = siz->nbr_prec - t_arg;
 	else if (siz->nbr && siz->nbr_prec)
