@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:05:20 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/30 12:56:44 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/30 15:04:08 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,13 @@ int	ft_size_chain_str(char *s, int t_arg, int diff, char *arg)
 	return (siz.i);
 }
 
-int	ft_size_chain_str_maj_bis(t_siz *siz, char *s, int t_arg, int diff)
+int	ft_size_chain_str_maj_bis(t_siz *siz, wchar_t *arg, int t_arg, int diff)
 {
-	if (ft_check_zero(s) == 1)
-		siz->d = '0';
-	if (ft_check_zero(s) == 0)
-		siz->d = ' ';
+	siz->len = siz->nbr - t_arg - diff;
 	if (siz->nbr_prec < t_arg && siz->nbr_prec)
 	{
 		siz->ecart = siz->nbr_prec;
-		siz->len = siz->len + (t_arg - siz->nbr_prec);
+		siz->len = siz->nbr - (ft_cptnstr(arg, siz->nbr_prec));
 	}
 	if (siz->nbr_prec > t_arg)
 		siz->ecart = siz->nbr_prec;
@@ -70,11 +67,10 @@ int	ft_size_chain_str_maj(char *s, int t_arg, int diff, wchar_t *arg)
 	ft_memset(&siz, 0, sizeof(t_siz));
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
-	siz.d = '0';
+	siz.d = ' ';
 	if (ft_check_less(s))
 		return (0);
-	siz.len = siz.nbr - t_arg - diff;
-	ft_size_chain_str_maj_bis(&siz, s, t_arg, diff);
+	ft_size_chain_str_maj_bis(&siz, arg, t_arg, diff);
 	while (siz.i < siz.len)
 	{
 		ft_putchar(siz.d);
@@ -95,6 +91,7 @@ int	ft_size_chain_str_plus(char *s, int t_arg, int diff)
 
 	if (ft_check_less(s) == 0)
 		return (0);
+	ft_putnbr_maj(arg);
 	nbr = ft_record_chain(s);
 	i = 0;
 

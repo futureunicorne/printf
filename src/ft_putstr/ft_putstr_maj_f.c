@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/30 12:45:32 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/30 13:23:05 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,30 @@ void	ft_putnstr_maj(wchar_t *s, int n)
 		ft_putchar_maj(s[j]);
 		j++;;
 	}
+}
+
+int	ft_cptnstr(wchar_t *s, int n)
+{
+	int i;
+	int j;
+	int k;
+
+	i = 0;
+	j = 0;
+	while (s[i] && j < n)
+	{
+		j = ft_strwclen(s[i]) + j;
+		if (j <= n)
+			i++;
+	}
+	j = 0;
+	k = 0;
+	while (j < i)
+	{
+		k = k + ft_strwclen(s[j]);
+		j++;
+	}
+	return (k);
 }
 
 int	ft_putstr_maj_f(char *s, va_list *p)

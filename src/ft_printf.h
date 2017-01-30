@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 19:56:34 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/30 13:14:56 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int		ft_putspace_str_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_str_size(char *s, void *arg, int check_type);
 int 	ft_putnstr(char const *s, int n);
 void	ft_putnstr_maj(wchar_t *s, int n);
+int		ft_cptnstr(wchar_t *s, int n);
 void 	ft_putpercent(char *str);
 int		ft_putpercent_f(char *s, va_list *p);
 int		ft_putspace_oct(int auth, int flag, int flag_z, int check_type);
