@@ -6,14 +6,26 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 15:41:00 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/30 17:19:42 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
+size_t	ft_strnlen(const char *s)
+{
+	size_t i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 int	ft_putnstr(char const *s, int n)
 {
+	if (n > ft_strlen(s))
+		n = ft_strlen(s);
 	if (s)
 		write(1, s, n);
 	return ((int)ft_strlen(s));
@@ -34,6 +46,6 @@ int	ft_putstr_f(char *s, va_list *p)
 	diff = ft_str_size(s,(void*)arg, check_type);
 	ft_handle_str(s, arg, check_type);
 	ft_size_chain_str(s, nb, diff, arg);
-	ft_size_chain_str_plus(s, nb, diff);
+	ft_size_chain_str_plus(s, nb, diff, arg);
 	return (0);
 }

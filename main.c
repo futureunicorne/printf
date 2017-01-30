@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/30 15:03:26 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/30 18:33:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main()
 	s = "le gloububouka";
 	nb = 4344;
 	setlocale(LC_ALL, "");
-	ft_printf("%-.10S", str);
+	ft_printf("%-15.13s", s);
 	printf("\n");
 	setlocale(LC_NUMERIC, "");
-	printf("%-.10S", str);
+	printf("%-15.13s", s);
 	printf("\n");
 	return (0);
 }
@@ -37,7 +37,7 @@ int	main()
 
 /*
 // type x est un unsigned
-pour chaine de caracatere cela ninflue que sur la taille de la chaine,
+pour chaine de caracatere cela ninflue que sur la taille d e la chaine,
 le reste des des flag  reste inchanges
 gerer % + d +%
 
