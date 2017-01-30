@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 16:25:10 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/30 12:58:09 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main()
 	s = "le gloububouka";
 	nb = 4344;
 	setlocale(LC_ALL, "");
-	ft_printf("%.10S", str);
+	ft_printf("%0S", str);
 	printf("\n");
-	setlocale(LC_ALL, "");
-	printf("%.10S", str);
+	setlocale(LC_NUMERIC, "");
+	printf("%0S", str);
 	printf("\n");
 	return (0);
 }

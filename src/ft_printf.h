@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 15:53:36 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/29 19:56:34 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdio.h>
 # include <wctype.h>
 # include <locale.h>
+# include <inttypes.h>
 # include "../libft/libft.h"
 
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*));
