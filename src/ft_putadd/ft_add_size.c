@@ -6,20 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:45:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:06:40 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/31 11:33:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-int	ft_putspace_add(int auth, int flag, int flag_z, int check_type)
-{
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 0)
-		return (1);
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 1)
-		return (1);
-	return (0);
-}
 
 int ft_add_size(char *s, int long arg, int check_type)
 {
@@ -41,9 +32,7 @@ int ft_add_size(char *s, int long arg, int check_type)
 			pos.flag_zero = 1;
 		i++;
 	}
-	if (ft_check_point(s) == 1)
-		check_type = 1;
-	if (ft_putspace_add(pos.auth, pos.flag, pos.flag_zero, check_type) == 1)
-		pos.flag_size++;
+	if (pos.auth)
+		pos.flag_size = 1; 
 	return (pos.flag_size);
 }

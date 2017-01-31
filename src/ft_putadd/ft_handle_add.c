@@ -6,20 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:49:39 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:30:03 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/31 10:43:14 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-int	ft_putspace_add_bis(int auth, int flag, int flag_z, int check_type)
-{
-	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 0)
-		ft_putchar(' ');
-	else if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 1)
-		ft_putchar(' ');
-	return (0);
-}
 
 int ft_handle_add(char *s, int long arg, int check_type)
 {
@@ -43,6 +34,5 @@ int ft_handle_add(char *s, int long arg, int check_type)
 	}
 	if (ft_check_point(s) == 1)
 		check_type = 1;
-	ft_putspace_add_bis(pos.auth, pos.flag, pos.flag_zero ,check_type);
-	return (0);
+ 	return (0);
 }

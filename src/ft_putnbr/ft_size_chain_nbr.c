@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 19:12:02 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/31 17:09:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg)
 		siz.val++;
 		siz.flag = 1;
 	}
-	if (ft_check_space(s) && (!ft_check_more(s)) && ft_putplus_nbr(s, arg))
+	if (ft_check_space(s) && (!ft_check_more(s)) && ft_putplus_nbr(s, arg) && siz.nbr <= t_arg)
 	{
 		ft_putchar(' ');
 		siz.val++;
 	}
-	if (ft_check_less(s) && (!ft_check_point(s)))
+	if (ft_check_less(s) && siz.nbr_prec  <= t_arg)
 		return (siz.val);
 	ft_size_chain_nbr_bis(&siz, s, t_arg, diff);
 	while (siz.i < siz.len)
@@ -107,9 +107,10 @@ int	ft_size_chain_nbr_plus(char *s, int t_arg, int diff)
 	t_siz siz;
 
 	ft_memset(&siz, 0, sizeof(t_siz));
-	if (ft_check_less(s) == 0 || ft_check_point(s) == 1)
-		return (0);
 	siz.nbr = ft_record_chain(s);
+	siz.nbr_prec = ft_record_prec(s);
+	if (ft_check_less(s) == 0 && siz.nbr_prec <= t_arg)
+		return (0);
 	siz.i = 0;
 	if (t_arg > siz.nbr)
 		return (0);

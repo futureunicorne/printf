@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/30 16:20:29 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/30 21:13:55 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		ft_putstr_maj_f(char *s, va_list *p);
 int		ft_size_chain_str_plus(char *s, int t_arg, int diff, char *arg);
 int		ft_size_chain_str(char *s, int t_arg, int diff, char *arg);
 int		ft_size_chain_str_maj(char *s, int t_arg, int diff, wchar_t *arg);
+int		ft_size_chain_str_plus_maj(char *s, int t_arg, int diff, wchar_t *arg);
 int		ft_putspace_str_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_str_size(char *s, void *arg, int check_type);
 int 	ft_putnstr(char const *s, int n);

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:33:46 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 19:13:13 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/31 18:10:43 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 int	ft_size_chain_add_plus(char *s, int t_arg, int diff)
 {
 	int nbr;
+	int nbr_prec;
 	int i;
 	int len;
 
-	if (ft_check_less(s) == 0)
-		return (0);
 	nbr = ft_record_chain(s);
-	i = 0;
-	if (t_arg > nbr)
+	nbr_prec = ft_record_prec(s);
+	if (ft_check_less(s) == 0 && nbr_prec > t_arg)
 		return (0);
-	len = nbr - t_arg - diff;
+	i = 0;
+	len = nbr - t_arg - diff - 2;
 	while (i < len)
 	{
 		ft_putchar(' ');
@@ -33,40 +33,88 @@ int	ft_size_chain_add_plus(char *s, int t_arg, int diff)
 	return (i);
 }
 
+void	ft_size_chain_add_bis1(t_siz *siz, char *arg, int t_arg, int diff)
+{
+	if (!siz->nbr && siz->nbr_prec)
+	{
+		siz->len = 0;
+		if (siz->nbr_prec > t_arg)
+			siz->ecart = siz->nbr_prec - t_arg;
+	}
+	else if (!siz->nbr_prec && siz->nbr)
+	{
+		siz->len = siz->nbr - t_arg -2;
+		siz->ecart = 0;
+	}
+}
+
+int	ft_size_chain_add_bis(t_siz *siz, char *arg, int t_arg, int diff)
+{
+	siz->ecart =  siz->nbr_prec - t_arg;
+	if (siz->nbr && siz->nbr_prec)
+	{
+		if (siz->nbr > siz->nbr_prec)
+		{
+			siz->len = siz->nbr - t_arg;
+			if (siz->nbr_prec < t_arg)
+				siz->len = siz->nbr - t_arg - 2;
+			if (siz->nbr_prec > t_arg)
+				siz->len = siz->nbr - siz->nbr_prec - 2;
+		}
+		else if (siz->nbr < siz->nbr_prec)
+		{
+			if (t_arg > siz->nbr)
+				siz->len = siz->nbr - t_arg;
+			if (t_arg < siz->nbr)
+				siz->len =  0;
+			}
+		else if (siz->nbr == siz->nbr_prec)
+		{
+			if (siz->nbr > t_arg || siz->nbr_prec > t_arg)
+				siz->len = 0;
+		}
+	}
+	return (0);
+}
+
 int	ft_size_chain_add(char *s, int t_arg, int diff)
 {
-	int nbr;
-	int i;
-	int len;
-	int flag;
-	char d;
+	t_siz siz;
 
-	nbr = ft_record_chain(s);
-	i = 0;
-	flag = 0;
-	if (ft_check_less(s) == 1 || ft_check_zero(s) == 0)
+	ft_memset(&siz, 0, sizeof(t_siz));
+	printf("t_arg%d\n",t_arg);
+	siz.nbr = ft_record_chain(s);
+	siz.nbr_prec = ft_record_prec(s);
+	if (ft_check_space(s) && (siz.nbr <= t_arg || siz.nbr_prec > t_arg))
+		ft_putchar(' ');
+	if (siz.nbr <= t_arg && siz.nbr_prec <= t_arg)
 	{
 		ft_putstr("0x");
-		flag = 1;
+		siz.flag = 1;
 	}
-	if (ft_check_less(s) == 1)
-		return (0);
-	if (t_arg > nbr)
-		return (0);
-	len = nbr - t_arg - diff;
-	if (ft_check_zero(s) == 1)
+	if (ft_check_less(s) && siz.nbr_prec <= t_arg)
 	{
-		len = len;
-		d = '0';
+		if (!siz.flag)
+			ft_putstr("0x");
+		return (0);
 	}
-	if (ft_check_zero(s) == 0)
-		d = ' ';
-	while (i < len)
+	ft_size_chain_add_bis1(&siz, s, t_arg, diff);
+	ft_size_chain_add_bis(&siz, s, t_arg, diff);
+	while (siz.i < siz.len)
 	{
-		ft_putchar(d);
-		i++;
+		ft_putchar(' ');
+		siz.i++;
 	}
-	if (flag == 0)
+	if (!siz.flag)
+	{
 		ft_putstr("0x");
-	return (i);
+		siz.val = siz.val + 2;
+	}
+	siz.i = 0;
+	while (siz.i < siz.ecart)
+	{
+		ft_putchar('0');
+		siz.i++;
+	}
+	return (siz.i);
 }
