@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 08:59:02 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 13:50:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,7 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 	}
 	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val);
+	return (val + nb);
 }
 
 int	ft_putnbr_j(char *s, va_list *p)
@@ -180,7 +180,7 @@ int	ft_putnbr_j(char *s, va_list *p)
 	}
 	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val);
+	return (val + nb);
 }
 
 int	ft_putnbr_z(char *s, va_list *p)
@@ -207,7 +207,7 @@ int	ft_putnbr_z(char *s, va_list *p)
 	}
 	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val);
+	return (val + nb);
 }
 
 int	ft_putnbr_h(char *s, va_list *p)
@@ -234,7 +234,7 @@ int	ft_putnbr_h(char *s, va_list *p)
 	}
 	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val);
+	return (val + nb);
 }
 
 
@@ -246,6 +246,7 @@ int	ft_putnbr_f(char *s, va_list *p)
 	int diff;
 
 	diff = 0;
+	val = 0;
 	if (ft_check_long(s))
 	{
 		if (ft_check_long(s))

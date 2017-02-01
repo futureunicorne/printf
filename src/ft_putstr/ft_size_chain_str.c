@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:05:20 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 10:07:14 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 13:10:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,13 @@ int	ft_size_chain_str(char *s, int t_arg, int diff, char *arg)
 	{
 		ft_putchar(siz.d);
 		siz.i++;
+		siz.val++;
 	}
-	if (ft_check_point(s))
-		ft_putnstr(arg, siz.ecart);
+	if (ft_check_point(s) && arg != NULL)
+		siz.val = siz.val + ft_putnstr(arg, siz.ecart);
 	else
-		ft_putstr1(arg);
-	return (siz.i);
+		siz.val = siz.val + ft_putstr1(arg);
+	return (siz.val);
 }
 
 int	ft_size_chain_str_maj_bis(t_siz *siz, wchar_t *arg, int t_arg, int diff)
@@ -110,12 +111,13 @@ int	ft_size_chain_str_maj(char *s, int t_arg, int diff, wchar_t *arg)
 	{
 		ft_putchar(siz.d);
 		siz.i++;
+		siz.val++;
 	}
-	if (ft_check_point(s))
-		ft_putnstr_maj(arg, siz.ecart);
+	if (ft_check_point(s) && arg != NULL)
+		siz.val = siz.val + ft_putnstr_maj(arg, siz.ecart);
 	else
-		ft_putstr_maj(arg);
-	return (siz.i);
+		siz.val = siz.val + ft_putstr_maj(arg);
+	return (siz.val);
 }
 
 int	ft_size_chain_str_plus(char *s, int t_arg, int diff, char *arg)
@@ -131,15 +133,16 @@ int	ft_size_chain_str_plus(char *s, int t_arg, int diff, char *arg)
 	ft_size_chain_str_bis1(&siz, arg, t_arg, diff);
 	ft_size_chain_str_bis(&siz, arg, t_arg, diff);
 	if (ft_check_point(s))
-		ft_putnstr(arg, siz.ecart);
+		siz.val = siz.val + ft_putnstr(arg, siz.ecart);
 	else
-		ft_putstr(arg);
+		siz.val = siz.val + ft_putstr(arg);
 	while (siz.i < siz.len)
 	{
 		ft_putchar(siz.d);
 		siz.i++;
+		siz.val++;
 	}
-	return (siz.i);
+	return (siz.val);
 }
 
 int	ft_size_chain_str_plus_maj(char *s, int t_arg, int diff, wchar_t *arg)
@@ -154,14 +157,14 @@ int	ft_size_chain_str_plus_maj(char *s, int t_arg, int diff, wchar_t *arg)
 		return (0);
 	ft_size_chain_str_maj_bis(&siz, arg, t_arg, diff);
 	if (ft_check_point(s))
-		ft_putnstr_maj(arg, siz.ecart);
+		siz.val = siz.val + ft_putnstr_maj(arg, siz.ecart);
 	else
-		ft_putstr_maj(arg);
+		siz.val = siz.val + ft_putstr_maj(arg);
 	while (siz.i < siz.len)
 	{
 		ft_putchar(siz.d);
 		siz.i++;
+		siz.val++;
 	}
-	return (siz.i);
+	return (siz.val);
 }
-

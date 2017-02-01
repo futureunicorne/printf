@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/30 21:16:28 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 13:16:23 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,25 @@ int		ft_strwlen(wchar_t *s)
 	return (cpt);
 }
 
-void	ft_putstr_maj(wchar_t *s)
+int	ft_putstr_maj(wchar_t *s)
 {
 	int i;
 
 	i = 0;
-	while (s[i])
+	if (s == NULL)
+		write(1, "(null)", 6);
+	else
 	{
-		ft_putchar_maj(s[i]);
-		i++;
+		while (s[i])
+		{
+			ft_putchar_maj(s[i]);
+			i++;
+		}
 	}
+	return (i);
 }
 
-void	ft_putnstr_maj(wchar_t *s, int n)
+int	ft_putnstr_maj(wchar_t *s, int n)
 {
 	int i;
 	int j;
@@ -65,6 +71,7 @@ void	ft_putnstr_maj(wchar_t *s, int n)
 		ft_putchar_maj(s[j]);
 		j++;;
 	}
+	return (n);
 }
 
 int	ft_cptnstr(wchar_t *s, int n)
@@ -95,17 +102,22 @@ int	ft_putstr_maj_f(char *s, va_list *p)
 {
 	wchar_t *arg;
 	int		nb;
+	int		val;
 	int		diff;
 	int		check_type;
 
 	nb = 0;
 	diff = 0;
+	val = 0;
 	check_type = 1;
 	arg = va_arg(*p, wchar_t*);
-	nb = ft_strwlen(arg);
+	if (arg != NULL)
+		nb = ft_strwlen(arg);
+	else
+		nb = 6;
 	diff = ft_str_size(s, (void*)arg, check_type);
 	ft_handle_str(s, (void*)arg, check_type);
-	ft_size_chain_str_maj(s, nb, diff, arg);
-	ft_size_chain_str_plus_maj(s, nb, diff, arg);
-	return (0);
+	val = val + ft_size_chain_str_maj(s, nb, diff, arg);
+	val = val + ft_size_chain_str_plus_maj(s, nb, diff, arg);
+	return (val);
 }

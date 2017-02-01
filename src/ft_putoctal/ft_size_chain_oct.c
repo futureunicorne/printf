@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 10:07:16 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 14:02:22 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,22 @@ void	ft_size_chain_oct_bis2(t_siz *siz, char *s)
 	{
 		ft_putchar(' ');
 		siz->i++;
+		siz->val++;
+
 	}
 	if (ft_check_dieses(s) && (siz->nbr > siz->nbr_prec)
 	&& !siz->flag && siz->nbr_prec)
 	{
 		ft_putchar('0');
 		siz->flag = 1;
+		siz->val++;
 	}
 	siz->i = 0;
 	while (siz->i < siz->ecart)
 	{
 		ft_putchar('0');
 		siz->i++;
+		siz->val++;
 	}
 }
 
@@ -89,11 +93,15 @@ int	ft_size_chain_oct(char *s, int t_arg, int diff, int arg)
 	{
 		ft_putchar('0');
 		siz.flag = 1;
+		siz.val++;
 	}
 	if (ft_check_less(s) && siz.nbr_prec <= t_arg)
 	{
 		if (ft_check_dieses(s) && !siz.flag && arg != 0)
+		{
 			ft_putchar('0');
+			siz.val++;
+		}
 		return (0);
 	}
 	siz.len = siz.nbr - t_arg - diff;
@@ -110,20 +118,18 @@ int	ft_size_chain_oct(char *s, int t_arg, int diff, int arg)
 
 int	ft_size_chain_oct_plus(char *s, int t_arg, int diff)
 {
-	int nbr;
-	int i;
-	int len;
+	t_siz siz;
 
+	ft_memset(&siz, 0, sizeof(t_siz));
 	if (ft_check_less(s) == 0)
 		return (0);
-	nbr = ft_record_chain(s);
-	i = 0;
-
-	len = nbr - t_arg - diff;
-	while (i < len)
+	siz.nbr = ft_record_chain(s);
+	siz.len = siz.nbr - t_arg - diff;
+	while (siz.i < siz.len)
 	{
 		ft_putchar(' ');
-		i++;
+		siz.i++;
+		siz.val++;
 	}
-	return (i);
+	return (siz.val);
 }

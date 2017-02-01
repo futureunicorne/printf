@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/24 18:19:12 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 13:48:34 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,17 @@ int	ft_putchar_maj_f(char *s, va_list *p)
 	wchar_t arg;
 	int		nb;
 	int		diff;
+	int		val;
 	int		check_type;
 
-
+	val = 0;
 	arg = va_arg(*p, wchar_t);
 	nb = ft_strwclen(arg);
 	check_type = 1;
 	diff = ft_char_size(s, check_type);
 	ft_handle_char(s, check_type);
-	ft_size_chain_char(s, nb, diff);
+	val = val + ft_size_chain_char(s, nb, diff);
 	ft_putchar_maj(arg);
-	ft_size_chain_char_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_char_plus(s, nb, diff);
+	return (val + nb);
 }

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/31 21:03:13 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 14:07:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,51 +85,75 @@ int	ft_putoctal_j(char *s, va_list *p)
 {
 	intmax_t 	arg;
 	int			nb;
+	int			val;
 	int			diff;
 	int			check_type;
 
 	check_type = 1;
+	val = 0;
 	arg = va_arg(*p, intmax_t);
 	nb = ft_nbr_octal_len(arg);
 	diff = ft_oct_size(s, check_type);
-	ft_size_chain_oct(s, nb, diff, arg);
+	if (arg == 0)
+	{
+		diff = 0;
+		nb = 1;
+	}
+	ft_handle_oct(s, check_type);
+	val =  val  + ft_size_chain_oct(s, nb, diff, arg);
 	ft_putoctal_max(arg);
-	ft_size_chain_oct_plus(s, nb, diff);
-	return (0);
+	val =  val  + ft_size_chain_oct_plus(s, nb, diff);
+	return (val + nb);
 }
 
 int	ft_putoctal_z(char *s, va_list *p)
 {
-	size_t 	arg;
+	size_t 		arg;
+	int			val;
 	int			nb;
 	int			diff;
 	int			check_type;
 
 	check_type = 1;
+	val = 0;
 	arg = va_arg(*p, size_t);
 	nb = ft_nbr_octal_len(arg);
 	diff = ft_oct_size(s, check_type);
-	ft_size_chain_oct(s, nb, diff, arg);
+	if (arg == 0)
+	{
+		diff = 0;
+		nb = 1;
+	}
+	ft_handle_oct(s, check_type);
+	val =  val  + ft_size_chain_oct(s, nb, diff, arg);
 	ft_putoctal_size(arg);
-	ft_size_chain_oct_plus(s, nb, diff);
-	return (0);
+	val =  val  + ft_size_chain_oct_plus(s, nb, diff);
+	return (val + nb);
 }
 
 int	ft_putoctal_h(char *s, va_list *p)
 {
 	short int 	arg;
 	int			nb;
+	int			val;
 	int			diff;
 	int			check_type;
 
 	check_type = 1;
+	val  = 0;
 	arg = va_arg(*p, int);
 	nb = ft_nbr_octal_len(arg);
 	diff = ft_oct_size(s, check_type);
-	ft_size_chain_oct(s, nb, diff, arg);
+	if (arg == 0)
+	{
+		diff = 0;
+		nb = 1;
+	}
+	ft_handle_oct(s, check_type);
+	val =  val  + ft_size_chain_oct(s, nb, diff, arg);
 	ft_putoctal_short(arg);
-	ft_size_chain_oct_plus(s, nb, diff);
-	return (0);
+	val =  val  + ft_size_chain_oct_plus(s, nb, diff);
+	return (val + nb);
 }
 
 int	ft_putoctal_f(char *s, va_list *p)
@@ -137,9 +161,11 @@ int	ft_putoctal_f(char *s, va_list *p)
 	unsigned 	arg;
 	int			nb;
 	int			diff;
+	int			val;
 	int			check_type;
 
 	check_type = 1;
+	val = 0;
 	if (ft_check_long(s))
 	{
 		if (ft_check_long(s) == 'l')
@@ -161,8 +187,8 @@ int	ft_putoctal_f(char *s, va_list *p)
 		nb = 1;
 	}
 	ft_handle_oct(s, check_type);
-	ft_size_chain_oct(s, nb, diff, arg);
+	val =  val  + ft_size_chain_oct(s, nb, diff, arg);
 	ft_putoctal(arg);
-	ft_size_chain_oct_plus(s, nb, diff);
-	return (0);
+	val =  val  + ft_size_chain_oct_plus(s, nb, diff);
+	return (val + nb);
 }

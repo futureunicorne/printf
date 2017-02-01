@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/31 18:20:49 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 13:34:24 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,23 @@ int	ft_putadd_f(char *s, va_list *p)
 {
 	int long	arg;
 	int	long	nb;
+	int			val;
 	int			diff;
 	int			check_type;
 
+	val = 0;
 	if (ft_check_long(s))
 	{
 		ft_putstr("0x");
-		ft_puthexa_l(s, p);
-		return (0);
+		val = val + ft_puthexa_l(s, p);
+		return (val + 2);
 	}
 	arg = va_arg(*p, int long);
 	nb = ft_nbr_add_len((int long)&arg);
 	diff = ft_add_size(s, arg, check_type);
 	ft_handle_add(s, arg, check_type);
-	ft_size_chain_add(s, nb, diff);
+	val = val + ft_size_chain_add(s, nb, diff);
 	ft_putadd(arg);
-	ft_size_chain_add_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_add_plus(s, nb, diff);
+	return (val + nb);
 }

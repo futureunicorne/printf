@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 10:07:15 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 11:53:40 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int 	ft_handle_str(char *s, void *arg, int check_type);
 int		ft_putstr_f(char *s, va_list *p);
 int		ft_strwlen(wchar_t *s);
 int		ft_putstr1(char const *s);
-void	ft_putstr_maj(wchar_t *s);
+int		ft_putstr_maj(wchar_t *s);
 int		ft_putstr_maj_f(char *s, va_list *p);
 int		ft_size_chain_str_plus(char *s, int t_arg, int diff, char *arg);
 int		ft_size_chain_str(char *s, int t_arg, int diff, char *arg);
@@ -64,7 +64,7 @@ int		ft_size_chain_str_plus_maj(char *s, int t_arg, int diff, wchar_t *arg);
 int		ft_putspace_str_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_str_size(char *s, void *arg, int check_type);
 int 	ft_putnstr(char const *s, int n);
-void	ft_putnstr_maj(wchar_t *s, int n);
+int		ft_putnstr_maj(wchar_t *s, int n);
 int		ft_cptnstr(wchar_t *s, int n);
 void 	ft_putpercent(char *str);
 int		ft_putpercent_f(char *s, va_list *p);

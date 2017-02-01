@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 19:24:04 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 11:32:48 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,21 @@ int	ft_puthexa_maj_long_f(char *s, va_list *p)
 	arg = va_arg(*p, unsigned long long);
 	nb = ft_strhlen((int)arg);
 	diff = ft_hexa_size(s, arg, check_type);
-	ft_size_chain_hexa(s, nb, diff, "0X");
+	if (arg == 0)
+	{
+		nb = 1;
+		diff =  diff - 1;
+	}
+	val = ft_size_chain_hexa(s, nb, diff, "0x");
 	ft_puthexa_maj_long(arg);
-	ft_size_chain_hexa_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_hexa_plus(s, nb, diff);
+	return (val + nb);
 }
 
 int	ft_puthexa_maj_f(char *s, va_list *p)
 {
 	int 		arg;
+	int			val;
 	int			nb;
 	int			diff;
 	int			check_type;
@@ -89,10 +95,15 @@ int	ft_puthexa_maj_f(char *s, va_list *p)
 		return (0);
 	}
 	arg = va_arg(*p, int long);
-	nb = ft_strhlen((int long)arg);
+	nb = ft_strhlen((int)arg);
 	diff = ft_hexa_size(s, arg, check_type);
-	ft_size_chain_hexa(s, nb, diff, "0X");
+	if (arg == 0)
+	{
+		nb = 1;
+		diff =  diff - 1;
+	}
+	val = ft_size_chain_hexa(s, nb, diff, "0x");
 	ft_puthexa_maj(arg);
-	ft_size_chain_hexa_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_hexa_plus(s, nb, diff);
+	return (val + nb);
 }

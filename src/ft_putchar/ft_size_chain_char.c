@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:51:10 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/31 00:24:00 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 13:48:55 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,38 @@
 
 int	ft_size_chain_char(char *s, int t_arg, int diff)
 {
-	int nbr;
-	int i;
-	int len;
-	char d;
+	t_siz siz;
 
+	ft_memset(&siz, 0, sizeof(t_siz));
 	if (ft_check_less(s) == 1)
 		return (0);
-	d = ' ';
-	nbr = ft_record_chain(s);
-	i = 0;
-	len = nbr - t_arg - diff;
-	while (i < len)
+	siz.d = ' ';
+	siz.nbr = ft_record_chain(s);
+	siz.i = 0;
+	siz.len = siz.nbr - t_arg - diff;
+	while (siz.i < siz.len)
 	{
-		ft_putchar(d);
-		i++;
+		ft_putchar(siz.d);
+		siz.i++;
+		siz.val++;
 	}
-	return (i);
+	return (siz.i);
 }
 
 int	ft_size_chain_char_plus(char *s, int t_arg, int diff)
 {
-	int nbr;
-	int i;
-	int len;
+	t_siz siz;
 
+	ft_memset(&siz, 0, sizeof(t_siz));
 	if (ft_check_less(s) == 0)
 		return (0);
-	nbr = ft_record_chain(s);
-	i = 0;
-	len = nbr - t_arg - diff;
-	while (i < len)
+	siz.nbr = ft_record_chain(s);
+	siz.len = siz.nbr - t_arg - diff;
+	while (siz.i < siz.len)
 	{
 		ft_putchar(' ');
-		i++;
+		siz.i++;
+		siz.val++;
 	}
-	return (i);
+	return (siz.val);
 }

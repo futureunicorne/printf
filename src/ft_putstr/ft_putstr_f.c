@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 10:07:09 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 13:16:12 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_putstr1(char const *s)
 	else
 	{
 		write(1, "(null)", 6);
-		return (4);
+		return (6);
 	}
 	return (0);
 }
@@ -43,7 +43,7 @@ int	ft_putnstr(char const *s, int n)
 		n = ft_strlen(s);
 	if (s)
 		write(1, s, n);
-	return ((int)ft_strlen(s));
+	return ((int)n);
 }
 
 int	ft_putstr_f(char *s, va_list *p)
@@ -51,12 +51,14 @@ int	ft_putstr_f(char *s, va_list *p)
 
 	char	*arg;
 	int		nb;
+	int		val;
 	int		diff;
 	int		check_type;
 
 	nb = 0;
 	diff = 0;
 	check_type = 1;
+	val = 0;
 	arg = va_arg(*p, char*);
 	if (arg != NULL)
 		nb = ft_strlen(arg);
@@ -64,7 +66,7 @@ int	ft_putstr_f(char *s, va_list *p)
 		nb = 6;
 	diff = ft_str_size(s,(void*)arg, check_type);
 	ft_handle_str(s, arg, check_type);
-	ft_size_chain_str(s, nb, diff, arg);
-	ft_size_chain_str_plus(s, nb, diff, arg);
-	return (0);
+	val = val + ft_size_chain_str(s, nb, diff, arg);
+	val = val + ft_size_chain_str_plus(s, nb, diff, arg);
+	return (val);
 }
