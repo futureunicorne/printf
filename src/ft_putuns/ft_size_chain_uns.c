@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:07:29 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 11:27:21 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/31 18:45:00 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_size_chain_uns(char *s, int t_arg, int diff)
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
 
-	if (ft_check_less(s) && !ft_check_point(s))
+	if (ft_check_less(s) && siz.nbr_prec <= t_arg)
 		return (0);
 	siz.len = siz.nbr - t_arg - diff;
 	ft_size_chain_uns_bis(&siz, s, t_arg, diff);
@@ -72,12 +72,14 @@ int	ft_size_chain_uns(char *s, int t_arg, int diff)
 int	ft_size_chain_uns_plus(char *s, int t_arg, int diff)
 {
 	int nbr;
+	int nbr_prec;
 	int i;
 	int len;
 
-	if (ft_check_less(s) == 0 || ft_check_point(s))
-		return (0);
 	nbr = ft_record_chain(s);
+	nbr_prec = ft_record_prec(s);
+	if (ft_check_less(s) == 0 && nbr_prec <= t_arg)
+		return (0);
 	i = 0;
 	len = nbr - t_arg - diff;
 	while (i < len)

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 14:16:17 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 08:59:02 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,14 +266,26 @@ int	ft_putnbr_f(char *s, va_list *p)
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
 		nb = ft_count_num_2(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
-		ft_putnbr_less(arg);
+		if (arg != 0)
+			ft_putnbr_less(arg);
 	}
 	else
 	{
 		nb = ft_count_num(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
-		ft_putnbr(arg);
+		if (arg != 0)
+			ft_putnbr(arg);
 	}
 	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;

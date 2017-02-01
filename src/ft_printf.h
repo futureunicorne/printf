@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/30 21:13:55 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 10:07:15 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		ft_putspace_str(int auth, int flag, int flag_z, int check_type);
 int 	ft_handle_str(char *s, void *arg, int check_type);
 int		ft_putstr_f(char *s, va_list *p);
 int		ft_strwlen(wchar_t *s);
+int		ft_putstr1(char const *s);
 void	ft_putstr_maj(wchar_t *s);
 int		ft_putstr_maj_f(char *s, va_list *p);
 int		ft_size_chain_str_plus(char *s, int t_arg, int diff, char *arg);
@@ -77,7 +78,7 @@ void	ft_putoctal(unsigned n);
 int		ft_putoctal_f(char *s, va_list *p);
 void	ft_putoctal_maj(unsigned long long n);
 int		ft_putoctal_maj_f(char *s ,va_list *p);
-int		ft_size_chain_oct(char *s, int t_arg, int diff);
+int		ft_size_chain_oct(char *s, int t_arg, int diff, int arg);
 int		ft_size_chain_oct_plus(char *s, int t_arg, int diff);
 int		ft_putplus_nbr(char *s, int arg);
 int		ft_putspace_nbr(int auth, int flag, int flag_z, int check_type);

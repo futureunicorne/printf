@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:01:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 09:24:38 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/31 19:00:13 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int ft_oct_size(char *s, int check_type)
 			if (ft_putdieses_oct(s) > 0)
 				pos.flag_size = ft_putdieses_oct(s);
 			pos.flag3 = 1;
-			//pos.flag = 1;
 		}
 		i++;
 	}

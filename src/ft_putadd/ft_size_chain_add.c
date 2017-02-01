@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:33:46 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/31 18:10:43 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/01/31 18:24:17 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_size_chain_add_plus(char *s, int t_arg, int diff)
 
 	nbr = ft_record_chain(s);
 	nbr_prec = ft_record_prec(s);
-	if (ft_check_less(s) == 0 && nbr_prec > t_arg)
+	if (ft_check_less(s) == 0 || nbr_prec > t_arg)
 		return (0);
 	i = 0;
 	len = nbr - t_arg - diff - 2;
@@ -82,7 +82,6 @@ int	ft_size_chain_add(char *s, int t_arg, int diff)
 	t_siz siz;
 
 	ft_memset(&siz, 0, sizeof(t_siz));
-	printf("t_arg%d\n",t_arg);
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
 	if (ft_check_space(s) && (siz.nbr <= t_arg || siz.nbr_prec > t_arg))

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:05:20 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/31 10:41:30 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 10:07:14 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	ft_size_chain_str(char *s, int t_arg, int diff, char *arg)
 	if (ft_check_point(s))
 		ft_putnstr(arg, siz.ecart);
 	else
-		ft_putstr(arg);
+		ft_putstr1(arg);
 	return (siz.i);
 }
 
