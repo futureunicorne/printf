@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_size_chain_hexa.c                               :+:      :+:    :+:   */
+/*   ft_size_chain_hexa_maj.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/24 09:56:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 18:28:31 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/02/01 17:46:13 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/02/01 18:13:56 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_size_chain_hexa_bis2(t_siz *siz, char *arg, int t_arg, int diff)
+void	ft_size_chain_hexa_maj_bis2(t_siz *siz, char *arg, int t_arg, int diff)
 {
 	if (!siz->nbr && siz->nbr_prec)
 	{
@@ -27,7 +27,7 @@ void	ft_size_chain_hexa_bis2(t_siz *siz, char *arg, int t_arg, int diff)
 	}
 }
 
-int	ft_size_chain_hexa_bis(t_siz *siz, char *arg, int t_arg, int diff)
+int	ft_size_chain_hexa_maj_bis(t_siz *siz, char *arg, int t_arg, int diff)
 {
 
 	siz->ecart =  siz->nbr_prec - t_arg;
@@ -57,7 +57,7 @@ int	ft_size_chain_hexa_bis(t_siz *siz, char *arg, int t_arg, int diff)
 	return (0);
 }
 
-void	ft_size_chain_hexa_bis1(t_siz *siz, char *s, ssize_t arg)
+void	ft_size_chain_hexa_maj_bis1(t_siz *siz, char *s, ssize_t arg)
 {
 	if (ft_check_zero(s) == 1)
 		siz->d = '0';
@@ -72,7 +72,7 @@ void	ft_size_chain_hexa_bis1(t_siz *siz, char *s, ssize_t arg)
 	if (ft_check_dieses(s) && arg != 0 && (siz->nbr > siz->nbr_prec)
 	&& !siz->flag && siz->nbr_prec)
 	{
-		ft_putstr("0x");
+		ft_putstr("0X");
 		siz->flag = 1;
 		siz->val = siz->val + 2;
 	}
@@ -85,7 +85,7 @@ void	ft_size_chain_hexa_bis1(t_siz *siz, char *s, ssize_t arg)
 	}
 }
 
-int	ft_size_chain_hexa(char *s, int t_arg, int diff, ssize_t arg)
+int	ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 {
 	t_siz siz;
 
@@ -95,7 +95,7 @@ int	ft_size_chain_hexa(char *s, int t_arg, int diff, ssize_t arg)
 	if (ft_check_dieses(s) == 1 && arg != 0 && ((!(siz.nbr > siz.nbr_prec)) ||
 	(ft_check_zero(s) && siz.nbr && (!siz.nbr_prec))))
 	{
-		ft_putstr("0x");
+		ft_putstr("0X");
 		siz.flag = 1;
 		siz.val = siz.val + 2;
 	}
@@ -103,24 +103,24 @@ int	ft_size_chain_hexa(char *s, int t_arg, int diff, ssize_t arg)
 	{
 		if (ft_check_dieses(s) && !siz.flag)
 		{
-			ft_putstr("0x");
+			ft_putstr("0X");
 			siz.val = siz.val + 2;
 		}
-		return (siz.val);
+		return (0);
 	}
 	siz.len = siz.nbr - t_arg - diff;
-	ft_size_chain_hexa_bis2(&siz, s, t_arg, diff);
-	ft_size_chain_hexa_bis(&siz, s, t_arg, diff);
-	ft_size_chain_hexa_bis1(&siz, s, arg);
+	ft_size_chain_hexa_maj_bis2(&siz, s, t_arg, diff);
+	ft_size_chain_hexa_maj_bis(&siz, s, t_arg, diff);
+	ft_size_chain_hexa_maj_bis1(&siz, s, arg);
 	if (!siz.flag && ft_check_dieses(s) && arg != 0)
 	{
-		ft_putstr("0x");
+		ft_putstr("0X");
 		siz.val = siz.val + 2;
 	}
 	return (siz.val);
 }
 
-int	ft_size_chain_hexa_plus(char *s, int t_arg, int diff)
+int	ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff)
 {
 	t_siz siz;
 

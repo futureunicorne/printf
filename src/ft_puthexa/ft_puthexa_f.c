@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 16:11:36 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 18:58:23 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_puthexa_long(unsigned long long nb)
 		ft_putchar(tab[nb % 16]);
 	}
 }
+
 
 void	ft_puthexa_size(size_t nb)
 {
@@ -67,7 +68,7 @@ void	ft_puthexa_short(int nb)
 	}
 }
 
-void	ft_puthexa_max(intmax_t nb)
+void	ft_puthexa_max(size_t nb)
 {
 	char *tab = "0123456789abcdef";
 	if (nb <= 15)
@@ -108,7 +109,7 @@ int	ft_puthexa_l(char *s, va_list *p)
 		nb = 1;
 		diff =  diff - 1;
 	}
-	val = ft_size_chain_hexa(s, nb, diff, "0X");
+	val = ft_size_chain_hexa(s, nb, diff, arg);
 	ft_puthexa_long(arg);
 	val = val + ft_size_chain_hexa_plus(s, nb, diff);
 	return (val + nb);
@@ -132,7 +133,7 @@ int	ft_puthexa_h(char *s, va_list *p)
 		nb = 1;
 		diff =  diff - 1;
 	}
-	val = ft_size_chain_hexa(s, nb, diff, "0x");
+	val = ft_size_chain_hexa(s, nb, diff, arg);
 	ft_puthexa_short(arg);
 	val = val + ft_size_chain_hexa_plus(s, nb, diff);
 	return (val + nb);
@@ -156,8 +157,9 @@ int	ft_puthexa_j(char *s, va_list *p)
 		nb = 1;
 		diff =  diff - 1;
 	}
-	val = ft_size_chain_hexa(s, nb, diff, "0x");
+	val = ft_size_chain_hexa(s, nb, diff, arg);
 	ft_puthexa_max(arg);
+
 	val = val + ft_size_chain_hexa_plus(s, nb, diff);
 	return (val + nb);
 }
@@ -180,7 +182,7 @@ int	ft_puthexa_z(char *s, va_list *p)
 		nb = 1;
 		diff =  diff - 1;
 	}
-	val = ft_size_chain_hexa(s, nb, diff, "0x");
+	val = ft_size_chain_hexa(s, nb, diff, arg);
 	ft_puthexa_size(arg);
 	val = val + ft_size_chain_hexa_plus(s, nb, diff);
 	return (val + nb);
@@ -192,6 +194,7 @@ int	ft_puthexa_f(char *s, va_list *p)
 	int			nb;
 	int			diff;
 	int			val;
+	int			flag;
 	int			check_type;
 
 	if (ft_check_long(s))
@@ -207,16 +210,24 @@ int	ft_puthexa_f(char *s, va_list *p)
 		return (val);
 	}
 	check_type = 1;
+	flag = 0;
 	arg = va_arg(*p, unsigned);
 	nb = ft_strhlen((unsigned)arg);
 	diff = ft_hexa_size(s, arg, check_type);
 	if (arg == 0)
 	{
-		nb = 1;
+		if (ft_check_point(s))
+			nb = 1;
+		else
+		{
+			nb = 0;
+			flag = 1;
+		}
 		diff =  diff - 1;
 	}
-	val = ft_size_chain_hexa(s, nb, diff, "0x");
-	ft_puthexa(arg);
+	val = ft_size_chain_hexa(s, nb, diff, arg);
+	if (flag == 0)
+		ft_puthexa(arg);
 	val = val + ft_size_chain_hexa_plus(s, nb, diff);
 	return (val + nb);
 }

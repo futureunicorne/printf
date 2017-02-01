@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 15:58:45 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 18:48:51 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	ft_puthexa(unsigned nb);
 int		ft_puthexa_f(char *s, va_list *p);
 void	ft_puthexa_maj(unsigned n);
 int		ft_puthexa_maj_f(char *s, va_list *p);
-int		ft_size_chain_hexa(char *s, int t_arg, int diff, char *base);
+int		ft_size_chain_hexa(char *s, int t_arg, int diff, ssize_t arg);
 int		ft_size_chain_hexa_plus(char *s, int t_arg, int diff);
 int		ft_putspace_char(int auth, int flag, int flag_z, int check_type);
 int 	ft_char_size(char *s, int check_type);
@@ -138,6 +138,11 @@ int 	ft_putnbr_long_f(char *s, va_list *p);
 int		ft_check_long(char *s);
 int 	check_ptr2(char c);
 int		check_ptr_bis2(char c);
+int		ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff);
+int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg);
+
+
+
 
 typedef struct	s_pos
 {
