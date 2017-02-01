@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 15:58:18 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/31 20:32:47 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 14:28:00 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	ft_putpercent_f(char *s, va_list *p)
 	nb = 1;
 	arg = va_arg(*p, char*);
 	ft_putpercent(arg);
-	return (0);
+	return (1);
 }

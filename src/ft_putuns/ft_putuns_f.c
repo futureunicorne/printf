@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 11:02:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 10:53:32 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 14:40:08 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,27 +72,35 @@ int		ft_putuns_h(char *s, va_list *p)
 {
 	unsigned short	arg;
 	int				nb;
+	int				val;
 	int				diff;
 	int				check_type;
 
 
 	nb = 0;
 	diff = 0;
+	val = 0;
 	check_type = 1;
 
 	arg = va_arg(*p, unsigned);
 	nb = ft_count_num(arg);
 	diff = ft_uns_size(s, check_type);
-	ft_size_chain_uns(s, nb, diff);
+	if (arg == 0)
+	{
+		nb = 1;
+		diff =  diff - 1;
+	}
+	val = val + ft_size_chain_uns(s, nb, diff);
 	ft_putuns_short(arg);
-	ft_size_chain_uns_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_uns_plus(s, nb, diff);
+	return (val + nb);
 }
 
 int		ft_putuns_j(char *s, va_list *p)
 {
 	intmax_t	arg;
 	int			nb;
+	int			val;
 	int			diff;
 	int			check_type;
 
@@ -100,47 +108,60 @@ int		ft_putuns_j(char *s, va_list *p)
 	nb = 0;
 	diff = 0;
 	check_type = 1;
-
 	arg = va_arg(*p, intmax_t);
 	nb = ft_count_num(arg);
 	diff = ft_uns_size(s, check_type);
-	ft_size_chain_uns(s, nb, diff);
+	if (arg == 0)
+	{
+		nb = 1;
+		diff =  diff - 1;
+	}
+	val = val + ft_size_chain_uns(s, nb, diff);
 	ft_putuns_max(arg);
-	ft_size_chain_uns_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_uns_plus(s, nb, diff);
+	return (val + nb);
 }
 
 int		ft_putuns_z(char *s, va_list *p)
 {
 	size_t		arg;
 	int			nb;
+	int			val;
 	int			diff;
 	int			check_type;
 
 
 	nb = 0;
 	diff = 0;
+	val = 0;
 	check_type = 1;
 
 	arg = va_arg(*p, size_t);
 	nb = ft_count_num(arg);
 	diff = ft_uns_size(s, check_type);
-	ft_size_chain_uns(s, nb, diff);
+	if (arg == 0)
+	{
+		nb = 1;
+		diff =  diff - 1;
+	}
+	val = val + ft_size_chain_uns(s, nb, diff);
 	ft_putuns_size(arg);
-	ft_size_chain_uns_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_uns_plus(s, nb, diff);
+	return (val + nb);
 }
 
 int		ft_putuns_f(char *s, va_list *p)
 {
 	unsigned	arg;
 	int			nb;
+	int			val;
 	int			diff;
 	int			check_type;
 
 
 	nb = 0;
 	diff = 0;
+	val = 0;
 	check_type = 1;
 	if (ft_check_long(s))
 	{
@@ -162,8 +183,8 @@ int		ft_putuns_f(char *s, va_list *p)
 		nb = 1;
 		diff =  diff - 1;
 	}
-	ft_size_chain_uns(s, nb, diff);
+	val = val + ft_size_chain_uns(s, nb, diff);
 	ft_putuns(arg);
-	ft_size_chain_uns_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_uns_plus(s, nb, diff);
+	return (val + nb);
 }

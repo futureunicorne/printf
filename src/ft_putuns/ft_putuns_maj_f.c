@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:21:49 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 14:06:14 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 14:37:03 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int ft_putuns_maj_f(char *s, va_list *p)
 {
 	unsigned long long	arg;
 	int					nb;
+	int 				val;
 	int					diff;
 	int				check_type;
-
 
 	nb = 0;
 	diff = 0;
@@ -40,9 +40,13 @@ int ft_putuns_maj_f(char *s, va_list *p)
 	arg = va_arg(*p, unsigned long long);
 	nb = ft_count_num(arg);
 	diff = ft_uns_size(s, check_type);
-	ft_handle_uns(s, check_type);
-	ft_size_chain_uns(s, nb, diff);
+	if (arg == 0)
+	{
+		nb = 1;
+		diff =  diff - 1;
+	}
+	val = val + ft_size_chain_uns(s, nb, diff);
 	ft_putuns_maj(arg);
-	ft_size_chain_uns_plus(s, nb, diff);
-	return (0);
+	val = val + ft_size_chain_uns_plus(s, nb, diff);
+	return (val + nb);
 }
