@@ -6,12 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 14:51:31 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 16:28:17 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*))
 {
@@ -75,6 +74,6 @@ int	ft_printf(char *str, ...)
 		pos.i++;
 	}
   	va_end(ap);
-	printf("val = %d\n",pos.val);
+	printf("\nval = %d\n",pos.val);
 	return (pos.val);
 }

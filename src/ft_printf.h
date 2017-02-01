@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 11:53:40 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 15:58:45 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,9 @@ int		ft_putdieses_hexa(char *s);
 int		ft_putspace_hexa_bis(int auth, int flag, int flag_z, int check_type);
 int 	ft_hexa_size(char *s, int arg, int check_type);
 int		ft_strhlen(size_t nb);
+int		ft_puthexa_z(char *s, va_list *p);
+int		ft_puthexa_j(char *s, va_list *p);
+int		ft_puthexa_h(char *s, va_list *p);
 void	ft_puthexa(unsigned nb);
 int		ft_puthexa_f(char *s, va_list *p);
 void	ft_puthexa_maj(unsigned n);
