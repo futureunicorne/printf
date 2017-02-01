@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 09:36:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/28 19:08:57 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 21:02:37 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 		siz.val++;
 		siz.flag = 1;
 	}
-	if (ft_check_space(s) && (!ft_check_more(s)) && (!ft_putplus_nbr_bis_maj(s, arg)))
-	{
-		ft_putchar(' ');
-		siz.val++;
-	}
+	//if (ft_check_space(s) && (!ft_check_more(s)) && (!ft_putplus_nbr_bis_maj(s, arg)))
+	//{
+	//	ft_putchar(' ');
+	//	siz.val++;
+	//}
 	if (ft_check_less(s) && (!ft_check_point(s)))
 		return (siz.val);
 	ft_size_chain_nbr_bis(&siz, s, t_arg, diff);
@@ -86,7 +86,7 @@ int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 				siz.val++;
 				siz.flag = 1;
 			}
-			siz .val++;
+			siz.val++;
 			ft_putchar(siz.d);
 		}
 		siz.i++;

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 17:19:22 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 21:29:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 	diff = ft_nbr_size(s, arg);
 	if (!ft_putplus_nbr_bis_maj(s, arg))
 	{
-		nb = ft_count_num_2(arg);
+		nb = ft_count_num(arg);
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
 		ft_putnbr_maj_less(arg);
 	}
@@ -273,8 +273,6 @@ int	ft_putnbr_f(char *s, va_list *p)
 			diff =  diff - 1;
 		}
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
-		printf("oui\n");
-
 		if (arg != 0)
 			ft_putnbr_less(arg);
 	}
@@ -287,8 +285,7 @@ int	ft_putnbr_f(char *s, va_list *p)
 			diff =  diff - 1;
 		}
 		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
-		if (arg != 0)
-			ft_putnbr(arg);
+		ft_putnbr(arg);
 	}
 	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;

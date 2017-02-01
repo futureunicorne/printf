@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 18:58:23 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/01 19:43:36 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,14 +216,15 @@ int	ft_puthexa_f(char *s, va_list *p)
 	diff = ft_hexa_size(s, arg, check_type);
 	if (arg == 0)
 	{
-		if (ft_check_point(s))
+		if (!ft_check_point(s))
 			nb = 1;
 		else
 		{
 			nb = 0;
 			flag = 1;
 		}
-		diff =  diff - 1;
+		if (diff)
+			diff = diff -1 ;
 	}
 	val = ft_size_chain_hexa(s, nb, diff, arg);
 	if (flag == 0)
