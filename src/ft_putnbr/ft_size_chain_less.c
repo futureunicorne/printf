@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 09:36:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 11:34:31 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 17:00:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ static int	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, int diff)
 	return (0);
 }
 
-int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
+int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, ssize_t arg)
 {
 	t_siz siz;
 
 	ft_memset(&siz, 0, sizeof(t_siz));
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
-	if ((!ft_check_point(s)) && !ft_putplus_nbr_bis_maj(s, arg)
+	if ((!ft_check_point(s)) && !ft_putplus_nbr_bis(s, arg)
 	&& (t_arg > siz.nbr || ft_check_zero(s)))
 	{
 		ft_putchar('-');
@@ -88,7 +88,7 @@ int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 		}
 		else if (siz.i >= siz.ecart)
 		{
-			if (!siz.flag  && (!ft_putplus_nbr_bis_maj(s, arg))
+			if (!siz.flag  && (!ft_putplus_nbr_bis(s, arg))
 			&& siz.nbr_prec < siz.nbr && siz.nbr_prec)
 			{
 				ft_putchar('-');
@@ -100,7 +100,7 @@ int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 		}
 		siz.i++;
 	}
-	if (!siz.flag && (!ft_putplus_nbr_bis_maj(s, arg)))
+	if (!siz.flag && (!ft_putplus_nbr_bis(s, arg)))
 	{
 		ft_putchar('-');
 		siz.val++;

@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:57:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/26 15:23:45 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 17:01:30 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putplus_nbr_bis(char *s, int arg)
+int	ft_putplus_nbr_bis(char *s, ssize_t arg)
 {
 	int i;
 	int flag;
@@ -23,8 +23,6 @@ int	ft_putplus_nbr_bis(char *s, int arg)
 	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
 		i++;
 	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
-	if (((long)arg > 2147483647 || (long)arg < 0) && flag == 3)
-		return (0);
 	if (arg >= 0 && (flag == 3 || flag == 8))
 		return (1);
 	return (0);
