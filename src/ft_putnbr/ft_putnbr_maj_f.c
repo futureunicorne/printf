@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 21:29:25 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 11:40:58 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,21 +139,33 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 	arg = va_arg(*p, long long);
 	nb = ft_count_nb_long((ssize_t)arg);
 	diff = ft_nbr_size(s, arg);
-	if (!ft_putplus_nbr_bis_maj(s, arg))
+	if (!ft_putplus_nbr_bis(s, arg))
 	{
-		nb = ft_count_num(arg);
+		nb = ft_count_num_2(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
-		ft_putnbr_maj_less(arg);
+		if (arg != 0)
+			ft_putnbr_maj_less(arg);
+		val += ft_size_chain_nbr_plus_bis(s, nb, diff);
 	}
 	else
 	{
 		nb = ft_count_num(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
 		ft_putnbr_maj(arg);
+		val += ft_size_chain_nbr_plus(s, nb, diff);
 	}
-	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val + nb);
+	return (val);
 }
 
 int	ft_putnbr_j(char *s, va_list *p)
@@ -169,18 +181,31 @@ int	ft_putnbr_j(char *s, va_list *p)
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
 		nb = ft_count_num_2(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
-		ft_putnbr_less(arg);
+		if (arg != 0)
+			ft_putnbr_less(arg);
+		val += ft_size_chain_nbr_plus_bis(s, nb, diff);
+
 	}
 	else
 	{
 		nb = ft_count_num(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
 		ft_putnbr_max(arg);
+		val += ft_size_chain_nbr_plus(s, nb, diff);
 	}
-	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val + nb);
+	return (val);
 }
 
 int	ft_putnbr_z(char *s, va_list *p)
@@ -192,22 +217,34 @@ int	ft_putnbr_z(char *s, va_list *p)
 
 	diff = 0;
 	arg = va_arg(*p, size_t);
-	diff = ft_nbr_size(s, arg);
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
 		nb = ft_count_num_2(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
-		ft_putnbr_less(arg);
+		if (arg != 0)
+			ft_putnbr_less(arg);
+		val += ft_size_chain_nbr_plus_bis(s, nb, diff);
+
 	}
 	else
 	{
 		nb = ft_count_num(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
 		ft_putnbr_size(arg);
+		val += ft_size_chain_nbr_plus(s, nb, diff);
 	}
-	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val + nb);
+	return (val);
 }
 
 int	ft_putnbr_h(char *s, va_list *p)
@@ -223,18 +260,31 @@ int	ft_putnbr_h(char *s, va_list *p)
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
 		nb = ft_count_num_2(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
-		ft_putnbr_less(arg);
+		if (arg != 0)
+			ft_putnbr_less(arg);
+		val += ft_size_chain_nbr_plus_bis(s, nb, diff);
+
 	}
 	else
 	{
 		nb = ft_count_num(arg);
+		if (arg == 0)
+		{
+			nb = 1;
+			diff =  diff - 1;
+		}
 		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
 		ft_putnbr_short(arg);
+		val += ft_size_chain_nbr_plus(s, nb, diff);
 	}
-	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
-	return (val + nb);
+	return (val);
 }
 
 
@@ -275,6 +325,8 @@ int	ft_putnbr_f(char *s, va_list *p)
 		val = ft_size_chain_nbr_less(s, nb, diff, (size_t)arg);
 		if (arg != 0)
 			ft_putnbr_less(arg);
+		val += ft_size_chain_nbr_plus_bis(s, nb, diff);
+
 	}
 	else
 	{
@@ -286,8 +338,8 @@ int	ft_putnbr_f(char *s, va_list *p)
 		}
 		val = ft_size_chain_nbr(s, nb, diff, (size_t)arg);
 		ft_putnbr(arg);
+		val += ft_size_chain_nbr_plus(s, nb, diff);
 	}
-	val += ft_size_chain_nbr_plus(s, nb, diff);
 	val += nb;
 	return (val);
 }

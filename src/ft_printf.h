@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 18:48:51 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 11:28:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,8 +140,7 @@ int 	check_ptr2(char c);
 int		check_ptr_bis2(char c);
 int		ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff);
 int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg);
-
-
+int		ft_size_chain_nbr_plus_bis(char *s, int t_arg, int diff);
 
 
 typedef struct	s_pos

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 09:36:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 21:02:37 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 11:34:31 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ static int	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, int diff)
 	if (ft_check_zero(s) == 0)
 		siz->d = ' ';
 	if (!siz->nbr_prec)
-		siz->len = siz->nbr - t_arg - diff;
+	{
+		siz->len = siz->nbr - t_arg - 1;
+	}
 	else if (!siz->nbr)
 	{
 		siz->len = siz->nbr_prec - t_arg + 1;
@@ -68,7 +70,14 @@ int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 	//	siz.val++;
 	//}
 	if (ft_check_less(s) && (!ft_check_point(s)))
+	{
+		if (siz.flag == 0)
+		{
+			ft_putchar('-');
+			siz.val++;
+		}
 		return (siz.val);
+	}
 	ft_size_chain_nbr_bis(&siz, s, t_arg, diff);
 	while (siz.i < siz.len)
 	{
@@ -80,7 +89,7 @@ int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 		else if (siz.i >= siz.ecart)
 		{
 			if (!siz.flag  && (!ft_putplus_nbr_bis_maj(s, arg))
-			 && siz.nbr_prec < siz.nbr && siz.nbr_prec)
+			&& siz.nbr_prec < siz.nbr && siz.nbr_prec)
 			{
 				ft_putchar('-');
 				siz.val++;
@@ -96,6 +105,30 @@ int		ft_size_chain_nbr_less(char *s, int t_arg, int diff, int arg)
 		ft_putchar('-');
 		siz.val++;
 		siz.flag = 1;
+	}
+	return (siz.val);
+}
+
+int	ft_size_chain_nbr_plus_bis(char *s, int t_arg, int diff)
+{
+	t_siz siz;
+
+	ft_memset(&siz, 0, sizeof(t_siz));
+	siz.nbr = ft_record_chain(s);
+	siz.nbr_prec = ft_record_prec(s);
+	if (ft_check_less(s) == 0 && siz.nbr_prec <= t_arg)
+		return (0);
+	siz.i = 0;
+	if (t_arg > siz.nbr)
+		return (0);
+	siz.len = siz.nbr - t_arg - 1 - diff;
+	if (ft_check_space(s) == 1 && siz.nbr && ft_check_more(s) == 0)
+		siz.len -= 1;
+	while (siz.i < siz.len)
+	{
+		ft_putchar(' ');
+		siz.val++;
+		siz.i++;
 	}
 	return (siz.val);
 }
