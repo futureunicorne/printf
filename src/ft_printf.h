@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 18:09:57 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 18:24:45 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ int		check_ptr_bis2(char c);
 int		ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff);
 int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg);
 int		ft_size_chain_nbr_plus_bis(char *s, int t_arg, int diff);
-int		ft_check_letter(char *s);
+int		ft_check_letter(char *s, char c);
 void	ft_putnbr_short2(signed char n);
 void	ft_putnbr_short(short int n);
 void	ft_putnbr_max(intmax_t n);

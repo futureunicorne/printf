@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 18:09:51 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:23:37 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	ft_putnbr_ll(char *s, va_list *p)
 	ptr.diff = ft_nbr_size(s, arg);
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
-		ptr.nb = ft_count_num_2(arg);
+		if (arg < -9223372036854775807)
+			ptr.nb = ft_count_num(arg);
+		else
+			ptr.nb = ft_count_num_2(arg);
 		ptr.val = ft_size_chain_nbr_less(s, ptr.nb, ptr.diff, arg);
 		ft_putnbr_long2(arg);
 		ptr.val += ft_size_chain_nbr_plus_bis(s, ptr.nb, ptr.diff);
@@ -43,7 +46,7 @@ int	ft_putnbr_maj_f(char *s, va_list *p)
 	ssize_t arg;
 	t_ptr ptr;
 
-	if (ft_check_letter(s))
+	if (ft_check_letter(s, 'l'))
 	{
 		ptr.val = ft_putnbr_ll(s, p);
 		return (ptr.val);
@@ -79,7 +82,10 @@ int	ft_putnbr_j(char *s, va_list *p)
 	ptr.diff = ft_nbr_size(s, arg);
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
-		ptr.nb = ft_count_num_2(arg);
+		if (arg < -9223372036854775807)
+			ptr.nb = ft_count_num(arg);
+		else
+			ptr.nb = ft_count_num_2(arg);
 		ptr.val = ft_size_chain_nbr_less(s, ptr.nb, ptr.diff, arg);
 		ft_putnbr_max(arg);
 		ptr.val += ft_size_chain_nbr_plus_bis(s, ptr.nb, ptr.diff);
@@ -152,12 +158,11 @@ int	ft_putnbr_h(char *s, va_list *p)
 	short arg;
 	t_ptr ptr;
 
-	if (ft_check_letter(s))
+	if (ft_check_letter(s, 'h'))
 	{
 		ptr.val = ft_putnbr_hh(s, p);
 		return (ptr.val);
 	}
-	printf("oui\n");
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	arg = va_arg(*p, signed);
 	ptr.diff = ft_nbr_size(s, arg);
@@ -198,6 +203,7 @@ int	ft_putnbr_f(char *s, va_list *p)
 		return (ptr.val);
 	}
 	arg = va_arg(*p, int);
+	ptr.diff = ft_nbr_size(s, arg);
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
 		ptr.nb = ft_count_num_2(arg);

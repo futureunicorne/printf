@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:07:07 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 18:09:54 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:06:45 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,12 @@ void	ft_putnbr_short(short int n)
 
 void	ft_putnbr_max(intmax_t n)
 {
-	intmax_t nb;
+	size_t nb;
 
 	nb = n;
-	if (nb < 0)
-	{
-		ft_putchar('-');
+	if (!nb)
 		nb = nb * (-1);
-	}
-	if (nb >= 0 && nb <= 9)
+	if (nb <= 9)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{
@@ -99,7 +96,7 @@ void	ft_putnbr_long2(long long n)
 	long long nb;
 	nb = n;
 	if ((long long)nb < -9223372036854775807)
-		ft_putstr("-9223372036854775808");
+		ft_putstr("9223372036854775808");
 	else
 	{
 		if (nb < 0)
