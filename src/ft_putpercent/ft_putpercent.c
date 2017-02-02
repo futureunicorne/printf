@@ -6,16 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 15:58:18 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 15:18:48 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:43:47 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void ft_putpercent(char *str)
-{
-	ft_putchar('%');
-}
+
 
 int	ft_putpercent_f(char *s, va_list *p)
 {
@@ -24,7 +21,6 @@ int	ft_putpercent_f(char *s, va_list *p)
 	int val;
 	int diff;
 	int	check_type;
-
 
 	val = 0;
 	diff = 0;

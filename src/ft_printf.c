@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 18:40:27 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 21:08:17 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(char *s, va_l
 		{
 			spec = ft_return_chain(s + pos->i);
 			pos->val = pos->val + ptr_func[ft_check_spec(spec)](spec, ap);
-
 			if (ft_check_ecart(s + pos->i + 1) > 0)
 				pos->i = pos->i + ft_check_ecart(s + pos->i + 1);
 			if (s[pos->i + 2] == 'l')

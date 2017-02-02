@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 13:16:23 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 21:14:05 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,5 @@ int	ft_putstr_maj_f(char *s, va_list *p)
 	ft_handle_str(s, (void*)arg, check_type);
 	val = val + ft_size_chain_str_maj(s, nb, diff, arg);
 	val = val + ft_size_chain_str_plus_maj(s, nb, diff, arg);
-	return (val);
+	return (val + nb);
 }

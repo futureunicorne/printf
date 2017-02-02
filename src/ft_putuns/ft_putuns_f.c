@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 11:02:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 14:40:08 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 21:22:23 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,14 +166,14 @@ int		ft_putuns_f(char *s, va_list *p)
 	if (ft_check_long(s))
 	{
 		if (ft_check_long(s) == 'l')
-			ft_putuns_maj_f(s, p);
+			val = ft_putuns_maj_f(s, p);
 		else if (ft_check_long(s) == 'h')
-			ft_putuns_h(s, p);
+			val = ft_putuns_h(s, p);
 		else if (ft_check_long(s) == 'j')
-			ft_putuns_j(s, p);
+			val = ft_putuns_j(s, p);
 		else if (ft_check_long(s) == 'z')
-			ft_putuns_z(s, p);
-		return (0);
+			val = ft_putuns_z(s, p);
+		return (val);
 	}
 	arg = va_arg(*p, unsigned);
 	nb = ft_count_num(arg);

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 18:08:48 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:56:29 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ int	ft_puthexa_maj_l(char *s, va_list *p)
 	check_type = 1;
 
 	arg = va_arg(*p, unsigned long long);
-	nb = ft_strhlen((int)arg);
+	nb = ft_strhlen(arg);
 	diff = ft_hexa_size(s, arg, check_type);
 	if (arg == 0)
 	{

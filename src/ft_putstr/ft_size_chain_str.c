@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:05:20 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 13:10:58 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/02 21:17:27 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	ft_size_chain_str(char *s, int t_arg, int diff, char *arg)
 		siz.i++;
 		siz.val++;
 	}
-	if (ft_check_point(s) && arg != NULL)
+	if (ft_check_point(s) && arg != NULL && siz.ecart)
 		siz.val = siz.val + ft_putnstr(arg, siz.ecart);
 	else
 		siz.val = siz.val + ft_putstr1(arg);
@@ -116,8 +116,8 @@ int	ft_size_chain_str_maj(char *s, int t_arg, int diff, wchar_t *arg)
 	if (ft_check_point(s) && arg != NULL)
 		siz.val = siz.val + ft_putnstr_maj(arg, siz.ecart);
 	else
-		siz.val = siz.val + ft_putstr_maj(arg);
-	return (siz.val);
+		ft_putstr_maj(arg);
+	return (0);
 }
 
 int	ft_size_chain_str_plus(char *s, int t_arg, int diff, char *arg)
