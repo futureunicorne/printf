@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/03 14:15:37 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/03 16:35:43 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	ft_size_chain_nbr_less_bis1(t_siz *siz, char *arg, int t_arg, int diff)
 				siz->len = siz->nbr - t_arg - diff;
 			if (siz->nbr_prec > t_arg)
 				siz->len = siz->nbr - siz->nbr_prec- diff;
+
 		}
 		else if (siz->nbr < siz->nbr_prec)
 		{
