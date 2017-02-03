@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 18:24:45 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/03 14:46:56 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int 	ft_nbr_size(char *s, int arg);
 void	ft_putnbr_maj(long long n);
 int		ft_putnbr_maj_f(char *s, va_list *p);
 int		ft_putnbr_f(char *s, va_list *p);
-int		ft_size_chain_nbr(char *s, int t_arg, int diff, int arg);
+int		ft_size_chain_nbr(char *s, int t_arg, int diff, ssize_t arg);
 int		ft_size_chain_nbr_plus(char *s, int t_arg, int diff);
 int 	ft_handle_nbr(char *s, int arg, int check_type);
 int		ft_handle_nbr_maj(char *s, int long arg, int check_type);
@@ -185,6 +185,7 @@ typedef struct	s_ptr
 	int 		nb;
 	int 		val;
 	int 		diff;
+	int			flag;
 }				t_ptr;
 
 

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 21:08:17 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/03 14:13:27 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	ft_printf(char *str, ...)
 {
 	t_pos pos;
 	int (*ptr_func[15])(char*, va_list*);
+	//const int (*ptr_func[15])(char*, va_list*) = {&ft};
+
 	va_list ap;
 
 	ft_memset(&pos, 0, sizeof(t_pos));

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 22:29:53 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/03 14:41:39 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,14 @@ int	ft_size_chain_oct(char *s, int t_arg, int diff, int arg)
 	ft_memset(&siz, 0, sizeof(t_siz));
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
-	if (ft_check_dieses(s) == 1 && arg != 0 && ((!(siz.nbr > siz.nbr_prec)) ||
+	if (ft_check_dieses(s) == 1 && ((!(siz.nbr > siz.nbr_prec)) ||
 	(ft_check_zero(s) && siz.nbr && (!siz.nbr_prec))))
 	{
 		ft_putchar('0');
 		siz.flag = 1;
 		siz.val++;
 	}
-	if (ft_check_less(s) && (!(siz.nbr > t_arg && siz.nbr > siz.nbr_prec)))
+	if (ft_check_less(s) && siz.nbr_prec <= t_arg && arg != 0)
 	{
 		if (ft_check_dieses(s) && !siz.flag && arg != 0)
 		{
@@ -108,7 +108,7 @@ int	ft_size_chain_oct(char *s, int t_arg, int diff, int arg)
 		}
 		return (siz.val);
 	}
-	if (ft_check_point(s) && siz.nbr > t_arg && siz.nbr > siz.nbr_prec)
+	if (ft_check_point(s) && siz.nbr > t_arg && siz.nbr > siz.nbr_prec && siz.nbr_prec)
 		siz.nbr = 0;
 	ft_size_chain_oct_bis(&siz, s, t_arg, diff);
 	ft_size_chain_oct_bis1(&siz, s, t_arg, diff);
@@ -128,7 +128,7 @@ int	ft_size_chain_oct_plus(char *s, int t_arg, int diff)
 	ft_memset(&siz, 0, sizeof(t_siz));
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
-	if (!ft_check_less(s) && ((siz.nbr > t_arg && siz.nbr > siz.nbr_prec)))
+	if (!ft_check_less(s))
 		return (0);
 	if (siz.nbr_prec)
 		siz.len = siz.nbr - siz.nbr_prec - diff;

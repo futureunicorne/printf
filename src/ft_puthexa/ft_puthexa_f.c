@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:24:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 19:56:44 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/03 13:50:52 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ int	ft_puthexa_l(char *s, va_list *p)
 	int					diff;
 	int					check_type;
 	check_type = 1;
-	printf("oui\n" );
 	arg = va_arg(*p, unsigned long long);
 	nb = ft_strhlen((unsigned long long)arg);
 	diff = ft_hexa_size(s, arg, check_type);
