@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/03 17:25:01 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/03 18:14:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_size_chain_nbr_bis2(t_siz *siz, char *arg, int t_arg, int diff)
 			if (siz->nbr_prec < t_arg)
 				siz->len = siz->nbr - t_arg - diff;
 			if (siz->nbr_prec > t_arg)
-				siz->len = siz->nbr - siz->nbr_prec - diff;
+				siz->len = siz->nbr - siz->nbr_prec;
 		}
 		else if (siz->nbr < siz->nbr_prec)
 		{
@@ -87,8 +87,8 @@ void	ft_size_chain_nbr_bis3(t_siz *siz, char *s, ssize_t arg)
 
 void	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, ssize_t arg)
 {
-	if (ft_check_more(s) && ((!ft_check_point(s) && ft_putplus_nbr_bis(s, arg)
-	&& (t_arg > siz->nbr || ft_check_zero(s))) || (siz->nbr_prec < t_arg)))
+	if (ft_check_more(s) && ft_putplus_nbr_bis(s, arg)
+	&& ((siz->nbr <= t_arg || siz->nbr_prec <= t_arg) || (ft_check_less(s) && (siz->nbr > t_arg || siz->nbr_prec > t_arg))))
 	{
 		ft_putchar('+');
 		siz->val++;
@@ -123,6 +123,8 @@ int	ft_size_chain_nbr(char *s, int t_arg, int diff, ssize_t arg)
 		siz.nbr = 0;
 	ft_size_chain_nbr_bis1(&siz, s, t_arg, diff);
 	ft_size_chain_nbr_bis2(&siz, s, t_arg, diff);
+	if (siz.nbr > siz.nbr_prec && siz.nbr_prec > t_arg && ft_check_more(s))
+		siz.len = siz.nbr - siz.nbr_prec - diff;
 	ft_size_chain_nbr_bis3(&siz, s, arg);
 	if (!siz.flag && ft_check_more(s) && ft_putplus_nbr_bis(s, arg))
 	{
