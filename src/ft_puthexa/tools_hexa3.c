@@ -1,36 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handle_uns.c                                    :+:      :+:    :+:   */
+/*   tools_hexa3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/23 17:17:50 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 10:53:51 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/02/04 16:59:22 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/02/04 17:41:34 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-int ft_handle_uns(char *s, int check_type)
-{
-   int i;
-   t_pos pos;
-
-   i = 0;
-   ft_memset(&pos, 0, sizeof(t_pos));
-   while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
-   {
-	   if (s[i] == '-' && pos.flag2 == 0)
-	   {
-		   pos.flag2 = 1;
-		   pos.flag = 1;
-	   }
-	   else if (s[i] == ' ')
-		   pos.auth = 1;
-	   else if (s[i] == '0')
-		   pos.flag_zero = 1;
-	   i++;
-   }
-   return (0);
-}

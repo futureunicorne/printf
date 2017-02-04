@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 13:48:34 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 15:44:08 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,16 @@ void	ft_putchar_maj(wchar_t c)
 int	ft_putchar_maj_f(char *s, va_list *p)
 {
 	wchar_t arg;
-	int		nb;
-	int		diff;
-	int		val;
-	int		check_type;
+	t_ptr 	ptr;
 
-	val = 0;
+	ft_memset(&ptr, 0, sizeof(t_ptr));
 	arg = va_arg(*p, wchar_t);
-	nb = ft_strwclen(arg);
-	check_type = 1;
-	diff = ft_char_size(s, check_type);
-	ft_handle_char(s, check_type);
-	val = val + ft_size_chain_char(s, nb, diff);
+	ptr.nb = ft_strwclen(arg);
+	ptr.check_type = 1;
+	ptr.diff = ft_char_size(s, ptr.check_type);
+	ft_handle_char(s, ptr.check_type);
+	ptr.val = ptr.val + ft_size_chain_char(s, ptr.nb, ptr.diff);
 	ft_putchar_maj(arg);
-	val = val + ft_size_chain_char_plus(s, nb, diff);
-	return (val + nb);
+	ptr.val = ptr.val + ft_size_chain_char_plus(s, ptr.nb, ptr.diff);
+	return (ptr.val + ptr.nb);
 }

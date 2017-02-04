@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:21:49 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 21:22:24 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 15:12:59 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,20 @@ void	ft_putuns_maj(unsigned long long n)
 int ft_putuns_maj_f(char *s, va_list *p)
 {
 	unsigned long long	arg;
-	int					nb;
-	int 				val;
-	int					diff;
-	int				check_type;
+	t_ptr 				ptr;
 
-	nb = 0;
-	diff = 0;
-	val  = 0;
-	check_type = 1;
+	ft_memset(&ptr, 0, sizeof(t_ptr));
+	ptr.check_type = 1;
 	arg = va_arg(*p, unsigned long long);
-	nb = ft_count_num(arg);
-	diff = ft_uns_size(s, check_type);
+	ptr.nb = ft_count_num(arg);
+	ptr.diff = ft_uns_size(s, ptr.check_type);
 	if (arg == 0)
 	{
-		nb = 1;
-		diff =  diff - 1;
+		ptr.nb = 1;
+		ptr.diff =  ptr.diff - 1;
 	}
-	val = val + ft_size_chain_uns(s, nb, diff);
+	ptr.val = ptr.val + ft_size_chain_uns(s, ptr.nb, ptr.diff);
 	ft_putuns_maj(arg);
-	val = val + ft_size_chain_uns_plus(s, nb, diff);
-	return (val + nb);
+	ptr.val = ptr.val + ft_size_chain_uns_plus(s, ptr.nb, ptr.diff);
+	return (ptr.val + ptr.nb);
 }

@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/02/03 19:42:29 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/02/04 17:49:30 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,27 +27,31 @@ SRCS = 	ft_putadd/ft_add_size.c				\
 		ft_puthexa/ft_puthexa_maj_f.c		\
 		ft_puthexa/ft_size_chain_hexa.c		\
 		ft_puthexa/ft_size_chain_hexa_maj.c \
+		ft_puthexa/tools_hexa.c 			\
+		ft_puthexa/tools_hexa2.c 			\
 		ft_putnbr/ft_nbr_size.c				\
 		ft_putnbr/ft_nbr_size_maj.c			\
 		ft_putnbr/ft_putnbr_maj_f.c			\
 		ft_putnbr/ft_size_chain_nbr.c		\
 		ft_putnbr/ft_size_chain_less.c 		\
-		ft_putoctal/ft_handle_oct.c			\
 		ft_putoctal/ft_oct_size.c			\
 		ft_putoctal/ft_putoctal_f.c			\
 		ft_putoctal/ft_putoctal_maj_f.c		\
 		ft_putoctal/ft_size_chain_oct.c		\
+		ft_putoctal/tools_oct.c 			\
+		ft_putoctal/tools_oct2.c 			\
 		ft_putpercent/ft_putpercent.c		\
 		ft_putstr/ft_handle_str.c			\
 		ft_putstr/ft_putstr_f.c				\
 		ft_putstr/ft_putstr_maj_f.c			\
 		ft_putstr/ft_size_chain_str.c		\
 		ft_putstr/ft_str_size.c				\
-		ft_putuns/ft_handle_uns.c			\
 		ft_putuns/ft_putuns_f.c				\
 		ft_putuns/ft_putuns_maj_f.c			\
 		ft_putuns/ft_size_chain_uns.c		\
 		ft_putuns/ft_uns_size.c				\
+		ft_putuns/tools_uns.c				\
+		ft_putuns/tools_uns2.c				\
 		ft_check_spec.c						\
 		ft_check_tools.c					\
 		ft_check_tools2.c					\

@@ -6,12 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/03 18:14:38 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 17:28:49 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
 
 void	ft_size_chain_nbr_bis1(t_siz *siz, char *arg, int t_arg, int diff)
 {
@@ -101,7 +100,7 @@ void	ft_size_chain_nbr_bis(t_siz *siz, char *s, int t_arg, ssize_t arg)
 		siz->val++;
 		siz->flag = 1;
 	}
-	if (ft_check_space(s) && (!ft_check_more(s)) && ft_putplus_nbr_bis(s, arg) && siz->nbr <= t_arg)
+	if (ft_check_space(s) && (!ft_check_more(s)) && ft_putplus_nbr_bis(s, arg) && (siz->nbr <= t_arg || arg == 0))
 	{
 		ft_putchar(' ');
 		siz->val++;

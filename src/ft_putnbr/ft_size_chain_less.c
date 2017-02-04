@@ -6,12 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/03 16:35:43 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 17:28:43 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
 
 void	ft_size_chain_nbr_less_bis(t_siz *siz, char *arg, int t_arg, int diff)
 {

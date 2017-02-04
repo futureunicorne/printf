@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 13:16:12 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 18:04:39 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,18 @@ int	ft_putstr_f(char *s, va_list *p)
 {
 
 	char	*arg;
-	int		nb;
-	int		val;
-	int		diff;
-	int		check_type;
+	t_ptr 	ptr;
 
-	nb = 0;
-	diff = 0;
-	check_type = 1;
-	val = 0;
+	ft_memset(&ptr, 0, sizeof(t_ptr));
+	ptr.check_type = 1;
 	arg = va_arg(*p, char*);
 	if (arg != NULL)
-		nb = ft_strlen(arg);
+		ptr.nb = ft_strlen(arg);
 	else
-		nb = 6;
-	diff = ft_str_size(s,(void*)arg, check_type);
-	ft_handle_str(s, arg, check_type);
-	val = val + ft_size_chain_str(s, nb, diff, arg);
-	val = val + ft_size_chain_str_plus(s, nb, diff, arg);
-	return (val);
+		ptr.nb = 6;
+	ptr.diff = ft_str_size(s,(void*)arg, ptr.check_type);
+	ft_handle_str(s, arg, ptr.check_type);
+	ptr.val = ptr.val + ft_size_chain_str(s, ptr.nb, ptr.diff, arg);
+	ptr.val = ptr.val + ft_size_chain_str_plus(s, ptr.nb, ptr.diff, arg);
+	return (ptr.val);
 }

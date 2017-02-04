@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:33:46 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/01 13:29:50 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 17:56:44 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,27 @@ int	ft_size_chain_add_bis(t_siz *siz, char *arg, int t_arg, int diff)
 	}
 	return (0);
 }
-
+void	ft_size_chain_add_bis2(t_siz *siz)
+{
+	while (siz->i < siz->len)
+	{
+		ft_putchar(' ');
+		siz->i++;
+		siz->val++;
+	}
+	if (!siz->flag)
+	{
+		ft_putstr("0x");
+		siz->val = siz->val + 2;
+	}
+	siz->i = 0;
+	while (siz->i < siz->ecart)
+	{
+		ft_putchar('0');
+		siz->i++;
+		siz->val++;
+	}
+}
 int	ft_size_chain_add(char *s, int t_arg, int diff)
 {
 	t_siz siz;
@@ -101,27 +121,10 @@ int	ft_size_chain_add(char *s, int t_arg, int diff)
 			ft_putstr("0x");
 			siz.val = siz.val + 2;
 		}
-		return (0);
+		return (siz.val);
 	}
 	ft_size_chain_add_bis1(&siz, s, t_arg, diff);
 	ft_size_chain_add_bis(&siz, s, t_arg, diff);
-	while (siz.i < siz.len)
-	{
-		ft_putchar(' ');
-		siz.i++;
-		siz.val++;
-	}
-	if (!siz.flag)
-	{
-		ft_putstr("0x");
-		siz.val = siz.val + 2;
-	}
-	siz.i = 0;
-	while (siz.i < siz.ecart)
-	{
-		ft_putchar('0');
-		siz.i++;
-		siz.val++;
-	}
+	ft_size_chain_add_bis2(&siz);
 	return (siz.val);
 }

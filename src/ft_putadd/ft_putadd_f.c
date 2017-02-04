@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 21:03:13 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 15:36:48 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,24 @@ void	ft_putadd(int long nb)
 
 int	ft_putadd_f(char *s, va_list *p)
 {
-	int long	arg;
-	int	long	nb;
-	int			val;
-	int			diff;
-	int			check_type;
+	int long		arg;
+	t_ptr 			ptr;
 
-	val = 0;
+	ft_memset(&ptr, 0, sizeof(t_ptr));
 	if (ft_check_long(s))
 	{
 		ft_putstr("0x");
-		val = val + ft_puthexa_l(s, p);
-		return (val + 2);
+		ptr.val = ptr.val + ft_puthexa_l(s, p);
+		return (ptr.val + 2);
 	}
 	arg = va_arg(*p, int long);
-	nb = ft_nbr_add_len((int long)&arg);
+	ptr.nb = ft_nbr_add_len((int long)&arg);
 	if (arg == 0)
-		nb = 1;
-	diff = ft_add_size(s, arg, check_type);
-	ft_handle_add(s, arg, check_type);
-	val = val + ft_size_chain_add(s, nb, diff);
+		ptr.nb = 1;
+	ptr.diff = ft_add_size(s, arg, ptr.check_type);
+	ft_handle_add(s, arg, ptr.check_type);
+	ptr.val = ptr.val + ft_size_chain_add(s, ptr.nb, ptr.diff);
 	ft_putadd(arg);
-	val = val + ft_size_chain_add_plus(s, nb, diff);
-	return (val + nb);
+	ptr.val = ptr.val + ft_size_chain_add_plus(s, ptr.nb, ptr.diff);
+	return (ptr.val + ptr.nb);
 }

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/03 16:31:06 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 14:07:29 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,9 @@ int	ft_size_chain_oct(char *s, int t_arg, int diff, int arg)
 		}
 		return (siz.val);
 	}
-	if (ft_check_point(s) && siz.nbr > t_arg && siz.nbr > siz.nbr_prec && siz.nbr_prec)
+	if (ft_check_point(s) && siz.nbr > t_arg && siz.nbr > siz.nbr_prec && siz.nbr_prec && ft_check_less(s))
 		siz.nbr = 0;
+
 	ft_size_chain_oct_bis(&siz, s, t_arg, diff);
 	ft_size_chain_oct_bis1(&siz, s, t_arg, diff);
 	ft_size_chain_oct_bis2(&siz, s);

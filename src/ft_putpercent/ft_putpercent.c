@@ -6,28 +6,22 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 15:58:18 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 19:43:47 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 17:20:20 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-
-
 int	ft_putpercent_f(char *s, va_list *p)
 {
-	char *arg;
-	int nb;
-	int val;
-	int diff;
-	int	check_type;
+	char 	*arg;
+	t_ptr 	ptr;
 
-	val = 0;
-	diff = 0;
-	nb = 1;
+	ft_memset(&ptr, 0, sizeof(t_ptr));
+	ptr.nb = 1;
 	arg = "%";
-	diff = ft_str_size(s,(void*)arg, check_type);
-	val = val + ft_size_chain_str(s, nb, diff, arg);
-	val = val + ft_size_chain_str_plus(s, nb, diff, arg);
-	return (val);
+	ptr.diff = ft_str_size(s,(void*)arg, ptr.check_type);
+	ptr.val = ptr.val + ft_size_chain_str(s, ptr.nb, ptr.diff, arg);
+	ptr.val = ptr.val + ft_size_chain_str_plus(s, ptr.nb, ptr.diff, arg);
+	return (ptr.val);
 }
