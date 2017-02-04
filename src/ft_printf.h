@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 18:04:08 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 20:34:45 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ int		ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff);
 int		ft_size_chain_hexa(char *s, int t_arg, int diff, ssize_t arg);
 int		ft_size_chain_hexa_plus(char *s, int t_arg, int diff);
 void	ft_puthexa_long(unsigned long long nb);
-void	ft_puthexa_short(int nb);
+void	ft_puthexa_short(unsigned short nb);
 void	ft_puthexa_max(size_t nb);
 void	ft_puthexa_size(size_t nb);
 void	ft_puthexa(unsigned nb);
