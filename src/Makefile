@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/02/04 17:49:30 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/02/04 18:31:20 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,6 @@ SRCS = 	ft_putadd/ft_add_size.c				\
 		ft_putuns/ft_size_chain_uns.c		\
 		ft_putuns/ft_uns_size.c				\
 		ft_putuns/tools_uns.c				\
-		ft_putuns/tools_uns2.c				\
 		ft_check_spec.c						\
 		ft_check_tools.c					\
 		ft_check_tools2.c					\

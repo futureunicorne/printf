@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 18:02:02 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 18:25:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,26 @@ int	ft_putoctal_l(char *s, va_list *p)
 
 	return (ptr.val + ptr.nb);
 }
+int	ft_putoctal_0(char *s, int arg)
+{
+	t_ptr ptr;
+	ft_memset(&ptr, 0, sizeof(t_ptr));
+	ptr.nb = 1;
+	ptr.diff = ft_nbr_size(s, arg);
+	if (ft_check_point(s))
+	{
+		ptr.diff = ptr.diff - 1;
+		ptr.flag = 1;
+	}
+	ptr.val = ft_size_chain_oct(s, ptr.nb, ptr.diff, arg);
+	if (!ptr.flag)
+	{
+		ft_putoctal(arg);
+		ptr.val++;
+	}
+	ptr.val =  ptr.val  + ft_size_chain_oct_plus(s, ptr.nb, ptr.diff);
+	return (ptr.val);
+}
 
 int	ft_putoctal_f(char *s, va_list *p)
 {
@@ -126,21 +146,12 @@ int	ft_putoctal_f(char *s, va_list *p)
 		return (ptr.val);
 	}
 	arg = va_arg(*p, int long);
+	if (arg == 0)
+		return (ft_putoctal_0(s, arg));
 	ptr.nb = ft_nbr_octal_len(arg);
 	ptr.diff = ft_oct_size(s, ptr.check_type);
-	if (arg == 0)
-	{
-		if (!ft_check_point(s))
-		{
-			ptr.nb = 0;
-			ptr.flag = 1;
-		}
-		if (ptr.diff)
-			ptr.diff = ptr.diff -1;
-	}
 	ptr.val =  ptr.val  + ft_size_chain_oct(s, ptr.nb, ptr.diff, arg);
-	if (ptr.flag == 0)
-		ft_putoctal(arg);
+	ft_putoctal(arg);
 	ptr.val =  ptr.val  + ft_size_chain_oct_plus(s, ptr.nb, ptr.diff);
 	return (ptr.val + ptr.nb);
 }

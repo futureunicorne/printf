@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 17:10:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 15:33:01 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 19:00:23 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_putoctal_maj_f(char *s ,va_list *p)
 	if (ft_check_long(s))
 	{
 		if (ft_check_long(s) == 'l')
-			ptr.val = ft_putoctal_maj_f(s, p);
+			ptr.val = ft_putoctal_l(s, p);
 		else if (ft_check_long(s) == 'h')
 			ptr.val = ft_putoctal_h(s, p);
 		else if (ft_check_long(s) == 'j')
