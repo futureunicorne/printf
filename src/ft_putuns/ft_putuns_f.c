@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 11:02:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/02 21:22:23 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/04 08:17:09 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putuns(unsigned n)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
+		ft_putuns(nb / 10);
 		ft_putchar((nb % 10) + 48);
 	}
 }
@@ -35,21 +35,22 @@ void	ft_putuns_short(unsigned short n)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
+		ft_putuns_short(nb / 10);
 		ft_putchar((nb % 10) + 48);
 	}
 }
 
 void	ft_putuns_max(intmax_t n)
 {
- 	intmax_t nb;
+ 	size_t nb;
 
 	nb = n;
+
 	if (nb <= 9)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
+		ft_putuns_max(nb / 10);
 		ft_putchar((nb % 10) + 48);
 	}
 }
@@ -63,7 +64,7 @@ void	ft_putuns_size(size_t n)
 		ft_putchar(nb + 48);
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
+		ft_putuns_size(nb / 10);
 		ft_putchar((nb % 10) + 48);
 	}
 }
@@ -98,17 +99,17 @@ int		ft_putuns_h(char *s, va_list *p)
 
 int		ft_putuns_j(char *s, va_list *p)
 {
-	intmax_t	arg;
+	size_t	arg;
 	int			nb;
 	int			val;
 	int			diff;
 	int			check_type;
 
-
 	nb = 0;
 	diff = 0;
+	val = 0;
 	check_type = 1;
-	arg = va_arg(*p, intmax_t);
+	arg = va_arg(*p, size_t);
 	nb = ft_count_num(arg);
 	diff = ft_uns_size(s, check_type);
 	if (arg == 0)

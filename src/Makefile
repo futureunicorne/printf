@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/02/03 19:08:07 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/02/03 19:42:29 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ OPT2 = -o
 
 all: $(NAME)
 $(NAME):
-		make -C ../libft fclean && ../make -C libft
+		make -C ../libft fclean && make -C ../libft
 		$(CC) $(FLAGS) $(OPT1) $(SRCS)
 		@mkdir objets
 		@mv *.o objets

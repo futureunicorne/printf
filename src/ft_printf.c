@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/03 18:02:04 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/03 19:44:27 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ int	ft_printf(char *str, ...)
 		pos.i++;
 	}
   	va_end(ap);
+	printf("\nval = %d", pos.val);
 	return (pos.val);
 }
