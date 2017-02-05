@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/03 19:44:27 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/05 15:06:28 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ void	ft_resolve(char *s, t_pos *pos, va_list *ap, int(*ptr_func[])(char *s, va_l
 				pos->i += 2;
 			else
 				pos->i++;
+		}
+		else
+		{
+			ft_putchar('%');
+			pos->val++;
 		}
 	}
 	else

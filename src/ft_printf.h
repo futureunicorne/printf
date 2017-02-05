@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 20:34:45 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/05 23:16:24 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void	ft_putoctal_long(unsigned long long n);
 void	ft_putoctal_max(intmax_t n);
 void	ft_putoctal_size(size_t n);
 int		ft_putoctal_short2(unsigned char n);
-int		ft_putoctal_short(unsigned n);
+int		ft_putoctal_short(unsigned short n);
 int		ft_nbr_octal_len_maj(unsigned long long nb);
 int		ft_nbr_octal_len(size_t nb);
 void	ft_putoctal(unsigned n);
@@ -177,11 +177,12 @@ int		ft_size_chain_hexa(char *s, int t_arg, int diff, ssize_t arg);
 int		ft_size_chain_hexa_plus(char *s, int t_arg, int diff);
 void	ft_puthexa_long(unsigned long long nb);
 void	ft_puthexa_short(unsigned short nb);
+void	ft_puthexa_short2(unsigned char nb);
 void	ft_puthexa_max(size_t nb);
 void	ft_puthexa_size(size_t nb);
 void	ft_puthexa(unsigned nb);
 void	ft_puthexa_size_maj(size_t nb);
-void	ft_puthexa_short_maj(int nb);
+void	ft_puthexa_short_maj(unsigned short nb);
 void	ft_puthexa_max_maj(size_t nb);
 void	ft_puthexa_maj_long(unsigned long long n);
 void	ft_puthexa_maj(unsigned int n);
@@ -203,6 +204,14 @@ int		ft_putadd_f(char *s, va_list *p);
 int		ft_size_chain_add_plus(char *s, int t_arg, int diff);
 int		ft_size_chain_add(char *s, int t_arg, int diff);
 int		ft_putplus_nbr_bis(char *s, ssize_t arg);
-
+int		ft_putuns_0(char *s, int arg);
+int		ft_putoctal_0(char *s, int arg);
+int		ft_putnbr_0(char *s, int arg);
+int		ft_puthexa_0(char *s, int arg);
+int		ft_puthexa_0(char *s, int arg);
+int		ft_putadd_0(char *s, int arg);
+int		ft_puthexa_maj_0(char *s, int arg);
+int		ft_puthexa_maj_hh(char *s, va_list *p);
+void	ft_puthexa_short_maj2(unsigned char nb);
 
 #endif

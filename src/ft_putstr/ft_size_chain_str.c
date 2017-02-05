@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:05:20 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 14:23:11 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/05 23:52:45 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_size_chain_str_bis1(t_siz *siz, char *arg, int t_arg, int diff)
+void	ft_size_chain_str_bis1(t_siz *siz, char *s, int t_arg, int diff)
 {
 	if (!siz->nbr && siz->nbr_prec)
 	{
@@ -23,6 +23,8 @@ void	ft_size_chain_str_bis1(t_siz *siz, char *arg, int t_arg, int diff)
 	else if (!siz->nbr_prec && siz->nbr)
 	{
 		siz->len = siz->nbr - t_arg;
+		if (ft_check_point(s))
+			siz->len = siz->nbr;
 		siz->ecart = 0;
 	}
 }
@@ -68,7 +70,7 @@ int	ft_size_chain_str(char *s, int t_arg, int diff, char *arg)
 	siz.d = ' ';
 	if (ft_check_less(s))
 		return (0);
-	ft_size_chain_str_bis1(&siz, arg, t_arg, diff);
+	ft_size_chain_str_bis1(&siz, s, t_arg, diff);
 	ft_size_chain_str_bis(&siz, arg, t_arg, diff);
 	while (siz.i < siz.len)
 	{
@@ -78,6 +80,8 @@ int	ft_size_chain_str(char *s, int t_arg, int diff, char *arg)
 	}
 	if (ft_check_point(s) && arg != NULL && siz.ecart)
 		siz.val = siz.val + ft_putnstr(arg, siz.ecart);
+	else if (ft_check_point(s) && arg != NULL && !siz.nbr_prec)
+		return (siz.val);
 	else
 		siz.val = siz.val + ft_putstr1(arg);
 	return (siz.val);
@@ -106,6 +110,7 @@ int	ft_size_chain_str_maj(char *s, int t_arg, int diff, wchar_t *arg)
 	siz.d = ' ';
 	if (ft_check_less(s))
 		return (0);
+	ft_size_chain_str_bis1(&siz, s, t_arg, diff);
 	ft_size_chain_str_maj_bis(&siz, arg, t_arg, diff);
 	while (siz.i < siz.len)
 	{
@@ -115,6 +120,8 @@ int	ft_size_chain_str_maj(char *s, int t_arg, int diff, wchar_t *arg)
 	}
 	if (ft_check_point(s) && arg != NULL)
 		siz.val = siz.val + ft_putnstr_maj(arg, siz.ecart);
+	else if (ft_check_point(s) && arg != NULL && !siz.nbr_prec)
+		return (siz.val);
 	else
 		ft_putstr_maj(arg);
 	return (0);

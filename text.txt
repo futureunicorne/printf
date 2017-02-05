@@ -5,22 +5,7 @@ Legend: (.) Ok / (F) Fail / (S) Segfault / (B) Bus error / (T) Timeout / (A) Abo
 
 [ -------STARTING ALL UNIT TESTS------- ]
 
->>>> 05_percent_escape.spec.c ---- [FAIL] .....F.. [FAIL] percentSpaceZoo -> printf("% Zoooo")
->>>> 06_mix_sdp_percent.spec.c --- [FAIL] F. [FAIL] test_simple_mix -> printf("s: %s, p: %p, d:%d", "a string", &test_simple_mix, 42)
 >>>> 18_mix_all_previous.spec.c -- [FAIL] .F [FAIL] test_hard -> printf("%s%d%p%%%S%D%i%o%O%u%U%x%X%c%C","bonjour", 42, &c, L"ÊM-^ZM-^VÁM-^BM-^I", LONG_MAX, ...
->>>> 43_length_modif_hh.spec.c --- [FAIL] ................FFF.... [FAIL] test_hhx_max_plus -> printf("%hhx, %hhx", 0, UCHAR_MAX + 42)
->>>> 43_length_modif_j.spec.c ---- [FAIL] .......F..... [FAIL] test_jo_unsign_long_long_max -> printf("%jo, %jo", 0, ULLONG_MAX)
->>>> 50_min_width.spec.c --------- [FAIL] .........FFF [FAIL] invalidConvSpec_withMinWith -> printf("{%10R}")
->>>> 52_min_width_flag_zero.spec.c [FAIL] .......FFFF [FAIL] str_posMinWidth_zeroFlag -> printf("{%05s}", "abc")
->>>> 53_min_width_non_valid_conv.s [FAIL] F [FAIL] nonValidConv_negativeMinWidth -> printf("{%-15Z}", 123)
->>>> 60_flag_sharp.spec.c -------- [FAIL] .F......... [FAIL] test_octal_zero -> printf("%#o", 0)
->>>> 69_flag_mix.spec.c ---------- [FAIL] ....F...F [FAIL] zeroFlag_minusMinWidth -> printf("{%0-3d}", 0)
->>>> 70_precision_for_diu.spec.c - [FAIL] .............................F [FAIL] test_precision_u_zero_value -> printf("%.u, %.0u", 0, 0)
->>>> 71_precision_for_oOxX.spec.c  [FAIL] ............F.................F [FAIL] test_precision_o_up_zero_value -> printf("%.o, %.0O", 0, 0)
->>>> 72_precision_for_sS.spec.c -- [FAIL] ........FFFFFF [FAIL] test_precision_s_implicit_precision -> printf("%4.s", "42")
->>>> 74_precision_for_p.spec.c --- [FAIL] F.FFFF [FAIL] pNullPointer_zeroPrecision -> printf("%.0p, %.p", 0, 0)
->>>> 79_precision_mixed_with_flags [FAIL] ..F.FFF.FF [FAIL] test_precision_p_zero -> printf("%.p, %.0p", 0, 0)
->>>> 90_incomptbl_values_sdpi.spec [FAIL] ...F [FAIL] test_p_incompatible_flags -> printf("% p|%+p", 42, 42)
->>>> 92_incomptbl_values_oOxX.spec [FAIL] ..F.... [FAIL] test_octal_up_long_min -> printf("%O", LONG_MIN)
+
 
 >>>> Result: 24/48 test suites passed. 331/396 tests passed (dots).
