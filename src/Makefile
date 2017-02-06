@@ -6,7 +6,7 @@
 #    By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/24 11:53:06 by hel-hadi          #+#    #+#              #
-#    Updated: 2017/02/04 18:31:20 by hel-hadi         ###   ########.fr        #
+#    Updated: 2017/02/06 19:47:37 by hel-hadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ SRCS = 	ft_putadd/ft_add_size.c				\
 		ft_puthexa/ft_size_chain_hexa_maj.c \
 		ft_puthexa/tools_hexa.c 			\
 		ft_puthexa/tools_hexa2.c 			\
+		ft_puthexa/tools_hexa3.c 			\
+		ft_puthexa/tools_hexa4.c 			\
 		ft_putnbr/ft_nbr_size.c				\
 		ft_putnbr/ft_nbr_size_maj.c			\
 		ft_putnbr/ft_putnbr_maj_f.c			\
@@ -45,6 +47,7 @@ SRCS = 	ft_putadd/ft_add_size.c				\
 		ft_putstr/ft_putstr_f.c				\
 		ft_putstr/ft_putstr_maj_f.c			\
 		ft_putstr/ft_size_chain_str.c		\
+		ft_putstr/ft_size_chain_str_maj.c 	\
 		ft_putstr/ft_str_size.c				\
 		ft_putuns/ft_putuns_f.c				\
 		ft_putuns/ft_putuns_maj_f.c			\
@@ -57,6 +60,10 @@ SRCS = 	ft_putadd/ft_add_size.c				\
 		ft_check_tools3.c					\
 		ft_putnbr/tools_nbr.c  				\
 		ft_putnbr/tools_nbr2.c  			\
+		ft_putbin/ft_putbin_f.c				\
+		ft_putbin/ft_size_chain_bin.c 		\
+		ft_putnbr/ft_putnbr_f.c				\
+		ft_putnbr/ft_putnbr_f2.c   			\
 		ft_printf.c							\
 
 OBJ = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 13:37:05 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 15:04:26 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 16:01:22 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	check_ptr_bis2(char c)
 		return (13);
 	else if (c == '%')
 		return (14);
+	else if (c == 'b')
+		return (15);
 	return (0);
 }
 
@@ -72,6 +74,8 @@ int	check_ptr_bis(char c, char d, char e)
 		return (13);
 	else if (c == '%')
 		return (14);
+	else if (c == 'b')
+		return (15);
 	return (0);
 }
 
@@ -89,36 +93,8 @@ int	check_ptr(char c, char d, char e)
 		return (4);
 	else if (c == 'x')
 		return (5);
-	if (check_ptr_bis(c, d ,e))
-		return (check_ptr_bis(c, d ,e));
-	return (0);
-}
-
-char	*ft_return_chain(char *s)
-{
-	int i;
-	char *s1;
-
-	i = 1;
-	while (s[i] && (!check_ptr2(s[i])))
-		i++;
-	if (check_ptr(s[i], s[i + 1],s[i + 2]))
-	{
-		s1 = ft_strsub(s, 1, i);
-		return (s1);
-	}
-	return (NULL);
-}
-
-int	ft_check_spec(char *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
-		i++;
-	if (check_ptr(s[i], s[i + 1],s[i + 2]))
-		return (check_ptr(s[i], s[i + 1],s[i + 2]));
+	if (check_ptr_bis(c, d, e))
+		return (check_ptr_bis(c, d, e));
 	return (0);
 }
 
@@ -127,7 +103,7 @@ int	ft_check_ecart(char *s)
 	int i;
 
 	i = 0;
-	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
+	while (s[i] && check_ptr(s[i], s[i + 1], s[i + 2]) == 0)
 		i++;
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 17:46:13 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 15:43:43 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 19:50:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ void	ft_size_chain_hexa_maj_bis2(t_siz *siz, char *arg, int t_arg, int diff)
 	}
 }
 
-int	ft_size_chain_hexa_maj_bis(t_siz *siz, char *arg, int t_arg, int diff)
+int		ft_size_chain_hexa_maj_bis(t_siz *siz, char *arg, int t_arg, int diff)
 {
-
-	siz->ecart =  siz->nbr_prec - t_arg;
+	siz->ecart = siz->nbr_prec - t_arg;
 	if (siz->nbr && siz->nbr_prec)
 	{
 		if (siz->nbr > siz->nbr_prec)
@@ -39,15 +38,15 @@ int	ft_size_chain_hexa_maj_bis(t_siz *siz, char *arg, int t_arg, int diff)
 			if (siz->nbr_prec < t_arg)
 				siz->len = siz->nbr - t_arg - diff;
 			if (siz->nbr_prec > t_arg)
-				siz->len = siz->nbr - siz->nbr_prec- diff;
+				siz->len = siz->nbr - siz->nbr_prec - diff;
 		}
 		else if (siz->nbr < siz->nbr_prec)
 		{
 			if (t_arg > siz->nbr)
 				siz->len = siz->nbr - t_arg - diff;
 			if (t_arg < siz->nbr)
-				siz->len =  0;
-			}
+				siz->len = 0;
+		}
 		else if (siz->nbr == siz->nbr_prec)
 		{
 			if (siz->nbr > t_arg || siz->nbr_prec > t_arg)
@@ -85,7 +84,7 @@ void	ft_size_chain_hexa_maj_bis1(t_siz *siz, char *s, ssize_t arg)
 	}
 }
 
-int	ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
+int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 {
 	t_siz siz;
 
@@ -99,7 +98,8 @@ int	ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 		siz.flag = 1;
 		siz.val = siz.val + 2;
 	}
-	if (ft_check_less(s) && ((siz.nbr_prec <= t_arg && arg != 0) || (siz.nbr && !ft_check_point(s))))
+	if (ft_check_less(s) &&
+	((siz.nbr_prec <= t_arg && arg != 0) || (siz.nbr && !ft_check_point(s))))
 	{
 		if (ft_check_dieses(s) && !siz.flag)
 		{
@@ -120,7 +120,7 @@ int	ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 	return (siz.val);
 }
 
-int	ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff)
+int		ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff)
 {
 	t_siz siz;
 

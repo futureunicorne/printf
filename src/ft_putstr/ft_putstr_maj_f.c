@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 14:08:23 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 16:44:00 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_strwlen(wchar_t *s)
+int	ft_strwlen(wchar_t *s)
 {
 	int i;
 	int cpt;
@@ -69,7 +69,7 @@ int	ft_putnstr_maj(wchar_t *s, int n)
 	while (j < i)
 	{
 		ft_putchar_maj(s[j]);
-		j++;;
+		j++;
 	}
 	return (n);
 }
@@ -101,7 +101,7 @@ int	ft_cptnstr(wchar_t *s, int n)
 int	ft_putstr_maj_f(char *s, va_list *p)
 {
 	wchar_t *arg;
-	t_ptr 	ptr;
+	t_ptr	ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	ptr.check_type = 1;

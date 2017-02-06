@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:54:39 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/29 07:31:36 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 19:27:23 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	ft_putdieses_hexa(char *s)
 	int flag;
 
 	i = 0;
-	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
+	while (s[i] && check_ptr(s[i], s[i + 1], s[i + 2]) == 0)
 		i++;
-	flag = check_ptr(s[i], s[i + 1],s[i + 2]);
+	flag = check_ptr(s[i], s[i + 1], s[i + 2]);
 	if (flag == 5)
 		return (2);
 	else if (flag == 9)
@@ -28,14 +28,14 @@ int	ft_putdieses_hexa(char *s)
 	return (0);
 }
 
-int ft_hexa_size(char *s, int arg, int check_type)
+int	ft_hexa_size(char *s, int arg, int check_type)
 {
-	int i;
-	t_pos pos;
+	int		i;
+	t_pos	pos;
 
 	i = 0;
 	ft_memset(&pos, 0, sizeof(t_pos));
-	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
+	while (s[i] && check_ptr(s[i], s[i + 1], s[i + 2]) == 0)
 	{
 		if (s[i] == '#' && pos.flag3 == 0)
 		{

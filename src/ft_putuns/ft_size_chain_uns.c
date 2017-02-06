@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:07:29 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 13:54:17 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 16:39:43 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_size_chain_uns_bis(t_siz *siz, char *s, int t_arg, int diff)
 			siz->len = siz->nbr - t_arg;
 		else if (siz->nbr < siz->nbr_prec)
 			siz->len = siz->nbr_prec - t_arg;
-		siz->ecart =  siz->nbr - siz->nbr_prec -  diff;
+		siz->ecart = siz->nbr - siz->nbr_prec - diff;
 		siz->d = '0';
 		siz->e = ' ';
 	}
@@ -60,7 +60,7 @@ int	ft_size_chain_uns(char *s, int t_arg, int diff)
 		}
 		else if (siz.i >= siz.ecart)
 		{
-			siz .val++;
+			siz.val++;
 			ft_putchar(siz.d);
 		}
 		siz.i++;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putuns_maj_f.c                                  :+:      :+:    :+:   */
+/*   tools_hexa4.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/10 13:21:49 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 16:35:37 by hel-hadi         ###   ########.fr       */
+/*   Created: 2017/02/06 19:38:22 by hel-hadi          #+#    #+#             */
+/*   Updated: 2017/02/06 19:40:11 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_putuns_0(char *s, int arg)
+int	ft_puthexa_maj_0(char *s, int arg)
 {
 	t_ptr ptr;
 
@@ -24,44 +24,30 @@ int		ft_putuns_0(char *s, int arg)
 		ptr.diff = ptr.diff - 1;
 		ptr.flag = 1;
 	}
-	ptr.val = ft_size_chain_uns(s, ptr.nb, ptr.diff);
+	ptr.val = ft_size_chain_hexa_maj(s, ptr.nb, ptr.diff, arg);
 	if (!ptr.flag)
 	{
 		ft_putchar('0');
 		ptr.val++;
 	}
-	ptr.val = ptr.val + ft_size_chain_uns_plus(s, ptr.nb, ptr.diff);
+	ptr.val = ptr.val + ft_size_chain_hexa_plus_maj(s, ptr.nb, ptr.diff);
 	return (ptr.val);
 }
 
-void	ft_putuns_maj(unsigned long long n)
+int	ft_puthexa_maj_z(char *s, va_list *p)
 {
-	unsigned long long nb;
-
-	nb = n;
-	if (nb <= 9)
-		ft_putchar(nb + 48);
-	if (nb > 9)
-	{
-		ft_putuns_maj(nb / 10);
-		ft_putchar((nb % 10) + 48);
-	}
-}
-
-int		ft_putuns_maj_f(char *s, va_list *p)
-{
-	unsigned long long	arg;
-	t_ptr				ptr;
+	size_t	arg;
+	t_ptr	ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	ptr.check_type = 1;
-	arg = va_arg(*p, unsigned long long);
+	arg = va_arg(*p, size_t);
 	if (arg == 0)
-		return (ft_putuns_0(s, arg));
-	ptr.nb = ft_count_num(arg);
-	ptr.diff = ft_uns_size(s, ptr.check_type);
-	ptr.val = ptr.val + ft_size_chain_uns(s, ptr.nb, ptr.diff);
-	ft_putuns_maj(arg);
-	ptr.val = ptr.val + ft_size_chain_uns_plus(s, ptr.nb, ptr.diff);
+		return (ft_puthexa_maj_0(s, arg));
+	ptr.nb = ft_strhlen((size_t)arg);
+	ptr.diff = ft_hexa_size(s, arg, ptr.check_type);
+	ptr.val = ft_size_chain_hexa_maj(s, ptr.nb, ptr.diff, arg);
+	ft_puthexa_size_maj(arg);
+	ptr.val = ptr.val + ft_size_chain_hexa_plus_maj(s, ptr.nb, ptr.diff);
 	return (ptr.val + ptr.nb);
 }

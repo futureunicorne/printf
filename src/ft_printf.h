@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 15:07:46 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 17:27:52 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct	s_siz
 	int			ecart;
 	char		d;
 	char		e;
+	int			res;
 }				t_siz;
 
 typedef struct	s_ptr
@@ -61,6 +62,14 @@ typedef struct	s_ptr
 	int			flag;
 	int			check_type;
 }				t_ptr;
+
+typedef struct	s_chk
+{
+	int 		i;
+	int 		j;
+	int 		res;
+	char		*s1;
+}				t_chk;
 
 int		ft_printf(char *str, ...);
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*));
@@ -213,7 +222,15 @@ int		ft_putadd_0(char *s, int arg);
 int		ft_puthexa_maj_0(char *s, int arg);
 int		ft_puthexa_maj_hh(char *s, va_list *p);
 void	ft_puthexa_short_maj2(unsigned char nb);
-int		ft_check_O(char *s);
+int		ft_check_letter_o(char *s);
+void	ft_putbin(unsigned long long nb);
+int		ft_putbin_f(char *s, va_list *p);
+int		ft_size_chain_bin_plus(char *s, int t_arg, int diff);
+int		ft_size_chain_bin(char *s, int t_arg, int diff);
+
+
+
+
 
 
 #endif

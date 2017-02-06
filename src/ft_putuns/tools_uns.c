@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 15:10:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 17:15:57 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 16:38:32 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,9 @@ void	ft_putuns_short2(unsigned char n)
 
 void	ft_putuns_max(intmax_t n)
 {
- 	size_t nb;
+	size_t	nb;
 
 	nb = n;
-
 	if (nb <= 9)
 		ft_putchar(nb + 48);
 	if (nb > 9)
@@ -71,7 +70,7 @@ void	ft_putuns_max(intmax_t n)
 
 void	ft_putuns_size(size_t n)
 {
- 	size_t nb;
+	size_t	nb;
 
 	nb = n;
 	if (nb <= 9)

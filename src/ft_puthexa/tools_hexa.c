@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 15:51:14 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 13:10:06 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 19:45:21 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_puthexa_long(unsigned long long nb)
 {
-	char *tab = "0123456789abcdef";
+	char *tab;
+
+	tab = "0123456789abcdef";
 	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
@@ -26,7 +28,9 @@ void	ft_puthexa_long(unsigned long long nb)
 
 void	ft_puthexa_size(size_t nb)
 {
-	char *tab = "0123456789abcdef";
+	char *tab;
+
+	tab = "0123456789abcdef";
 	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
@@ -38,7 +42,9 @@ void	ft_puthexa_size(size_t nb)
 
 void	ft_puthexa_short(unsigned short nb)
 {
-	char *tab = "0123456789abcdef";
+	char *tab;
+
+	tab = "0123456789abcdef";
 	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
@@ -50,7 +56,9 @@ void	ft_puthexa_short(unsigned short nb)
 
 void	ft_puthexa_short2(unsigned char nb)
 {
-	char *tab = "0123456789abcdef";
+	char *tab;
+
+	tab = "0123456789abcdef";
 	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
@@ -62,24 +70,14 @@ void	ft_puthexa_short2(unsigned char nb)
 
 void	ft_puthexa_max(size_t nb)
 {
-	char *tab = "0123456789abcdef";
+	char *tab;
+
+	tab = "0123456789abcdef";
 	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{
 		ft_puthexa_max(nb / 16);
-		ft_putchar(tab[nb % 16]);
-	}
-}
-
-void	ft_puthexa(unsigned nb)
-{
-	char *tab = "0123456789abcdef";
-	if (nb <= 15)
-		ft_putchar(tab[nb]);
-	if (nb >= 16)
-	{
-		ft_puthexa(nb / 16);
 		ft_putchar(tab[nb % 16]);
 	}
 }

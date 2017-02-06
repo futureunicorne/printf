@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 15:28:54 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 13:41:12 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 17:31:41 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putoctal_long(unsigned long long n)
 {
-	unsigned long long  nb;
+	unsigned long long	nb;
 
 	nb = n;
 	if (nb <= 7)
@@ -54,9 +54,9 @@ void	ft_putoctal_size(size_t n)
 	}
 }
 
-int	ft_putoctal_short2(unsigned char n)
+int		ft_putoctal_short2(unsigned char n)
 {
-  	unsigned char nb;
+	unsigned char	nb;
 
 	nb = n;
 	if (nb <= 7)
@@ -69,10 +69,9 @@ int	ft_putoctal_short2(unsigned char n)
 	return (0);
 }
 
-
-int	ft_putoctal_short(unsigned short n)
+int		ft_putoctal_short(unsigned short n)
 {
-   unsigned short nb;
+	unsigned short nb;
 
 	nb = n;
 	if (n == 65535)

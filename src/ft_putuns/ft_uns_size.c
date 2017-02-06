@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 10:08:11 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/01/25 08:55:58 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 16:37:07 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int	ft_putspace_uns_bis(int auth, int flag, int flag_z, int check_type)
 {
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 0)
+	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 0)
 		return (1);
-	if (auth == 1 && flag == 0  && check_type == 0 && flag_z == 1)
+	if (auth == 1 && flag == 0 && check_type == 0 && flag_z == 1)
 		return (1);
 	return (0);
 }
 
-int ft_uns_size(char *s, int check_type)
+int	ft_uns_size(char *s, int check_type)
 {
-	int i;
-	t_pos pos;
+	int		i;
+	t_pos	pos;
 
 	i = 0;
 	ft_memset(&pos, 0, sizeof(t_pos));
-	while (s[i] && check_ptr(s[i], s[i + 1],s[i + 2]) == 0)
+	while (s[i] && check_ptr(s[i], s[i + 1], s[i + 2]) == 0)
 	{
 		if (s[i] == '-' && pos.flag2 == 0)
 		{

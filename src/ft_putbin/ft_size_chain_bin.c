@@ -6,11 +6,11 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/05 23:56:46 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 12:43:33 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 15:32:21 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_size_chain_bin_bis(t_siz *siz, char *s, int t_arg, int diff)
 {
