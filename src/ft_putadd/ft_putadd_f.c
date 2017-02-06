@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 22:41:05 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 15:09:44 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int		ft_nbr_add_len(size_t nb)
 	return (i);
 }
 
-void	ft_putadd(int long nb)
+void	ft_putadd(unsigned long nb)
 {
 	char *tab = "0123456789abcdef";
-	if (nb >= 0 && nb <= 15)
+	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{
@@ -60,8 +60,8 @@ int	ft_putadd_0(char *s, int arg)
 
 int	ft_putadd_f(char *s, va_list *p)
 {
-	int long		arg;
-	t_ptr 			ptr;
+	unsigned long		arg;
+	t_ptr 				ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	if (ft_check_long(s))
@@ -70,10 +70,10 @@ int	ft_putadd_f(char *s, va_list *p)
 		ptr.val = ptr.val + ft_puthexa_l(s, p);
 		return (ptr.val + 2);
 	}
-	arg = va_arg(*p, int long);
+	arg = va_arg(*p, unsigned long);
 	if (arg == 0)
 		return (ft_putadd_0(s, arg));
-	ptr.nb = ft_nbr_add_len((int long)&arg);
+	ptr.nb = ft_nbr_add_len((unsigned long)arg);
 	ptr.diff = ft_add_size(s, arg, ptr.check_type);
 	ft_handle_add(s, arg, ptr.check_type);
 	ptr.val = ptr.val + ft_size_chain_add(s, ptr.nb, ptr.diff);

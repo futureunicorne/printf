@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:27:15 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 14:14:03 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 15:00:25 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ int	main()
 	char *s;
 	char c;
 	int nb;
-	unsigned long long test_simple_mix;
+	unsigned test_simple_mix;
 
-	test_simple_mix = 45644346434743546;
+	test_simple_mix = 0;
 	c = 'c';
 	s = "le gloububouka";
-	nb = 214748364;
+	nb = 0;
 	setlocale(LC_ALL, "");
-	ft_printf("%.0%");
+	ft_printf("s: %s, p: %p, d:%d", "a string", &nb, 42);
 	printf("\n");
 	setlocale(LC_NUMERIC, "");
- 	printf("\nvap = %d\n", printf("%.0%"));
+ 	printf("\nvap = %d\n", printf("s: %s, p: %p, d:%d", "a string", &nb, 42));
 	return (0);
 }
 //d ok

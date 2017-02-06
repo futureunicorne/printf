@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 13:46:51 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 15:07:46 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,7 +199,7 @@ int		ft_size_chain_char_plus(char *s, int t_arg, int diff);
 int 	ft_add_size(char *s, int long arg, int check_type);
 int 	ft_handle_add(char *s, int long arg, int check_type);
 int		ft_nbr_add_len(size_t nb);
-void	ft_putadd(int long nb);
+void	ft_putadd(unsigned long nb);
 int		ft_putadd_f(char *s, va_list *p);
 int		ft_size_chain_add_plus(char *s, int t_arg, int diff);
 int		ft_size_chain_add(char *s, int t_arg, int diff);
