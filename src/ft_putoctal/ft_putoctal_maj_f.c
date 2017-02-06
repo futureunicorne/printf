@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 17:10:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 23:11:14 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 13:41:18 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	ft_putoctal_j(char *s, va_list *p)
 
 int	ft_putoctal_maj_f(char *s ,va_list *p)
 {
-	unsigned 	arg;
-	t_ptr		ptr;
+	unsigned long long	arg;
+	t_ptr				ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	ptr.check_type = 1;
@@ -49,13 +49,13 @@ int	ft_putoctal_maj_f(char *s ,va_list *p)
 			ptr.val = ft_putoctal_z(s, p);
 		return (ptr.val);
 	}
-	arg = va_arg(*p, unsigned);
+	arg = va_arg(*p, unsigned long long);
 	if (arg == 0)
 		return (ft_putoctal_0(s, arg));
-	ptr.nb = ft_nbr_octal_len_maj((unsigned)arg);
+	ptr.nb = ft_nbr_octal_len_maj((unsigned long long)arg);
 	ptr.diff = ft_oct_size(s, ptr.check_type);
 	ptr.val =  ptr.val  + ft_size_chain_oct(s, ptr.nb, ptr.diff, arg);
-	ft_putoctal(arg);
+	ft_putoctal_long(arg);
 	ptr.val =  ptr.val  + ft_size_chain_oct_plus(s, ptr.nb, ptr.diff);
 	return (ptr.val + ptr.nb);
 }

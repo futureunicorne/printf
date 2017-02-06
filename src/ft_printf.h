@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 23:16:24 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 13:46:51 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,5 +213,7 @@ int		ft_putadd_0(char *s, int arg);
 int		ft_puthexa_maj_0(char *s, int arg);
 int		ft_puthexa_maj_hh(char *s, va_list *p);
 void	ft_puthexa_short_maj2(unsigned char nb);
+int		ft_check_O(char *s);
+
 
 #endif

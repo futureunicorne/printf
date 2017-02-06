@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:35:31 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 23:10:50 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 13:48:01 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,16 @@ int	ft_putoctal_hh(char *s, va_list *p)
 	t_ptr				ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
+	if (ft_check_O(s))
+	{
+		ptr.val = ft_putoctal_l(s, p);
+		return (ptr.val);
+	}
 	ptr.check_type = 1;
 	arg = va_arg(*p, unsigned);
 	if (arg == 0)
 		return (ft_putoctal_0(s, arg));
 	ptr.nb = ft_nbr_octal_len((unsigned char)arg);
-	if (arg == 65535)
-		ptr.nb = 6;
 	ptr.diff = ft_oct_size(s, ptr.check_type);
 	ptr.val =  ptr.val  + ft_size_chain_oct(s, ptr.nb, ptr.diff, arg);
 	ft_putoctal_short2(arg);
@@ -54,7 +57,6 @@ int	ft_putoctal_h(char *s, va_list *p)
 {
  	unsigned short 		arg;
 	t_ptr				ptr;
-
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	if (ft_check_letter(s, 'h'))
 	{
@@ -79,7 +81,7 @@ int	ft_putoctal_l(char *s, va_list *p)
 {
 	unsigned long long	arg;
 	t_ptr				ptr;
-
+	
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	ptr.check_type = 1;
 	arg = va_arg(*p, unsigned long long);

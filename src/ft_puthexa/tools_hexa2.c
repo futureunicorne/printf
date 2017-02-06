@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 15:52:21 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 22:58:52 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 13:41:23 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,36 +27,24 @@ void	ft_puthexa_size_maj(size_t nb)
 void	ft_puthexa_short_maj(unsigned short nb)
 {
 	char *tab = "0123456789ABCDEF";
-	if (nb > 32767)
-		nb = nb * (-1);
 	if (nb <= 15)
-	{
-		if (nb <= 32767)
-			ft_putchar(tab[nb]);
-	}
+		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{
 		ft_puthexa_short_maj(nb / 16);
-		if (nb <= 32767)
-			ft_putchar(tab[nb % 16]);
+		ft_putchar(tab[nb % 16]);
 	}
 }
 
 void	ft_puthexa_short_maj2(unsigned char nb)
 {
 	char *tab = "0123456789ABCDEF";
-	if (nb > 32767)
-		nb = nb * (-1);
 	if (nb <= 15)
-	{
-		if (nb <= 32767)
-			ft_putchar(tab[nb]);
-	}
+		ft_putchar(tab[nb]);
 	if (nb >= 16)
 	{
 		ft_puthexa_short_maj2(nb / 16);
-		if (nb <= 32767)
-			ft_putchar(tab[nb % 16]);
+		ft_putchar(tab[nb % 16]);
 	}
 }
 

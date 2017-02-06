@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:09:26 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/05 22:58:42 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 13:58:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_puthexa_maj_hh(char *s, va_list *p)
 	arg = va_arg(*p, unsigned);
 	if (arg == 0)
 		return (ft_puthexa_maj_0(s, arg));
-	ptr.nb = ft_strhlen((unsigned short)arg);
+	ptr.nb = ft_strhlen((unsigned char)arg);
 	ptr.diff = ft_hexa_size(s, arg, ptr.check_type);
 	ptr.val = ft_size_chain_hexa_maj(s, ptr.nb, ptr.diff, arg);
 	ft_puthexa_short_maj2(arg);
@@ -120,7 +120,7 @@ int	ft_puthexa_maj_0(char *s, int arg)
 		ptr.flag = 1;
 	}
 	ptr.val = ft_size_chain_hexa_maj(s, ptr.nb, ptr.diff, arg);
-	if (!ptr.flag && !ft_check_dieses(s))
+	if (!ptr.flag)
 	{
 		ft_putchar('0');
 		ptr.val++;
