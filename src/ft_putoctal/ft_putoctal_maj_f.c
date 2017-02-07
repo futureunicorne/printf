@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 17:10:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 17:09:08 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 22:15:56 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	ft_putoctal_0(char *s, int arg)
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	ptr.nb = 1;
 	ptr.diff = ft_nbr_size(s, arg);
-	if (ft_check_point(s))
+	if (ft_check_point(s) && ft_check_point(s) && !ft_check_dieses(s))
 	{
-		ptr.diff = ptr.diff - 1;
+		ptr.nb = 0;
 		ptr.flag = 1;
 	}
 	ptr.val = ft_size_chain_oct(s, ptr.nb, ptr.diff, arg);
@@ -31,6 +31,11 @@ int	ft_putoctal_0(char *s, int arg)
 		ptr.val++;
 	}
 	ptr.val = ptr.val + ft_size_chain_oct_plus(s, ptr.nb, ptr.diff);
+	if (ft_check_dieses(s) && !ft_record_prec(s) && ft_record_chain(s))
+	{
+		ft_putchar('0');
+		ptr.val++;
+	}
 	return (ptr.val);
 }
 

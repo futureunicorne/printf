@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/07 10:21:32 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 20:46:33 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_size_chain_oct_bis2(t_siz *siz, char *s)
 		siz->val++;
 	}
 	if (ft_check_dieses(s) && (siz->nbr > siz->nbr_prec)
-	&& !siz->flag && siz->nbr_prec)
+	&& !siz->flag && (siz->nbr_prec))
 	{
 		ft_putchar('0');
 		siz->flag = 1;

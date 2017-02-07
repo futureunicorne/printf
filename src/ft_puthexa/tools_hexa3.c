@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 16:59:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 19:46:58 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 23:20:27 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,24 @@ int		ft_puthexa_0(char *s, int arg)
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	ptr.nb = 1;
 	ptr.diff = ft_nbr_size(s, arg);
-	if (ft_check_point(s))
+	if (ft_check_point(s) && ft_check_point(s))
 	{
-		ptr.diff = ptr.diff - 1;
+		ptr.nb = 0;
 		ptr.flag = 1;
 	}
 	ptr.val = ft_size_chain_hexa(s, ptr.nb, ptr.diff, arg);
-	if (!ptr.flag)
+	if (!ptr.flag && !ft_check_dieses(s))
 	{
 		ft_putchar('0');
 		ptr.val++;
 	}
 	ptr.val = ptr.val + ft_size_chain_hexa_plus(s, ptr.nb, ptr.diff);
+	if (ft_check_dieses(s) && ((ft_record_chain(s) && !ft_check_point(s))
+	|| (!ft_record_chain(s) && !ft_record_prec(s))))
+	{
+		ft_putchar('0');
+		ptr.val++;
+	}
 	return (ptr.val);
 }
 
