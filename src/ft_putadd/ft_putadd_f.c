@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 15:09:44 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 20:37:08 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int		ft_nbr_add_len(size_t nb)
 
 void	ft_putadd(unsigned long nb)
 {
-	char *tab = "0123456789abcdef";
+	char *tab;
+
+	tab = "0123456789abcdef";
 	if (nb <= 15)
 		ft_putchar(tab[nb]);
 	if (nb >= 16)
@@ -39,7 +41,8 @@ void	ft_putadd(unsigned long nb)
 
 int	ft_putadd_0(char *s, int arg)
 {
-	t_ptr ptr;
+	t_ptr	ptr;
+
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	ptr.nb = 1;
 	ptr.diff = ft_nbr_size(s, arg);
@@ -54,14 +57,14 @@ int	ft_putadd_0(char *s, int arg)
 		ft_putchar('0');
 		ptr.val++;
 	}
-	ptr.val =  ptr.val  + ft_size_chain_add_plus(s, ptr.nb, ptr.diff);
+	ptr.val = ptr.val + ft_size_chain_add_plus(s, ptr.nb, ptr.diff);
 	return (ptr.val);
 }
 
 int	ft_putadd_f(char *s, va_list *p)
 {
 	unsigned long		arg;
-	t_ptr 				ptr;
+	t_ptr				ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	if (ft_check_long(s))

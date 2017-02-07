@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/05 23:56:28 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 15:37:26 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 20:31:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int		ft_nbr_bin(size_t nb)
 
 void	ft_putbin(unsigned long long nb)
 {
-	char *tab = "0111111111";
+	char *tab;
+
+	tab = "0111111111";
 	if (nb < 2)
 		ft_putchar(tab[nb]);
 	if (nb > 1)
@@ -40,7 +42,7 @@ void	ft_putbin(unsigned long long nb)
 int	ft_putbin_f(char *s, va_list *p)
 {
    unsigned		arg;
-   t_ptr 		ptr;
+   t_ptr		ptr;
 
    ft_memset(&ptr, 0, sizeof(t_ptr));
    ptr.check_type = 1;

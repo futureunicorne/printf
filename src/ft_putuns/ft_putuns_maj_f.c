@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:21:49 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 16:35:37 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 09:06:50 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ int		ft_putuns_0(char *s, int arg)
 	ptr.diff = ft_nbr_size(s, arg);
 	if (ft_check_point(s))
 	{
-		ptr.diff = ptr.diff - 1;
-		ptr.flag = 1;
+		if (ft_record_prec(s) && !ft_record_chain(s))
+		{
+			ptr.diff = ptr.diff - 1;
+			ptr.flag = 0;
+		}
+		else
+			ptr.flag = 1;
 	}
 	ptr.val = ft_size_chain_uns(s, ptr.nb, ptr.diff);
 	if (!ptr.flag)

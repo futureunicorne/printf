@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 15:44:08 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 08:36:05 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,45 +28,51 @@ int		ft_strwclen(wchar_t arg)
 	return (nb);
 }
 
-void	ft_putchar_maj(wchar_t c)
+void	ft_putchar_maj2(t_wch *wch)
 {
-	wchar_t d;
-	wchar_t e;
-
-	d = c;
-	e = c;
-	if (c <= 127)
-		d = 1;
-	else if (c <= 2047)
+	if (wch->c <= 127)
+		wch->d = 1;
+	else if (wch->c <= 2047)
 	{
-		d =  (d >> 6 | 0xC0);
-		c = ((c & 0x3F) | 0x80);
-		c = (c << 8 | d);
-		d = 2;
+		wch->d =  (wch->d >> 6 | 0xC0);
+		wch->c = ((wch->c & 0x3F) | 0x80);
+		wch->c = (wch->c << 8 | wch->d);
+		wch->d = 2;
 	}
-	else if (c <= 65535)
+	else if (wch->c <= 65535)
 	{
-		c = (((c & 0x3F) | 0x80) << 16);
-		d = ((((d & 0xFC0) >> 6) | 0x80) << 8);
-		e = ((e >> 12) | 0xE0);
-		c = ((e | d) | c);
-		d = 3;
+		wch->c = (((wch->c & 0x3F) | 0x80) << 16);
+		wch->d = ((((wch->d & 0xFC0) >> 6) | 0x80) << 8);
+		wch->e = ((wch->e >> 12) | 0xE0);
+		wch->c = ((wch->e | wch->d) | wch->c);
+		wch->d = 3;
 	}
-	else if (c <= 1114111)
+	else if (wch->c <= 1114111)
 	{
-		c = (((c & 0x3F) | 0x80) << 24);
-		d = ((((d & 0xFC0) >> 6) | 0x80) << 16);
-		e = (((e >> 12) | 0x80) << 8);
-		c = (((c | d) | e) | 0xF0);
-		d = 4;
+		wch->c = (((wch->c & 0x3F) | 0x80) << 24);
+		wch->d = ((((wch->d & 0xFC0) >> 6) | 0x80) << 16);
+		wch->e = (((wch->e >> 12) | 0x80) << 8);
+		wch->c = (((wch->c | wch->d) | wch->e) | 0xF0);
+		wch->d = 4;
 	}
-	write(1, &c, d);
 }
 
-int	ft_putchar_maj_f(char *s, va_list *p)
+void	ft_putchar_maj(wchar_t b)
+{
+	t_wch wch;
+
+	ft_memset(&wch, 0, sizeof(t_wch));
+	wch.c = b;
+	wch.d = b;
+	wch.e = b;
+	ft_putchar_maj2(&wch);
+	write(1, &wch.c, wch.d);
+}
+
+int		ft_putchar_maj_f(char *s, va_list *p)
 {
 	wchar_t arg;
-	t_ptr 	ptr;
+	t_ptr	ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	arg = va_arg(*p, wchar_t);

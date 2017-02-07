@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:33:46 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 17:56:44 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 20:39:01 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_size_chain_add_plus(char *s, int t_arg, int diff)
+int		ft_size_chain_add_plus(char *s, int t_arg, int diff)
 {
 	t_siz siz;
 
@@ -47,9 +47,9 @@ void	ft_size_chain_add_bis1(t_siz *siz, char *arg, int t_arg, int diff)
 	}
 }
 
-int	ft_size_chain_add_bis(t_siz *siz, char *arg, int t_arg, int diff)
+int		ft_size_chain_add_bis(t_siz *siz, char *arg, int t_arg, int diff)
 {
-	siz->ecart =  siz->nbr_prec - t_arg;
+	siz->ecart = siz->nbr_prec - t_arg;
 	if (siz->nbr && siz->nbr_prec)
 	{
 		if (siz->nbr > siz->nbr_prec)
@@ -65,8 +65,8 @@ int	ft_size_chain_add_bis(t_siz *siz, char *arg, int t_arg, int diff)
 			if (t_arg > siz->nbr)
 				siz->len = siz->nbr - t_arg;
 			if (t_arg < siz->nbr)
-				siz->len =  0;
-			}
+				siz->len = 0;
+		}
 		else if (siz->nbr == siz->nbr_prec)
 		{
 			if (siz->nbr > t_arg || siz->nbr_prec > t_arg)
@@ -96,9 +96,9 @@ void	ft_size_chain_add_bis2(t_siz *siz)
 		siz->val++;
 	}
 }
-int	ft_size_chain_add(char *s, int t_arg, int diff)
+int		ft_size_chain_add(char *s, int t_arg, int diff)
 {
-	t_siz siz;
+	t_siz	siz;
 
 	ft_memset(&siz, 0, sizeof(t_siz));
 	siz.nbr = ft_record_chain(s);

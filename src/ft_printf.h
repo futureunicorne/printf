@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 17:27:52 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 08:35:37 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,13 @@ typedef struct	s_chk
 	int 		res;
 	char		*s1;
 }				t_chk;
+
+typedef struct	s_wch
+{
+	wchar_t		c;
+	wchar_t		d;
+	wchar_t		e;
+}				t_wch;
 
 int		ft_printf(char *str, ...);
 void	ft_attribute_ptr(int (*ptr_func[])(char * s, va_list*));

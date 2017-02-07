@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 19:38:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 19:40:11 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 08:16:26 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_puthexa_maj_0(char *s, int arg)
+int		ft_puthexa_maj_0(char *s, int arg)
 {
 	t_ptr ptr;
 
@@ -34,7 +34,7 @@ int	ft_puthexa_maj_0(char *s, int arg)
 	return (ptr.val);
 }
 
-int	ft_puthexa_maj_z(char *s, va_list *p)
+int		ft_puthexa_maj_z(char *s, va_list *p)
 {
 	size_t	arg;
 	t_ptr	ptr;
@@ -50,4 +50,44 @@ int	ft_puthexa_maj_z(char *s, va_list *p)
 	ft_puthexa_size_maj(arg);
 	ptr.val = ptr.val + ft_size_chain_hexa_plus_maj(s, ptr.nb, ptr.diff);
 	return (ptr.val + ptr.nb);
+}
+
+int		ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff)
+{
+	t_siz siz;
+
+	ft_memset(&siz, 0, sizeof(t_siz));
+	siz.nbr = ft_record_chain(s);
+	siz.nbr_prec = ft_record_prec(s);
+	if (ft_check_less(s) == 0 || siz.nbr_prec > t_arg)
+		return (0);
+	siz.i = 0;
+	siz.len = siz.nbr - t_arg - diff;
+	while (siz.i < siz.len)
+	{
+		ft_putchar(' ');
+		siz.i++;
+		siz.val++;
+	}
+	return (siz.val);
+}
+
+int		ft_size_chain_hexa_plus(char *s, int t_arg, int diff)
+{
+	t_siz siz;
+
+	ft_memset(&siz, 0, sizeof(t_siz));
+	siz.nbr = ft_record_chain(s);
+	siz.nbr_prec = ft_record_prec(s);
+	if (ft_check_less(s) == 0 || siz.nbr_prec > t_arg)
+		return (0);
+	siz.i = 0;
+	siz.len = siz.nbr - t_arg - diff;
+	while (siz.i < siz.len)
+	{
+		ft_putchar(' ');
+		siz.i++;
+		siz.val++;
+	}
+	return (siz.val);
 }

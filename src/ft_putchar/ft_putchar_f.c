@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:44 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/04 20:17:54 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 20:25:59 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_putchar_f(char *s, va_list *p)
 {
-	int 	arg;
-	t_ptr 	ptr;
+	int		arg;
+	t_ptr	ptr;
 
 	ft_memset(&ptr, 0, sizeof(t_ptr));
 	if (ft_check_long(s) == 'l')

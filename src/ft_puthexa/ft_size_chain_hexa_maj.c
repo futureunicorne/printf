@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 17:46:13 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 19:50:25 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/06 20:48:04 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,28 @@ void	ft_size_chain_hexa_maj_bis1(t_siz *siz, char *s, ssize_t arg)
 	}
 }
 
+int		ft_size_chain_hexa_maj_bis0(t_siz *siz, char *s, int t_arg, int arg)
+{
+	if (ft_check_dieses(s) == 1 && arg != 0 && ((!(siz->nbr > siz->nbr_prec)) ||
+	(ft_check_zero(s) && siz->nbr && (!siz->nbr_prec))))
+	{
+		ft_putstr("0X");
+		siz->flag = 1;
+		siz->val = siz->val + 2;
+	}
+	if (ft_check_less(s) &&
+	((siz->nbr_prec <= t_arg && arg != 0) || (siz->nbr && !ft_check_point(s))))
+	{
+		if (ft_check_dieses(s) && !siz->flag)
+		{
+			ft_putstr("0X");
+			siz->val = siz->val + 2;
+		}
+		return (siz->val);
+	}
+	return (0);
+}
+
 int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 {
 	t_siz siz;
@@ -91,23 +113,9 @@ int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 	ft_memset(&siz, 0, sizeof(t_siz));
 	siz.nbr = ft_record_chain(s);
 	siz.nbr_prec = ft_record_prec(s);
-	if (ft_check_dieses(s) == 1 && arg != 0 && ((!(siz.nbr > siz.nbr_prec)) ||
-	(ft_check_zero(s) && siz.nbr && (!siz.nbr_prec))))
-	{
-		ft_putstr("0X");
-		siz.flag = 1;
-		siz.val = siz.val + 2;
-	}
-	if (ft_check_less(s) &&
-	((siz.nbr_prec <= t_arg && arg != 0) || (siz.nbr && !ft_check_point(s))))
-	{
-		if (ft_check_dieses(s) && !siz.flag)
-		{
-			ft_putstr("0X");
-			siz.val = siz.val + 2;
-		}
-		return (siz.val);
-	}
+	siz.res = ft_size_chain_hexa_maj_bis0(&siz, s, t_arg, arg);
+	if (siz.res)
+		return (siz.res);
 	siz.len = siz.nbr - t_arg - diff;
 	ft_size_chain_hexa_maj_bis2(&siz, s, t_arg, diff);
 	ft_size_chain_hexa_maj_bis(&siz, s, t_arg, diff);
@@ -120,22 +128,3 @@ int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 	return (siz.val);
 }
 
-int		ft_size_chain_hexa_plus_maj(char *s, int t_arg, int diff)
-{
-	t_siz siz;
-
-	ft_memset(&siz, 0, sizeof(t_siz));
-	siz.nbr = ft_record_chain(s);
-	siz.nbr_prec = ft_record_prec(s);
-	if (ft_check_less(s) == 0 || siz.nbr_prec > t_arg)
-		return (0);
-	siz.i = 0;
-	siz.len = siz.nbr - t_arg - diff;
-	while (siz.i < siz.len)
-	{
-		ft_putchar(' ');
-		siz.i++;
-		siz.val++;
-	}
-	return (siz.val);
-}
