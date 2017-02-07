@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 16:22:28 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 19:11:56 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	ft_resolve(char *s, t_pos *pos,
 		if (ft_check_spec(s + pos->i + 1))
 		{
 			spec = ft_return_chain(s + pos->i);
-			pos->val = pos->val + ptr_func[ft_check_spec(spec)](spec, ap);
+			pos->val = pos->val + ptr_func[ft_check_spec(s + pos->i + 1)](spec, ap);
+			free (spec);
 			if (ft_check_ecart(s + pos->i + 1) > 0)
 				pos->i = pos->i + ft_check_ecart(s + pos->i + 1);
 			if (s[pos->i + 2] == 'l')
@@ -62,9 +63,11 @@ void	ft_resolve(char *s, t_pos *pos,
 int		ft_printf(char *str, ...)
 {
 	t_pos	pos;
+	int		res;
 	int		(*ptr_func[16])(char*, va_list*);
 	va_list	ap;
 
+	res = 0;
 	ft_memset(&pos, 0, sizeof(t_pos));
 	ft_attribute_ptr(ptr_func);
 	va_start(ap, str);
@@ -75,5 +78,6 @@ int		ft_printf(char *str, ...)
 	}
 	va_end(ap);
 	printf("\nval = %d", pos.val);
-	return (pos.val);
+	res = pos.val;
+	return (res);
 }

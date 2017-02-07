@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:37:16 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 16:16:22 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 13:15:38 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	ft_record_prec(char *s)
 		i++;
 	}
 	res = ft_atoi((const char*)s1);
+	free (s1);
 	return (res);
 }
 
@@ -67,6 +68,7 @@ int	ft_record_chain(char *s)
 		chk.i++;
 	}
 	chk.res = ft_atoi((const char*)chk.s1);
+	free (chk.s1);
 	return (chk.res);
 }
 

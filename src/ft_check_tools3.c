@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 15:08:00 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 16:17:53 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 19:08:06 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,13 @@ int		ft_check_letter_o(char *s)
 char	*ft_return_chain(char *s)
 {
 	int		i;
-	char	*s1;
 
 	i = 1;
 	while (s[i] && (!check_ptr2(s[i])))
 		i++;
 	if (check_ptr(s[i], s[i + 1], s[i + 2]))
 	{
-		s1 = ft_strsub(s, 1, i);
-		return (s1);
+		return (ft_strsub(s, 1, i));
 	}
 	return (NULL);
 }
@@ -63,11 +61,20 @@ char	*ft_return_chain(char *s)
 int		ft_check_spec(char *s)
 {
 	int i;
+	char c;
+	char d;
+	char e;
 
 	i = 0;
 	while (s[i] && check_ptr(s[i], s[i + 1], s[i + 2]) == 0)
 		i++;
+
 	if (check_ptr(s[i], s[i + 1], s[i + 2]))
-		return (check_ptr(s[i], s[i + 1], s[i + 2]));
+	{
+		c = s[i];
+		d = s[i + 1];
+		e = s[i + 2];
+		return (check_ptr(c, d, e));
+	}
 	return (0);
 }
