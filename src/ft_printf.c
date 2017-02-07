@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:06:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/07 19:11:56 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/08 00:16:52 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,15 @@ void	ft_attribute_ptr(int (*ptr_func[])(char *s, va_list*))
 void	ft_resolve(char *s, t_pos *pos,
 		va_list *ap, int (*ptr_func[])(char *s, va_list*))
 {
-	char	*spec;
-
 	if (s[pos->i] == '%')
 	{
 		if (ft_check_spec(s + pos->i + 1))
 		{
-			spec = ft_return_chain(s + pos->i);
-			pos->val = pos->val + ptr_func[ft_check_spec(s + pos->i + 1)](spec, ap);
-			free (spec);
+			pos->spec = ft_return_chain(s + pos->i);
+			pos->val = pos->val + ptr_func[ft_check_spec(pos->spec)](pos->spec, ap);
 			if (ft_check_ecart(s + pos->i + 1) > 0)
 				pos->i = pos->i + ft_check_ecart(s + pos->i + 1);
+			free (pos->spec);
 			if (s[pos->i + 2] == 'l')
 				pos->i += 2;
 			if (s[pos->i + 1] == 'l')
