@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/05 23:56:28 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 20:31:50 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 09:53:02 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@ void	ft_putbin(unsigned long long nb)
 	}
 }
 
-int	ft_putbin_f(char *s, va_list *p)
+int		ft_putbin_f(char *s, va_list *p)
 {
-   unsigned		arg;
-   t_ptr		ptr;
+	unsigned	arg;
+	t_ptr		ptr;
 
-   ft_memset(&ptr, 0, sizeof(t_ptr));
-   ptr.check_type = 1;
-   arg = va_arg(*p, unsigned);
-   ptr.nb = ft_nbr_bin((unsigned)arg);
-   ptr.diff = 0;
-   ptr.val = ft_size_chain_bin(s, ptr.nb, ptr.diff);
-   ft_putbin(arg);
-   ptr.val = ptr.val + ft_size_chain_bin_plus(s, ptr.nb, ptr.diff);
-   return (ptr.val + ptr.nb);
+	ft_memset(&ptr, 0, sizeof(t_ptr));
+	ptr.check_type = 1;
+	arg = va_arg(*p, unsigned);
+	ptr.nb = ft_nbr_bin((unsigned)arg);
+	ptr.diff = 0;
+	ptr.val = ft_size_chain_bin(s, ptr.nb, ptr.diff);
+	ft_putbin(arg);
+	ptr.val = ptr.val + ft_size_chain_bin_plus(s, ptr.nb, ptr.diff);
+	return (ptr.val + ptr.nb);
 }

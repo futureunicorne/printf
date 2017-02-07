@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 10:30:38 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 20:37:08 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 09:43:43 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putadd(unsigned long nb)
 	}
 }
 
-int	ft_putadd_0(char *s, int arg)
+int		ft_putadd_0(char *s, int arg)
 {
 	t_ptr	ptr;
 
@@ -61,7 +61,7 @@ int	ft_putadd_0(char *s, int arg)
 	return (ptr.val);
 }
 
-int	ft_putadd_f(char *s, va_list *p)
+int		ft_putadd_f(char *s, va_list *p)
 {
 	unsigned long		arg;
 	t_ptr				ptr;

@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:59:06 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 19:52:17 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 09:50:26 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ int		ft_size_chain_nbr_less_bis0(t_siz *siz, char *s, int t_arg, ssize_t arg)
 		siz->val++;
 		siz->flag = 1;
 	}
-	if (siz->nbr_prec && (siz->nbr_prec > siz->nbr || siz->nbr_prec == siz->nbr))
+	if (siz->nbr_prec
+	&& (siz->nbr_prec > siz->nbr || siz->nbr_prec == siz->nbr))
 	{
 		ft_putchar('-');
 		siz->val++;

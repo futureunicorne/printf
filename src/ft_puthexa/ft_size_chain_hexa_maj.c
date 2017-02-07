@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 17:46:13 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 20:48:04 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 09:51:31 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,4 +127,3 @@ int		ft_size_chain_hexa_maj(char *s, int t_arg, int diff, ssize_t arg)
 	}
 	return (siz.val);
 }
-

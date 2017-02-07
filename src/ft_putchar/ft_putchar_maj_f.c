@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:07:22 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/07 08:36:05 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 09:52:30 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_putchar_maj2(t_wch *wch)
 		wch->d = 1;
 	else if (wch->c <= 2047)
 	{
-		wch->d =  (wch->d >> 6 | 0xC0);
+		wch->d = (wch->d >> 6 | 0xC0);
 		wch->c = ((wch->c & 0x3F) | 0x80);
 		wch->c = (wch->c << 8 | wch->d);
 		wch->d = 2;
