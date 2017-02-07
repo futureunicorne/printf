@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:51:43 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 20:25:42 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 10:39:36 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	ft_char_size(char *s, int check_type)
 	int		i;
 	t_pos	pos;
 
+	i = 0;
 	ft_memset(&pos, 0, sizeof(t_pos));
 	while (s[i] && check_ptr(s[i], s[i + 1], s[i + 2]) == 0)
 	{

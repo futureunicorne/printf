@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:12 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 19:04:56 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 10:21:32 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int		ft_size_chain_oct_bis0(t_siz *siz, char *s, int t_arg, int arg)
 			ft_putchar('0');
 			siz->val++;
 		}
-		return (siz->val);
+		return (1);
 	}
 	return (0);
 }
@@ -115,7 +115,7 @@ int		ft_size_chain_oct(char *s, int t_arg, int diff, int arg)
 	siz.nbr_prec = ft_record_prec(s);
 	siz.res = ft_size_chain_oct_bis0(&siz, s, t_arg, arg);
 	if (siz.res)
-		return (siz.res);
+		return (siz.val);
 	if (ft_check_point(s) && siz.nbr > t_arg && siz.nbr > siz.nbr_prec
 	&& siz.nbr_prec && ft_check_less(s))
 		siz.nbr = 0;

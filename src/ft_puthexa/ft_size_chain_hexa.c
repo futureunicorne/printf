@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 09:56:08 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/07 09:52:02 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 10:18:32 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int		ft_size_chain_hexa_bis0(t_siz *siz, char *s, int t_arg, int arg)
 			ft_putstr("0x");
 			siz->val = siz->val + 2;
 		}
-		return (siz->val);
+		return (1);
 	}
 	return (0);
 }
@@ -115,7 +115,7 @@ int		ft_size_chain_hexa(char *s, int t_arg, int diff, ssize_t arg)
 	siz.nbr_prec = ft_record_prec(s);
 	siz.res = ft_size_chain_hexa_bis0(&siz, s, t_arg, arg);
 	if (siz.res)
-		return (siz.res);
+		return (siz.val);
 	siz.len = siz.nbr - t_arg - diff;
 	ft_size_chain_hexa_bis2(&siz, s, t_arg, diff);
 	ft_size_chain_hexa_bis(&siz, s, t_arg, diff);

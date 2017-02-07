@@ -6,7 +6,7 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:00:17 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/07 10:03:19 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 11:26:53 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,7 @@ int				ft_size_chain_nbr(char *s, int t_arg, int diff, ssize_t arg);
 int				ft_size_chain_nbr_plus(char *s, int t_arg, int diff);
 void			ft_putnbr_short2(signed char n);
 void			ft_putnbr_short(short int n);
-void			ft_putnbr_max(intmax_t n);
+int				ft_putnbr_max(intmax_t n);
 void			ft_putnbr_size(size_t n);
 void			ft_putnbr_long(int long n);
 void			ft_putnbr_long2(long long n);

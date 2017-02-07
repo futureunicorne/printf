@@ -6,13 +6,13 @@
 /*   By: hel-hadi <hel-hadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:13:41 by hel-hadi          #+#    #+#             */
-/*   Updated: 2017/02/06 19:26:08 by hel-hadi         ###   ########.fr       */
+/*   Updated: 2017/02/07 11:17:00 by hel-hadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putnbr_j2(char *s, int arg, t_ptr *ptr)
+void	ft_putnbr_j2(char *s, intmax_t arg, t_ptr *ptr)
 {
 	if (!ft_putplus_nbr_bis(s, arg))
 	{
